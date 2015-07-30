@@ -1,0 +1,2010 @@
+2015-07-23 12:47:10,588 e7a7cda9 MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D2
+--cloud=Azure
+--benchmarks=copy_throughput
+2015-07-23 12:47:10,834 e7a7cda9 MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7f350d49a990> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7f350ef99150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-23 12:47:10,834 e7a7cda9 MainThread copy_throughput(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-23 12:47:10,835 e7a7cda9 MainThread copy_throughput(1/1) pkb.py:194 INFO     Preparing benchmark copy_throughput
+2015-07-23 12:47:10,837 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:47:10,837 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkite7a7cda9121cb0a98 perfkite7a7cda9121cb0a98
+2015-07-23 12:47:14,433 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group create --location=East US --label=perfkite7a7cda9121cb0a98 perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    account affinity-group create command OK
+
+STDERR: 
+2015-07-23 12:47:14,434 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:47:14,434 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkite7a7cda9121cb0a98
+2015-07-23 12:47:17,185 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {
+  "capabilities": [
+    "PersistentVMRole",
+    "HighMemory"
+  ],
+  "hostedServices": [],
+  "storageServices": [],
+  "name": "perfkite7a7cda9121cb0a98",
+  "label": "perfkite7a7cda9121cb0a98",
+  "location": "East US",
+  "createdTime": "2015-07-23T12:47:24.000Z",
+  "statusCode": 200,
+  "requestId": "5abbfe92151fc14390db261dd81ac25f"
+}
+
+STDERR: 
+2015-07-23 12:47:17,186 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:47:17,186 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkite7a7cda9121cb0a98 --type=LRS perfkite7a7cda9121cb0a98
+2015-07-23 12:47:55,425 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure storage account create --affinity-group=perfkite7a7cda9121cb0a98 --type=LRS perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    storage account create command OK
+
+STDERR: 
+2015-07-23 12:47:55,425 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:47:55,426 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkite7a7cda9121cb0a98
+2015-07-23 12:47:58,620 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {
+  "extendedProperties": {
+    "ResourceGroup": "Default-Storage-EastUS",
+    "ResourceLocation": "East US"
+  },
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/storageservices/perfkite7a7cda9121cb0a98",
+  "name": "perfkite7a7cda9121cb0a98",
+  "properties": {
+    "endpoints": [
+      "https://perfkite7a7cda9121cb0a98.blob.core.windows.net/",
+      "https://perfkite7a7cda9121cb0a98.queue.core.windows.net/",
+      "https://perfkite7a7cda9121cb0a98.table.core.windows.net/"
+    ],
+    "affinityGroup": "perfkite7a7cda9121cb0a98",
+    "label": "perfkite7a7cda9121cb0a98",
+    "status": "Created",
+    "geoPrimaryRegion": "East US",
+    "statusOfGeoPrimaryRegion": "Available",
+    "geoSecondaryRegion": "",
+    "accountType": "Standard_LRS"
+  },
+  "resourceGroup": ""
+}
+
+STDERR: 
+2015-07-23 12:47:58,621 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:47:58,621 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet create --affinity-group=perfkite7a7cda9121cb0a98 perfkite7a7cda9121cb0a98
+2015-07-23 12:49:07,513 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet create --affinity-group=perfkite7a7cda9121cb0a98 perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet create
+info:    Using default address space start IP: 10.0.0.0
+info:    Using default address space cidr: 8
+info:    Using default subnet start IP: 10.0.0.0
+info:    Using default subnet cidr: 11
+info:    Looking up network configuration
+info:    Looking up affinity groups
+info:    Using affinity group perfkite7a7cda9121cb0a98
+info:    Setting network configuration
+info:    network vnet create command OK
+
+STDERR: 
+2015-07-23 12:49:07,514 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:49:07,514 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 12:49:10,577 e7a7cda9 Thread-1 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {
+  "dnsServers": [],
+  "subnets": [
+    {
+      "name": "Subnet-1",
+      "addressPrefix": "10.0.0.0/11"
+    }
+  ],
+  "name": "perfkite7a7cda9121cb0a98",
+  "id": "06485606-5b82-4a93-a1e4-f0b7d807ca88",
+  "affinityGroup": "perfkite7a7cda9121cb0a98",
+  "state": "Created",
+  "addressSpace": {
+    "addressPrefixes": [
+      "10.0.0.0/8"
+    ]
+  }
+}
+
+STDERR: 
+2015-07-23 12:49:10,602 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:49:10,602 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure service create --affinitygroup=perfkite7a7cda9121cb0a98 pkb-e7a7cda9-0
+2015-07-23 12:49:15,291 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure service create --affinitygroup=perfkite7a7cda9121cb0a98 pkb-e7a7cda9-0. Got return code (0).
+STDOUT: info:    Executing command service create
+info:    Creating cloud service
+data:    Cloud service name pkb-e7a7cda9-0
+info:    service create command OK
+
+STDERR: 
+2015-07-23 12:49:15,291 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:49:15,292 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-e7a7cda9-0
+2015-07-23 12:49:17,920 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-e7a7cda9-0. Got return code (0).
+STDOUT: {
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/hostedservices/pkb-e7a7cda9-0",
+  "serviceName": "pkb-e7a7cda9-0",
+  "properties": {
+    "extendedProperties": {},
+    "affinityGroup": "perfkite7a7cda9121cb0a98",
+    "label": "pkb-e7a7cda9-0",
+    "status": "Created",
+    "dateCreated": "2015-07-23T12:49:24.000Z",
+    "dateLastModified": "2015-07-23T12:49:25.000Z"
+  },
+  "statusCode": 200,
+  "requestId": "e4aafc653577c53f823402ea4d49817e"
+}
+
+STDERR: 
+2015-07-23 12:49:17,920 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:49:17,920 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkite7a7cda9121cb0a98 --virtual-network-name=perfkite7a7cda9121cb0a98 --vm-size=Standard_D2 pkb-e7a7cda9-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker.pem --no-ssh-password
+2015-07-23 12:51:48,167 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm create --affinity-group=perfkite7a7cda9121cb0a98 --virtual-network-name=perfkite7a7cda9121cb0a98 --vm-size=Standard_D2 pkb-e7a7cda9-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker.pem --no-ssh-password. Got return code (0).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Creating a new storage account 'portalvhds1437655772587'
+info:    Configuring certificate
+info:    Creating VM
+info:    OK
+info:    vm create command OK
+
+STDERR: 
+2015-07-23 12:51:48,168 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:51:48,168 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-e7a7cda9-0
+2015-07-23 12:51:52,721 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-e7a7cda9-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-e7a7cda9-0.cloudapp.net",
+  "AffinityGroup": "perfkite7a7cda9121cb0a98",
+  "VMName": "pkb-e7a7cda9-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "RoleStateUnknown",
+  "InstanceSize": "Standard_D2",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561",
+    "mediaLink": "https://portalvhds1437655772587.blob.core.windows.net/vhd-store/pkb-e7a7cda9-0-b5c9203c6b967035.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "137.135.123.201",
+      "name": "pkb-e7a7cda9-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "137.135.123.201",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-23 12:51:52,721 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:51:52,721 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-e7a7cda9-0
+2015-07-23 12:51:56,932 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-e7a7cda9-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-e7a7cda9-0.cloudapp.net",
+  "AffinityGroup": "perfkite7a7cda9121cb0a98",
+  "VMName": "pkb-e7a7cda9-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "RoleStateUnknown",
+  "InstanceSize": "Standard_D2",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561",
+    "mediaLink": "https://portalvhds1437655772587.blob.core.windows.net/vhd-store/pkb-e7a7cda9-0-b5c9203c6b967035.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "137.135.123.201",
+      "name": "pkb-e7a7cda9-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "137.135.123.201",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-23 12:51:56,933 e7a7cda9 Thread-8 copy_throughput(1/1) benchmark_spec.py:322 INFO     VM: 137.135.123.201
+2015-07-23 12:51:56,933 e7a7cda9 Thread-8 copy_throughput(1/1) benchmark_spec.py:323 INFO     Waiting for boot completion.
+2015-07-23 12:51:56,934 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:51:56,934 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:01,946 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection timed out
+
+2015-07-23 12:52:02,547 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:02,547 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:07,566 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection timed out
+
+2015-07-23 12:52:08,557 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:08,558 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:13,575 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection timed out
+
+2015-07-23 12:52:14,171 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:14,171 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:19,188 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection timed out
+
+2015-07-23 12:52:20,127 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:20,127 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:25,144 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection timed out
+
+2015-07-23 12:52:25,797 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:25,797 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:30,815 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection timed out
+
+2015-07-23 12:52:31,432 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:31,432 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:31,531 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:32,180 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:32,180 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:32,275 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:33,258 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:33,259 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:33,359 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:34,199 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:34,199 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:34,289 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:35,221 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:35,221 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:35,320 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:35,954 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:35,955 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:36,048 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:36,728 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:36,729 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:36,822 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:37,442 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:37,442 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:37,541 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:38,133 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:38,133 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:38,231 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:38,930 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:38,930 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:39,031 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:39,604 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:39,604 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:39,710 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:40,373 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:40,373 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:40,471 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:41,250 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:41,250 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:41,344 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:42,031 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:42,032 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:42,136 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:43,113 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:43,113 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:43,203 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:43,836 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:43,836 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:43,933 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:44,575 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:44,575 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:44,675 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:45,432 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:45,432 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:45,530 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:46,157 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:46,157 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:46,252 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:47,236 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:47,236 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:47,335 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:47,885 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:47,885 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:47,982 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:48,922 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:48,922 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:49,016 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:50,006 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:50,007 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:50,107 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:50,960 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:50,960 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:51,057 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:51,894 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:51,895 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:51,989 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:52,911 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:52,911 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:53,008 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:53,885 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:53,885 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:53,983 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:54,531 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:54,531 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:54,628 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:55,475 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:55,475 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:55,581 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:56,476 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:56,477 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:56,574 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:57,260 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:57,260 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:57,366 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:58,306 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:58,306 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:58,402 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:58,980 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:58,980 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:59,072 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:52:59,701 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:52:59,701 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:52:59,797 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:53:00,331 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:53:00,332 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:53:00,429 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:53:01,228 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:53:01,228 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:53:01,323 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:53:02,264 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:53:02,264 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:53:02,364 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.123.201 port 22: Connection refused
+
+2015-07-23 12:53:03,046 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:53:03,046 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:53:04,717 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile hostname. Got return code (0).
+STDOUT: pkb-e7a7cda9-0
+
+STDERR: Warning: Permanently added '137.135.123.201' (ECDSA) to the list of known hosts.
+
+2015-07-23 12:53:04,718 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:53:04,718 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm disk attach-new pkb-e7a7cda9-0 500
+2015-07-23 12:53:44,947 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm disk attach-new pkb-e7a7cda9-0 500. Got return code (0).
+STDOUT: info:    Executing command vm disk attach-new
+info:    Getting virtual machines
+info:    Adding Data-Disk
+info:    vm disk attach-new command OK
+
+STDERR: 
+2015-07-23 12:53:44,948 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:53:44,948 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-e7a7cda9-0
+2015-07-23 12:53:50,450 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-e7a7cda9-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-e7a7cda9-0.cloudapp.net",
+  "AffinityGroup": "perfkite7a7cda9121cb0a98",
+  "VMName": "pkb-e7a7cda9-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "ReadyRole",
+  "InstanceSize": "Standard_D2",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561",
+    "mediaLink": "https://portalvhds1437655772587.blob.core.windows.net/vhd-store/pkb-e7a7cda9-0-b5c9203c6b967035.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [
+    {
+      "hostCaching": "None",
+      "label": "pkb-e7a7cda9-0-pkb-e7a7cda9-0-pkb-e7a7cda9-0-0",
+      "name": "pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231253250846",
+      "logicalDiskSizeInGB": 500,
+      "mediaLink": "https://portalvhds1437655772587.blob.core.windows.net/vhd-store/pkb-e7a7cda9-0-616f891c8a740d05.vhd",
+      "iOType": "Standard"
+    }
+  ],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "137.135.123.201",
+      "name": "pkb-e7a7cda9-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "137.135.123.201",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-23 12:53:50,451 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:53:50,451 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile sudo mke2fs -F -E lazy_itable_init=0 -O ^has_journal -t ext4 -b 4096 /dev/sdc
+2015-07-23 12:56:17,564 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile sudo mke2fs -F -E lazy_itable_init=0 -O ^has_journal -t ext4 -b 4096 /dev/sdc. Got return code (0).
+STDOUT: Discarding device blocks:      4096/131072000 36179968/131072000 79171584/131072000125308928/131072000                   done                            
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+32768000 inodes, 131072000 blocks
+6553600 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=4294967296
+4000 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968, 
+	102400000
+
+Allocating group tables:    0/4000         done                            
+Writing inode tables:    0/4000 539/4000 631/4000 695/4000 744/4000 792/4000 836/4000 877/4000 907/4000 936/4000 965/4000 995/40001025/40001050/40001079/40001114/40001143/40001168/40001194/40001223/40001254/40001284/40001313/40001343/40001372/40001401/40001430/40001459/40001488/40001517/40001546/40001575/40001604/40001633/40001662/40001691/40001717/40001731/40001737/40001744/40001763/40001787/40001818/40001850/40001881/40001911/40001942/40001973/40002004/40002034/40002066/40002096/40002127/40002158/40002189/40002219/40002250/40002281/40002311/40002343/40002373/40002403/40002435/40002466/40002496/40002528/40002558/40002587/40002619/40002650/40002680/40002711/40002742/40002769/40002791/40002808/40002817/40002823/40002837/40002859/40002892/40002923/40002951/40002971/40002991/40003015/40003050/40003082/40003112/40003143/40003174/40003205/40003237/40003268/40003298/40003330/40003360/40003390/40003423/40003453/40003484/40003514/40003546/40003577/40003607/40003639/40003669/40003700/40003731/40003762/40003792/40003824/40003855/40003886/40003917/40003947/40003979/4000         done                            
+Writing superblocks and filesystem accounting information:    0/4000   8/4000  82/4000 626/4000         done
+
+
+STDERR: Warning: Permanently added '137.135.123.201' (ECDSA) to the list of known hosts.
+mke2fs 1.42.9 (4-Feb-2014)
+
+2015-07-23 12:56:17,565 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:56:17,565 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile sudo mkdir -p /scratch0;sudo mount /dev/sdc /scratch0;sudo chown -R $USER:$USER /scratch0;
+2015-07-23 12:56:23,712 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile sudo mkdir -p /scratch0;sudo mount /dev/sdc /scratch0;sudo chown -R $USER:$USER /scratch0;. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '137.135.123.201' (ECDSA) to the list of known hosts.
+
+2015-07-23 12:56:23,713 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:56:23,713 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm disk attach-new pkb-e7a7cda9-0 500
+2015-07-23 12:57:02,499 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm disk attach-new pkb-e7a7cda9-0 500. Got return code (0).
+STDOUT: info:    Executing command vm disk attach-new
+info:    Getting virtual machines
+info:    Adding Data-Disk
+info:    vm disk attach-new command OK
+
+STDERR: 
+2015-07-23 12:57:02,499 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:57:02,499 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-e7a7cda9-0
+2015-07-23 12:57:07,682 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-e7a7cda9-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-e7a7cda9-0.cloudapp.net",
+  "AffinityGroup": "perfkite7a7cda9121cb0a98",
+  "VMName": "pkb-e7a7cda9-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "ReadyRole",
+  "InstanceSize": "Standard_D2",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561",
+    "mediaLink": "https://portalvhds1437655772587.blob.core.windows.net/vhd-store/pkb-e7a7cda9-0-b5c9203c6b967035.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [
+    {
+      "hostCaching": "None",
+      "label": "pkb-e7a7cda9-0-pkb-e7a7cda9-0-pkb-e7a7cda9-0-0",
+      "name": "pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231253250846",
+      "logicalDiskSizeInGB": 500,
+      "mediaLink": "https://portalvhds1437655772587.blob.core.windows.net/vhd-store/pkb-e7a7cda9-0-616f891c8a740d05.vhd",
+      "iOType": "Standard"
+    },
+    {
+      "hostCaching": "None",
+      "label": "pkb-e7a7cda9-0-pkb-e7a7cda9-0-pkb-e7a7cda9-0-1",
+      "name": "pkb-e7a7cda9-0-pkb-e7a7cda9-0-1-201507231256430058",
+      "logicalUnitNumber": 1,
+      "logicalDiskSizeInGB": 500,
+      "mediaLink": "https://portalvhds1437655772587.blob.core.windows.net/vhd-store/pkb-e7a7cda9-0-e36da3db5e55798a.vhd",
+      "iOType": "Standard"
+    }
+  ],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "137.135.123.201",
+      "name": "pkb-e7a7cda9-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "137.135.123.201",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-23 12:57:07,682 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:57:07,682 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile sudo mke2fs -F -E lazy_itable_init=0 -O ^has_journal -t ext4 -b 4096 /dev/sdd
+2015-07-23 12:59:28,424 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile sudo mke2fs -F -E lazy_itable_init=0 -O ^has_journal -t ext4 -b 4096 /dev/sdd. Got return code (0).
+STDOUT: Discarding device blocks:      4096/131072000  5246976/131072000 62394368/131072000119541760/131072000                   done                            
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+32768000 inodes, 131072000 blocks
+6553600 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=4294967296
+4000 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968, 
+	102400000
+
+Allocating group tables:    0/4000         done                            
+Writing inode tables:    0/4000 532/4000 630/4000 698/4000 746/4000 795/4000 836/4000 868/4000 895/4000 928/4000 959/4000 989/40001018/40001050/40001079/40001107/40001136/40001164/40001190/40001220/40001250/40001280/40001310/40001339/40001368/40001397/40001426/40001455/40001484/40001513/40001542/40001572/40001601/40001630/40001659/40001688/40001717/40001746/40001776/40001806/40001837/40001866/40001898/40001929/40001960/40001991/40002021/40002052/40002083/40002113/40002144/40002175/40002206/40002236/40002267/40002298/40002329/40002359/40002391/40002421/40002451/40002481/40002511/40002543/40002573/40002598/40002611/40002618/40002621/40002622/40002623/40002625/40002632/40002647/40002670/40002691/40002711/40002737/40002769/40002800/40002832/40002864/40002896/40002928/40002961/40002994/40003026/40003059/40003092/40003124/40003157/40003190/40003223/40003255/40003288/40003321/40003353/40003386/40003419/40003451/40003484/40003517/40003549/40003582/40003615/40003647/40003679/40003709/40003740/40003768/40003800/40003831/40003862/40003891/40003920/40003946/40003979/4000         done                            
+Writing superblocks and filesystem accounting information:    0/4000   2/4000  26/4000 344/40002402/4000         done
+
+
+STDERR: Warning: Permanently added '137.135.123.201' (ECDSA) to the list of known hosts.
+mke2fs 1.42.9 (4-Feb-2014)
+
+2015-07-23 12:59:28,424 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:59:28,424 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile sudo mkdir -p /scratch1;sudo mount /dev/sdd /scratch1;sudo chown -R $USER:$USER /scratch1;
+2015-07-23 12:59:31,221 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile sudo mkdir -p /scratch1;sudo mount /dev/sdd /scratch1;sudo chown -R $USER:$USER /scratch1;. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '137.135.123.201' (ECDSA) to the list of known hosts.
+
+2015-07-23 12:59:31,221 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:59:31,222 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile sudo apt-get update
+2015-07-23 12:59:42,989 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile sudo apt-get update. Got return code (0).
+STDOUT: Ign http://security.ubuntu.com trusty-security InRelease
+Get:1 http://security.ubuntu.com trusty-security Release.gpg [933 B]
+Get:2 http://security.ubuntu.com trusty-security Release [63.5 kB]
+Ign http://azure.archive.ubuntu.com trusty InRelease
+Ign http://azure.archive.ubuntu.com trusty-updates InRelease
+Hit http://azure.archive.ubuntu.com trusty Release.gpg
+Get:3 http://azure.archive.ubuntu.com trusty-updates Release.gpg [933 B]
+Hit http://azure.archive.ubuntu.com trusty Release
+Get:4 http://azure.archive.ubuntu.com trusty-updates Release [63.5 kB]
+Get:5 http://security.ubuntu.com trusty-security/main Sources [88.7 kB]
+Get:6 http://azure.archive.ubuntu.com trusty/main Sources [1,064 kB]
+Get:7 http://security.ubuntu.com trusty-security/universe Sources [28.1 kB]
+Get:8 http://security.ubuntu.com trusty-security/main amd64 Packages [315 kB]
+Get:9 http://security.ubuntu.com trusty-security/universe amd64 Packages [111 kB]
+Get:10 http://azure.archive.ubuntu.com trusty/universe Sources [6,399 kB]
+Get:11 http://security.ubuntu.com trusty-security/main Translation-en [169 kB]
+Get:12 http://security.ubuntu.com trusty-security/universe Translation-en [64.0 kB]
+Hit http://azure.archive.ubuntu.com trusty/main amd64 Packages
+Hit http://azure.archive.ubuntu.com trusty/universe amd64 Packages
+Hit http://azure.archive.ubuntu.com trusty/main Translation-en
+Hit http://azure.archive.ubuntu.com trusty/universe Translation-en
+Get:13 http://azure.archive.ubuntu.com trusty-updates/main Sources [215 kB]
+Get:14 http://azure.archive.ubuntu.com trusty-updates/universe Sources [125 kB]
+Get:15 http://azure.archive.ubuntu.com trusty-updates/main amd64 Packages [575 kB]
+Get:16 http://azure.archive.ubuntu.com trusty-updates/universe amd64 Packages [296 kB]
+Get:17 http://azure.archive.ubuntu.com trusty-updates/main Translation-en [278 kB]
+Get:18 http://azure.archive.ubuntu.com trusty-updates/universe Translation-en [157 kB]
+Ign http://azure.archive.ubuntu.com trusty/main Translation-en_US
+Ign http://azure.archive.ubuntu.com trusty/universe Translation-en_US
+Fetched 10.0 MB in 4s (2,086 kB/s)
+Reading package lists...
+
+STDERR: Warning: Permanently added '137.135.123.201' (ECDSA) to the list of known hosts.
+
+2015-07-23 12:59:42,990 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:59:42,990 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile mkdir -p /tmp/pkb
+2015-07-23 12:59:44,263 e7a7cda9 Thread-8 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile mkdir -p /tmp/pkb. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '137.135.123.201' (ECDSA) to the list of known hosts.
+
+2015-07-23 12:59:44,292 e7a7cda9 MainThread copy_throughput(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-23 12:59:44,307 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:563 INFO     ssh to VMs in this benchmark by name with: ssh -F /tmp/perfkitbenchmarker/run_e7a7cda9/ssh_config <vm name>
+2015-07-23 12:59:44,311 e7a7cda9 Thread-68 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:59:44,312 e7a7cda9 Thread-68 copy_throughput(1/1) vm_util.py:392 INFO     Running: scp -P 22 -pr -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile perfkit@137.135.123.201:.ssh/id_rsa
+2015-07-23 12:59:49,526 e7a7cda9 Thread-68 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran scp -P 22 -pr -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile perfkit@137.135.123.201:.ssh/id_rsa. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '137.135.123.201' (ECDSA) to the list of known hosts.
+
+2015-07-23 12:59:49,545 e7a7cda9 Thread-70 copy_throughput(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-23 12:59:49,546 e7a7cda9 Thread-70 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:59:49,546 e7a7cda9 Thread-70 copy_throughput(1/1) vm_util.py:392 INFO     Running: scp -P 22 -pr -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile /home/final/PerfKitBenchmarker/perfkitbenchmarker/data/cloud-storage-workload.sh perfkit@137.135.123.201:/scratch0/
+2015-07-23 12:59:51,166 e7a7cda9 Thread-70 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran scp -P 22 -pr -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile /home/final/PerfKitBenchmarker/perfkitbenchmarker/data/cloud-storage-workload.sh perfkit@137.135.123.201:/scratch0/. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '137.135.123.201' (ECDSA) to the list of known hosts.
+
+2015-07-23 12:59:51,166 e7a7cda9 Thread-70 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:59:51,167 e7a7cda9 Thread-70 copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile cd /scratch0/; bash cloud-storage-workload.sh
+2015-07-23 13:00:22,200 e7a7cda9 Thread-70 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile cd /scratch0/; bash cloud-storage-workload.sh. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '137.135.123.201' (ECDSA) to the list of known hosts.
+16+0 records in
+16+0 records out
+16000 bytes (16 kB) copied, 0.0019978 s, 8.0 MB/s
+16+0 records in
+16+0 records out
+16000 bytes (16 kB) copied, 0.0019268 s, 8.3 MB/s
+16+0 records in
+16+0 records out
+16000 bytes (16 kB) copied, 0.0019304 s, 8.3 MB/s
+16+0 records in
+16+0 records out
+16000 bytes (16 kB) copied, 0.0018846 s, 8.5 MB/s
+16+0 records in
+16+0 records out
+16000 bytes (16 kB) copied, 0.0018763 s, 8.5 MB/s
+16+0 records in
+16+0 records out
+16000 bytes (16 kB) copied, 0.0020034 s, 8.0 MB/s
+16+0 records in
+16+0 records out
+16000 bytes (16 kB) copied, 0.0019375 s, 8.3 MB/s
+16+0 records in
+16+0 records out
+16000 bytes (16 kB) copied, 0.001878 s, 8.5 MB/s
+16+0 records in
+16+0 records out
+16000 bytes (16 kB) copied, 0.001885 s, 8.5 MB/s
+16+0 records in
+16+0 records out
+16000 bytes (16 kB) copied, 0.0019291 s, 8.3 MB/s
+16+0 records in
+16+0 records out
+16000 bytes (16 kB) copied, 0.0018814 s, 8.5 MB/s
+16+0 records in
+16+0 records out
+16000 bytes (16 kB) copied, 0.0046182 s, 3.5 MB/s
+16+0 records in
+16+0 records out
+16000 bytes (16 kB) copied, 0.0019536 s, 8.2 MB/s
+32+0 records in
+32+0 records out
+32000 bytes (32 kB) copied, 0.0047886 s, 6.7 MB/s
+32+0 records in
+32+0 records out
+32000 bytes (32 kB) copied, 0.0049444 s, 6.5 MB/s
+32+0 records in
+32+0 records out
+32000 bytes (32 kB) copied, 0.0103415 s, 3.1 MB/s
+32+0 records in
+32+0 records out
+32000 bytes (32 kB) copied, 0.0036118 s, 8.9 MB/s
+32+0 records in
+32+0 records out
+32000 bytes (32 kB) copied, 0.0039573 s, 8.1 MB/s
+32+0 records in
+32+0 records out
+32000 bytes (32 kB) copied, 0.0036149 s, 8.9 MB/s
+32+0 records in
+32+0 records out
+32000 bytes (32 kB) copied, 0.0045294 s, 7.1 MB/s
+32+0 records in
+32+0 records out
+32000 bytes (32 kB) copied, 0.0105444 s, 3.0 MB/s
+32+0 records in
+32+0 records out
+32000 bytes (32 kB) copied, 0.0037186 s, 8.6 MB/s
+32+0 records in
+32+0 records out
+32000 bytes (32 kB) copied, 0.0036567 s, 8.8 MB/s
+32+0 records in
+32+0 records out
+32000 bytes (32 kB) copied, 0.0058758 s, 5.4 MB/s
+32+0 records in
+32+0 records out
+32000 bytes (32 kB) copied, 0.0036508 s, 8.8 MB/s
+32+0 records in
+32+0 records out
+32000 bytes (32 kB) copied, 0.0036395 s, 8.8 MB/s
+32+0 records in
+32+0 records out
+32000 bytes (32 kB) copied, 0.0036537 s, 8.8 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0084341 s, 7.6 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0104743 s, 6.1 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0069461 s, 9.2 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0070901 s, 9.0 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0088848 s, 7.2 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0117313 s, 5.5 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0087561 s, 7.3 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0137476 s, 4.7 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0071822 s, 8.9 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0073836 s, 8.7 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0090332 s, 7.1 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0098094 s, 6.5 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0071301 s, 9.0 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0073739 s, 8.7 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0072849 s, 8.8 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0072161 s, 8.9 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0073921 s, 8.7 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0070945 s, 9.0 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0070337 s, 9.1 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0107322 s, 6.0 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.010053 s, 6.4 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0156082 s, 4.1 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0087926 s, 7.3 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0123424 s, 5.2 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0071956 s, 8.9 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0073851 s, 8.7 MB/s
+64+0 records in
+64+0 records out
+64000 bytes (64 kB) copied, 0.0152679 s, 4.2 MB/s
+64+0 records in
+64+0 records out
+128000 bytes (128 kB) copied, 0.0224444 s, 5.7 MB/s
+64+0 records in
+64+0 records out
+128000 bytes (128 kB) copied, 0.014164 s, 9.0 MB/s
+64+0 records in
+64+0 records out
+128000 bytes (128 kB) copied, 0.0138836 s, 9.2 MB/s
+64+0 records in
+64+0 records out
+128000 bytes (128 kB) copied, 0.0138407 s, 9.2 MB/s
+64+0 records in
+64+0 records out
+128000 bytes (128 kB) copied, 0.0140937 s, 9.1 MB/s
+64+0 records in
+64+0 records out
+128000 bytes (128 kB) copied, 0.0138584 s, 9.2 MB/s
+64+0 records in
+64+0 records out
+128000 bytes (128 kB) copied, 0.0137926 s, 9.3 MB/s
+64+0 records in
+64+0 records out
+128000 bytes (128 kB) copied, 0.0138175 s, 9.3 MB/s
+64+0 records in
+64+0 records out
+128000 bytes (128 kB) copied, 0.0137945 s, 9.3 MB/s
+64+0 records in
+64+0 records out
+512000 bytes (512 kB) copied, 0.054221 s, 9.4 MB/s
+64+0 records in
+64+0 records out
+512000 bytes (512 kB) copied, 0.054356 s, 9.4 MB/s
+64+0 records in
+64+0 records out
+512000 bytes (512 kB) copied, 0.0542762 s, 9.4 MB/s
+64+0 records in
+64+0 records out
+512000 bytes (512 kB) copied, 0.0546437 s, 9.4 MB/s
+64+0 records in
+64+0 records out
+512000 bytes (512 kB) copied, 0.0543083 s, 9.4 MB/s
+64+0 records in
+64+0 records out
+512000 bytes (512 kB) copied, 0.054415 s, 9.4 MB/s
+64+0 records in
+64+0 records out
+512000 bytes (512 kB) copied, 0.0541023 s, 9.5 MB/s
+64+0 records in
+64+0 records out
+512000 bytes (512 kB) copied, 0.0563251 s, 9.1 MB/s
+64+0 records in
+64+0 records out
+512000 bytes (512 kB) copied, 0.0543449 s, 9.4 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.107857 s, 9.5 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.107985 s, 9.5 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.108236 s, 9.5 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.10757 s, 9.5 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.108522 s, 9.4 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.10992 s, 9.3 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.109233 s, 9.4 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.10832 s, 9.5 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.10785 s, 9.5 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.107855 s, 9.5 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.109765 s, 9.3 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.108686 s, 9.4 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.10774 s, 9.5 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.107998 s, 9.5 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.108357 s, 9.5 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.107838 s, 9.5 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.121 s, 8.5 MB/s
+64+0 records in
+64+0 records out
+1024000 bytes (1.0 MB) copied, 0.116936 s, 8.8 MB/s
+14+0 records in
+14+0 records out
+14000000 bytes (14 MB) copied, 1.52402 s, 9.2 MB/s
+16+0 records in
+16+0 records out
+16000000 bytes (16 MB) copied, 1.95714 s, 8.2 MB/s
+18+0 records in
+18+0 records out
+18000000 bytes (18 MB) copied, 1.92996 s, 9.3 MB/s
+20+0 records in
+20+0 records out
+20000000 bytes (20 MB) copied, 2.20001 s, 9.1 MB/s
+22+0 records in
+22+0 records out
+22000000 bytes (22 MB) copied, 2.4036 s, 9.2 MB/s
+24+0 records in
+24+0 records out
+24000000 bytes (24 MB) copied, 2.68797 s, 8.9 MB/s
+32+0 records in
+32+0 records out
+32000000 bytes (32 MB) copied, 3.44607 s, 9.3 MB/s
+32+0 records in
+32+0 records out
+32000000 bytes (32 MB) copied, 3.59939 s, 8.9 MB/s
+32+0 records in
+32+0 records out
+32000000 bytes (32 MB) copied, 3.46681 s, 9.2 MB/s
+32+0 records in
+32+0 records out
+32000000 bytes (32 MB) copied, 3.43328 s, 9.3 MB/s
+
+2015-07-23 13:00:22,213 e7a7cda9 MainThread copy_throughput(1/1) pkb.py:221 INFO     Running benchmark copy_throughput
+2015-07-23 13:00:22,213 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:00:22,213 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile rm /scratch1/*; sudo sync; sudo sysctl vm.drop_caches=3; time cp /scratch0/data/* /scratch1/; 
+2015-07-23 13:00:52,295 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.123.201 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_keyfile rm /scratch1/*; sudo sync; sudo sysctl vm.drop_caches=3; time cp /scratch0/data/* /scratch1/; . Got return code (0).
+STDOUT: vm.drop_caches = 3
+
+STDERR: Warning: Permanently added '137.135.123.201' (ECDSA) to the list of known hosts.
+rm: cannot remove /scratch1/lost+found: Is a directory
+
+real	0m25.736s
+user	0m0.004s
+sys	0m0.440s
+
+2015-07-23 13:00:52,296 e7a7cda9 MainThread copy_throughput(1/1) copy_throughput_benchmark.py:116 INFO     Warning: Permanently added '137.135.123.201' (ECDSA) to the list of known hosts.
+rm: cannot remove /scratch1/lost+found: Is a directory
+
+real	0m25.736s
+user	0m0.004s
+sys	0m0.440s
+
+2015-07-23 13:00:52,297 e7a7cda9 MainThread copy_throughput(1/1) pkb.py:241 INFO     Cleaning up benchmark copy_throughput
+2015-07-23 13:00:52,298 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:00:52,298 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-e7a7cda9-0
+2015-07-23 13:01:32,005 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm delete --quiet pkb-e7a7cda9-0. Got return code (0).
+STDOUT: info:    Executing command vm delete
+info:    Getting virtual machines
+info:    Deleting VM
+info:    Deleting Cloud Service
+info:    vm delete command OK
+
+STDERR: 
+2015-07-23 13:01:32,006 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:01:32,006 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-e7a7cda9-0
+2015-07-23 13:01:36,346 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-e7a7cda9-0. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-23 13:01:36,346 e7a7cda9 Thread-74 copy_throughput(1/1) azure_disk.py:76 INFO     Deleting disk pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561. This may fail while the associated VM is deleted, but will be retried.
+2015-07-23 13:01:36,347 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:01:36,347 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561
+2015-07-23 13:01:40,550 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561
+error:   Windows Azure is currently performing an operation on deployment 'pkb-e7a7cda9-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-23 13:01:40,551 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:01:40,551 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561
+2015-07-23 13:01:43,370 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkite7a7cda9121cb0a98",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437655772587.blob.core.windows.net/vhd-store/pkb-e7a7cda9-0-b5c9203c6b967035.vhd",
+  "name": "pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "usageDetails": {
+    "hostedServiceName": "pkb-e7a7cda9-0",
+    "deploymentName": "pkb-e7a7cda9-0",
+    "roleName": "pkb-e7a7cda9-0"
+  },
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-23 13:01:43,371 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-23 13:02:11,354 e7a7cda9 Thread-74 copy_throughput(1/1) azure_disk.py:76 INFO     Deleting disk pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561. This may fail while the associated VM is deleted, but will be retried.
+2015-07-23 13:02:11,355 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:02:11,355 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561
+2015-07-23 13:02:15,874 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561
+error:   Windows Azure is currently performing an operation on deployment 'pkb-e7a7cda9-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-23 13:02:15,875 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:02:15,875 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561
+2015-07-23 13:02:18,884 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkite7a7cda9121cb0a98",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437655772587.blob.core.windows.net/vhd-store/pkb-e7a7cda9-0-b5c9203c6b967035.vhd",
+  "name": "pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "usageDetails": {
+    "hostedServiceName": "pkb-e7a7cda9-0",
+    "deploymentName": "pkb-e7a7cda9-0",
+    "roleName": "pkb-e7a7cda9-0"
+  },
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-23 13:02:18,885 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-23 13:02:45,155 e7a7cda9 Thread-74 copy_throughput(1/1) azure_disk.py:76 INFO     Deleting disk pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561. This may fail while the associated VM is deleted, but will be retried.
+2015-07-23 13:02:45,156 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:02:45,156 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561
+2015-07-23 13:02:49,339 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561
+error:   Windows Azure is currently performing an operation on deployment 'pkb-e7a7cda9-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-23 13:02:49,340 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:02:49,340 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561
+2015-07-23 13:02:52,893 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkite7a7cda9121cb0a98",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437655772587.blob.core.windows.net/vhd-store/pkb-e7a7cda9-0-b5c9203c6b967035.vhd",
+  "name": "pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-23 13:02:52,894 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-23 13:03:18,859 e7a7cda9 Thread-74 copy_throughput(1/1) azure_disk.py:76 INFO     Deleting disk pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561. This may fail while the associated VM is deleted, but will be retried.
+2015-07-23 13:03:18,860 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:03:18,860 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561
+2015-07-23 13:03:25,295 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm disk delete --blob-delete pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561. Got return code (0).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Disk deleted: pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561
+info:    vm disk delete command OK
+
+STDERR: 
+2015-07-23 13:03:25,295 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:03:25,295 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561
+2015-07-23 13:03:28,232 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231250590561. Got return code (1).
+STDOUT: 
+STDERR: The disk with the specified name does not exist.
+Error information has been recorded to /root/.azure/azure.err
+vm disk show command failed
+
+
+2015-07-23 13:03:28,232 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:03:28,233 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure service delete --quiet pkb-e7a7cda9-0
+2015-07-23 13:03:30,960 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:418 INFO     Ran azure service delete --quiet pkb-e7a7cda9-0. Got return code (1).
+STDOUT: info:    Executing command service delete
+info:    Deleting cloud service
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The hosted service does not exist.
+error:   service delete command failed
+
+
+2015-07-23 13:03:30,961 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:03:30,961 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-e7a7cda9-0
+2015-07-23 13:03:33,852 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-e7a7cda9-0. Got return code (1).
+STDOUT: 
+STDERR: The hosted service does not exist.
+Error information has been recorded to /root/.azure/azure.err
+service show command failed
+
+
+2015-07-23 13:03:33,853 e7a7cda9 Thread-74 copy_throughput(1/1) azure_disk.py:76 INFO     Deleting disk pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231253250846. This may fail while the associated VM is deleted, but will be retried.
+2015-07-23 13:03:33,853 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:03:33,854 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231253250846
+2015-07-23 13:03:38,976 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm disk delete --blob-delete pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231253250846. Got return code (0).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Disk deleted: pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231253250846
+info:    vm disk delete command OK
+
+STDERR: 
+2015-07-23 13:03:38,977 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:03:38,977 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231253250846
+2015-07-23 13:03:41,970 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-e7a7cda9-0-pkb-e7a7cda9-0-0-201507231253250846. Got return code (1).
+STDOUT: 
+STDERR: The disk with the specified name does not exist.
+Error information has been recorded to /root/.azure/azure.err
+vm disk show command failed
+
+
+2015-07-23 13:03:41,970 e7a7cda9 Thread-74 copy_throughput(1/1) azure_disk.py:76 INFO     Deleting disk pkb-e7a7cda9-0-pkb-e7a7cda9-0-1-201507231256430058. This may fail while the associated VM is deleted, but will be retried.
+2015-07-23 13:03:41,970 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:03:41,970 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-e7a7cda9-0-pkb-e7a7cda9-0-1-201507231256430058
+2015-07-23 13:03:47,449 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm disk delete --blob-delete pkb-e7a7cda9-0-pkb-e7a7cda9-0-1-201507231256430058. Got return code (0).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Disk deleted: pkb-e7a7cda9-0-pkb-e7a7cda9-0-1-201507231256430058
+info:    vm disk delete command OK
+
+STDERR: 
+2015-07-23 13:03:47,450 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:03:47,450 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-e7a7cda9-0-pkb-e7a7cda9-0-1-201507231256430058
+2015-07-23 13:03:50,628 e7a7cda9 Thread-74 copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-e7a7cda9-0-pkb-e7a7cda9-0-1-201507231256430058. Got return code (1).
+STDOUT: 
+STDERR: The disk with the specified name does not exist.
+Error information has been recorded to /root/.azure/azure.err
+vm disk show command failed
+
+
+2015-07-23 13:03:50,645 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:03:50,646 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:04:26,377 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    Setting network configuration
+info:    network vnet delete command OK
+
+STDERR: 
+2015-07-23 13:04:26,377 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:04:26,378 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:04:29,703 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:04:29,703 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:04:59,514 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:04:59,514 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:05:02,645 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:05:02,645 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:05:02,645 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:05:05,825 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:05:05,826 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:05:33,632 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:05:33,633 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:05:36,798 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:05:36,799 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:05:36,799 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:05:39,987 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:05:39,987 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:06:02,976 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:06:02,976 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:06:06,001 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:06:06,001 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:06:06,002 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:06:09,049 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:06:09,050 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:06:37,918 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:06:37,918 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:06:40,847 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:06:40,848 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:06:40,848 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:06:44,512 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:06:44,512 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:07:12,790 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:07:12,790 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:07:15,985 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:07:15,985 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:07:15,985 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:07:19,090 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:07:19,090 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:07:39,187 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:07:39,188 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:07:42,400 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:07:42,400 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:07:42,400 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:07:45,753 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:07:45,753 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:08:14,193 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:08:14,194 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:08:17,433 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:08:17,434 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:08:17,434 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:08:20,485 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:08:20,486 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:08:39,619 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:08:39,620 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:08:43,085 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:08:43,085 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:08:43,085 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:08:46,345 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:08:46,346 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:09:03,179 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:09:03,180 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:09:06,582 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:09:06,582 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:09:06,583 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:09:09,793 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:09:09,793 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:09:28,150 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:09:28,150 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:09:31,787 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:09:31,788 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:09:31,788 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:09:35,205 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:09:35,206 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:09:51,429 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:09:51,429 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:09:54,563 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:09:54,563 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:09:54,563 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:09:57,769 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:09:57,770 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:10:19,704 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:10:19,704 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:10:22,756 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:10:22,756 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:10:22,756 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:10:25,731 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:10:25,731 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:10:50,137 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:10:50,137 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:10:53,296 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:10:53,296 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:10:53,296 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:10:56,443 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:10:56,443 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:11:13,065 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:11:13,066 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:11:16,328 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:11:16,329 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:11:16,329 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:11:19,700 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:11:19,701 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:11:37,498 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:11:37,499 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:11:40,646 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:11:40,646 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:11:40,646 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:11:44,166 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:11:44,167 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:12:07,950 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:12:07,951 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:12:10,994 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:12:10,994 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:12:10,994 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:12:14,299 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:12:14,299 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:12:32,447 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:12:32,447 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:12:35,484 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:12:35,484 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:12:35,484 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:12:38,726 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:12:38,726 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:13:03,696 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:13:03,696 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:13:06,617 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:13:06,617 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:13:06,617 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:13:09,694 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:13:09,695 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:13:25,268 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:13:25,268 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:13:28,119 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:13:28,120 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:13:28,120 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:13:31,377 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:13:31,378 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:13:51,476 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:13:51,477 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:13:54,802 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:13:54,803 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:13:54,803 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:13:57,893 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:13:57,894 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:14:21,056 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:14:21,056 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:14:24,308 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:14:24,308 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:14:24,308 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:14:27,621 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:14:27,621 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:14:46,888 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:14:46,889 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:14:50,106 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:14:50,107 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:14:50,107 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:14:53,211 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:14:53,212 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:15:14,052 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:15:14,052 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:15:17,048 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:15:17,048 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:15:17,048 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:15:20,164 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:15:20,164 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:15:35,866 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:15:35,866 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:15:38,945 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:15:38,946 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:15:38,946 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:15:42,112 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:15:42,112 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:15:58,047 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:15:58,047 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:16:01,350 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:16:01,350 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:16:01,350 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:16:04,396 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:16:04,396 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:16:26,345 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:16:26,345 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:16:29,462 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:16:29,462 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:16:29,462 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:16:32,785 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:16:32,785 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:16:54,659 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:16:54,659 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:16:57,620 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:16:57,621 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:16:57,621 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:17:00,659 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:17:00,659 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:17:30,307 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:17:30,307 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:17:33,591 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:17:33,591 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:17:33,592 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:17:36,672 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:17:36,672 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:17:55,018 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:17:55,019 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:17:58,085 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:17:58,086 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:17:58,086 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:18:01,211 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:18:01,211 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:18:29,285 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:18:29,285 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:18:32,247 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:18:32,247 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:18:32,248 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:18:35,364 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:18:35,365 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:18:50,497 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:18:50,498 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:18:53,629 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:18:53,630 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:18:53,630 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:18:56,971 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:18:56,972 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:19:16,128 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:19:16,128 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:19:19,060 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:19:19,061 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:19:19,061 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:19:22,417 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:19:22,417 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:19:39,099 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:19:39,099 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:19:42,338 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:19:42,338 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:19:42,338 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:19:45,770 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:19:45,771 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:20:04,184 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:20:04,184 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:20:07,201 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:20:07,201 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:20:07,201 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:20:10,665 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:20:10,666 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:20:32,410 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:20:32,410 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:20:35,629 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:20:35,630 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:20:35,630 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:20:38,846 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:20:38,846 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:20:56,820 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:20:56,820 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:20:59,933 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:20:59,933 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:20:59,934 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:21:02,995 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:21:02,995 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:21:19,860 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:21:19,860 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:21:22,944 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:21:22,944 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:21:22,944 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:21:26,547 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:21:26,548 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:21:47,366 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:21:47,366 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:21:50,340 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:21:50,341 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:21:50,341 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:21:53,421 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:21:53,421 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:22:15,108 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:22:15,108 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:22:18,376 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:22:18,376 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:22:18,377 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:22:21,638 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:22:21,639 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:22:51,112 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:22:51,113 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:22:54,217 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:22:54,217 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:22:54,217 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:22:57,385 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:22:57,385 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:23:22,250 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:23:22,251 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:23:25,456 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:23:25,457 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:23:25,457 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:23:28,758 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:23:28,759 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:23:50,207 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:23:50,207 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkite7a7cda9121cb0a98
+2015-07-23 13:23:53,198 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkite7a7cda9121cb0a98" not found
+
+2015-07-23 13:23:53,198 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 13:23:53,199 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkite7a7cda9121cb0a98
+2015-07-23 13:23:56,590 e7a7cda9 MainThread copy_throughput(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkite7a7cda9121cb0a98. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 13:23:56,591 e7a7cda9 MainThread copy_throughput(1/1) benchmark_spec.py:242 ERROR    Got an exception deleting networks. Attempting to continue tearing down.
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 240, in Delete
+    net.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/azure/azure_network.py", line 228, in Delete
+    self.vnet.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/resource.py", line 135, in Delete
+    self._DeleteResource()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 354, in WrappedFunction
+    raise e
+RetryableDeletionError: Deletion of AzureVirtualNetwork failed.
+2015-07-23 13:23:56,598 e7a7cda9 MainThread publisher.py:329 INFO     
+-------------------------PerfKitBenchmarker Complete Results-------------------------
+{'timestamp': 1437656452.297483, 'metric': 'cp throughput', 'official': False, 'value': 9.951041342866025, 'owner': 'root', 'run_uri': '0805510d-0c7b-47ec-8f50-9deb50f593f8', 'test': 'copy_throughput', 'sample_uri': 'cc9a56d2-8236-4a41-8b1e-a8e70136b428', 'product_name': 'PerfKitBenchmarker', 'unit': 'MB/sec', 'metadata': {'scratch_disk_type': 'standard', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'num_striped_disks': 1, 'zones': 'East US', 'machine_type': 'Standard_D2', 'scratch_disk_size': 500, 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB', 'cloud': 'Azure'}}
+{'timestamp': 1437657836.594528, 'metric': 'End to End Runtime', 'official': False, 'value': 2205.7591400146484, 'owner': 'root', 'run_uri': '0805510d-0c7b-47ec-8f50-9deb50f593f8', 'test': 'copy_throughput', 'sample_uri': 'e228fdf7-d249-4305-a74f-f71ffdfa32af', 'product_name': 'PerfKitBenchmarker', 'unit': 'seconds', 'metadata': {'scratch_disk_type': 'standard', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'num_striped_disks': 1, 'zones': 'East US', 'machine_type': 'Standard_D2', 'scratch_disk_size': 500, 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB', 'cloud': 'Azure'}}
+
+2015-07-23 13:23:56,599 e7a7cda9 MainThread publisher.py:303 DEBUG    Pretty-printing results to <open file '<stdout>', mode 'w' at 0x7f350ef99150>:
+
+-------------------------PerfKitBenchmarker Results Summary-------------------------
+COPY_THROUGHPUT:
+  cp throughput                         9.951041 MB/sec                        
+  End to End Runtime                 2205.759140 seconds                       
+
+-------------------------
+For all tests: cloud="Azure" image="b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB" machine_type="Standard_D2" num_striped_disks="1" perfkitbenchmarker_version="v0.18.0-2-gf593091" scratch_disk_size="500" scratch_disk_type="standard" zones="East US"
+
+2015-07-23 13:23:56,599 e7a7cda9 MainThread publisher.py:359 INFO     Publishing 2 samples to /tmp/perfkitbenchmarker/run_e7a7cda9/perfkitbenchmarker_results.json
+2015-07-23 13:23:56,600 e7a7cda9 MainThread pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_e7a7cda9/pkb.log

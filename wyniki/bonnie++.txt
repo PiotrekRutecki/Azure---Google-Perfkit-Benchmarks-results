@@ -1,0 +1,34 @@
+
+-------------------------PerfKitBenchmarker Results Summary-------------------------
+BONNIE++:
+  bonnie_version="1.97" concurrency="1" file_size="13940M" format_version="1.97" name="pkb-14d9d3d0-0" num_files="100" seed="1437571535"
+  put_block                         47170.000000 K/sec                         
+  put_block_cpu                         6.000000 %s                            
+  rewrite                           11626.000000 K/sec                         
+  rewrite_cpu                           1.000000 %s                            
+  get_block                         21335.000000 K/sec                         
+  get_block_cpu                         1.000000 %s                            
+  seeks                               347.600000 K/sec                         
+  seeks_cpu                             6.000000 %s                            
+  seq_create                        47690.000000 K/sec                         
+  seq_create_cpu                       74.000000 %s                            
+  seq_del                           64173.000000 K/sec                         
+  seq_del_cpu                          64.000000 %s                            
+  ran_create                         2902.000000 K/sec                         
+  ran_create_cpu                       98.000000 %s                            
+  ran_del                           55801.000000 K/sec                         
+  ran_del_cpu                          54.000000 %s                            
+  put_block_latency                   230.000000 ms                            
+  rewrite_latency                    1770.000000 ms                            
+  get_block_latency                  1617.000000 ms                            
+  seeks_latency                       541.000000 ms                            
+  seq_create_latency                 6621.000000 us                            
+  seq_stat_latency                    967.000000 us                            
+  seq_del_latency                    1200.000000 us                            
+  ran_create_latency                16437.000000 us                            
+  ran_stat_latency                    571.000000 us                            
+  ran_del_latency                     585.000000 us                            
+  End to End Runtime                 4246.377492 seconds                       
+
+-------------------------
+For all tests: cloud="Azure" image="b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB" machine_type="Standard_D2" num_striped_disks="1" perfkitbenchmarker_version="v0.18.0-2-gf593091" scratch_disk_size="500" scratch_disk_type="standard" zones="East US"

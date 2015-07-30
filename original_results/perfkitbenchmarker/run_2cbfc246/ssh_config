@@ -1,0 +1,62 @@
+# Copyright 2015 Google Inc. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+Host *
+  Protocol=2
+  UserKnownHostsFile=/dev/null
+  StrictHostKeyChecking=no
+  IdentitiesOnly=yes
+  PreferredAuthentications=publickey
+  PasswordAuthentication=no
+  ConnectTimeout=5
+  GSSAPIAuthentication=no
+  ServerAliveInterval=30
+  ServerAliveCountMax=10
+  BatchMode=yes
+
+
+Host pkb-2cbfc246-0 vm0
+  HostName=137.117.108.65
+  User=perfkit
+  Port=22
+  IdentityFile=/tmp/perfkitbenchmarker/run_2cbfc246/perfkitbenchmarker_keyfile
+
+Host pkb-2cbfc246-1 vm1
+  HostName=137.135.102.210
+  User=perfkit
+  Port=22
+  IdentityFile=/tmp/perfkitbenchmarker/run_2cbfc246/perfkitbenchmarker_keyfile
+
+Host pkb-2cbfc246-2 vm2
+  HostName=137.117.100.130
+  User=perfkit
+  Port=22
+  IdentityFile=/tmp/perfkitbenchmarker/run_2cbfc246/perfkitbenchmarker_keyfile
+
+Host pkb-2cbfc246-3 vm3
+  HostName=137.135.109.142
+  User=perfkit
+  Port=22
+  IdentityFile=/tmp/perfkitbenchmarker/run_2cbfc246/perfkitbenchmarker_keyfile
+
+Host pkb-2cbfc246-4 vm4
+  HostName=137.117.109.221
+  User=perfkit
+  Port=22
+  IdentityFile=/tmp/perfkitbenchmarker/run_2cbfc246/perfkitbenchmarker_keyfile
+
+Host pkb-2cbfc246-5 vm5
+  HostName=137.117.107.151
+  User=perfkit
+  Port=22
+  IdentityFile=/tmp/perfkitbenchmarker/run_2cbfc246/perfkitbenchmarker_keyfile

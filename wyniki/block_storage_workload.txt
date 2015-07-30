@@ -1,0 +1,17 @@
+
+-------------------------PerfKitBenchmarker Results Summary-------------------------
+BLOCK_STORAGE_WORKLOAD:
+  direct="0" directory="/scratch0" filename="fio_test_file" filesize="10g" invalidate="1" iodepth="8" ioengine="libaio" randrepeat="0" size="7137604k" workload_mode="logging"
+  sequential_write:write:bandwidth    60087.000000 KB/s                           (bw_agg="100.0" bw_dev="62755.88" bw_max="461264" bw_mean="71670.58" bw_min="2311" end_fsync="1" overwrite="0" rw="write")
+  sequential_write:write:latency      393.350000 usec                           (end_fsync="1" max="143342" min="4" overwrite="0" p1="59" p5="60" p50="63" p95="88" p99="10176" p99.99="47360" rw="write" stddev="1990.95")
+  sequential_write:write:iops       15021.000000                                (end_fsync="1" overwrite="0" rw="write")
+  random_read:read:bandwidth          147.000000 KB/s                           (bw_agg="100.0" bw_dev="47.9" bw_max="368" bw_mean="149.65" bw_min="3" rw="randread")
+  random_read:read:latency         189429.610000 usec                           (max="1463948" min="5" p1="42240" p5="72192" p50="168960" p95="362496" p99="643072" p99.99="1351680" rw="randread" stddev="106201.3")
+  random_read:read:iops                36.000000                                (rw="randread")
+  sequential_read:read:bandwidth    14822.000000 KB/s                           (bw_agg="100.0" bw_dev="6914.91" bw_max="35068" bw_mean="15430.92" bw_min="875" rw="read")
+  sequential_read:read:latency       1889.680000 usec                           (max="1001459" min="4" p1="42" p5="43" p50="49" p95="9280" p99="36096" p99.99="561152" rw="read" stddev="14366.46")
+  sequential_read:read:iops          3705.000000                                (rw="read")
+  End to End Runtime                 7480.870244 seconds                       
+
+-------------------------
+For all tests: cloud="Azure" image="b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB" machine_type="Standard_D2" num_striped_disks="1" perfkitbenchmarker_version="v0.18.0-2-gf593091" scratch_disk_size="500" scratch_disk_type="standard" zones="East US"

@@ -1,0 +1,23 @@
+
+-------------------------PerfKitBenchmarker Results Summary-------------------------
+FIO:
+  direct="1" filename="fio_test_file" filesize="10*10*1000*$mb_memory" ioengine="libaio"
+  sequential_write:write:bandwidth    57640.000000 KB/s                           (blocksize="512k" bw_agg="100.0" bw_dev="32970.43" bw_max="114688" bw_mean="58695.32" bw_min="7772" end_fsync="1" iodepth="64" overwrite="0" rw="write" size="10*10*1000*$mb_memory")
+  sequential_write:write:latency   555043.250000 usec                           (blocksize="512k" end_fsync="1" iodepth="64" max="1577667" min="201928" overwrite="0" p1="234496" p5="261120" p50="419840" p95="1003520" p99="1335296" p99.99="1581056" rw="write" size="10*10*1000*$mb_memory" stddev="275041.25")
+  sequential_write:write:iops         112.000000                                (blocksize="512k" end_fsync="1" iodepth="64" overwrite="0" rw="write" size="10*10*1000*$mb_memory")
+  sequential_read:read:bandwidth    70142.000000 KB/s                           (blocksize="512k" bw_agg="99.93" bw_dev="12804.18" bw_max="104795" bw_mean="70095.53" bw_min="61020" invalidate="1" iodepth="64" overwrite="0" rw="read" size="10*10*1000*$mb_memory")
+  sequential_read:read:latency     457647.720000 usec                           (blocksize="512k" invalidate="1" iodepth="64" max="1642033" min="49123" overwrite="0" p1="101888" p5="214016" p50="452608" p95="692224" p99="913408" p99.99="1646592" rw="read" size="10*10*1000*$mb_memory" stddev="149994.66")
+  sequential_read:read:iops           136.000000                                (blocksize="512k" invalidate="1" iodepth="64" overwrite="0" rw="read" size="10*10*1000*$mb_memory")
+  random_write_test:write:bandwidth      324.000000 KB/s                           (blocksize="4k" bw_agg="100.0" bw_dev="117.96" bw_max="548" bw_mean="328.73" bw_min="19" iodepth="1" overwrite="1" rw="randwrite" size="10*1000*$mb_memory")
+  random_write_test:write:latency    12275.520000 usec                           (blocksize="4k" iodepth="1" max="451019" min="5120" overwrite="1" p1="5792" p5="6176" p50="8096" p95="27776" p99="89600" p99.99="423936" rw="randwrite" size="10*1000*$mb_memory" stddev="20252.75")
+  random_write_test:write:iops         81.000000                                (blocksize="4k" iodepth="1" overwrite="1" rw="randwrite" size="10*1000*$mb_memory")
+  random_read_test:read:bandwidth      101.000000 KB/s                           (blocksize="4k" bw_agg="100.0" bw_dev="33.36" bw_max="215" bw_mean="102.2" bw_min="7" invalidate="1" iodepth="1" rw="randread" size="10*1000*$mb_memory")
+  random_read_test:read:latency     39549.830000 usec                           (blocksize="4k" invalidate="1" iodepth="1" max="1184448" min="1" p1="7648" p5="11712" p50="28800" p95="95744" p99="238592" p99.99="847872" rw="randread" size="10*1000*$mb_memory" stddev="43375.61")
+  random_read_test:read:iops           25.000000                                (blocksize="4k" invalidate="1" iodepth="1" rw="randread" size="10*1000*$mb_memory")
+  random_read_test_parallel:read:bandwidth     2043.000000 KB/s                           (blocksize="4k" bw_agg="100.0" bw_dev="546.88" bw_max="5904" bw_mean="2043.58" bw_min="1254" invalidate="1" iodepth="64" rw="randread" size="10*1000*$mb_memory")
+  random_read_test_parallel:read:latency   125215.660000 usec                           (blocksize="4k" invalidate="1" iodepth="64" max="799735" min="1" p1="7968" p5="13376" p50="148480" p95="220160" p99="382976" p99.99="774144" rw="randread" size="10*1000*$mb_memory" stddev="83377.75")
+  random_read_test_parallel:read:iops      510.000000                                (blocksize="4k" invalidate="1" iodepth="64" rw="randread" size="10*1000*$mb_memory")
+  End to End Runtime                 3125.625537 seconds                       
+
+-------------------------
+For all tests: cloud="Azure" image="b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB" machine_type="Standard_D2" num_striped_disks="1" perfkitbenchmarker_version="v0.18.0-2-gf593091" scratch_disk_size="500" scratch_disk_type="standard" zones="East US"

@@ -1,0 +1,1537 @@
+2015-07-23 12:11:08,936 27993cb9 MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D2
+--cloud=Azure
+--benchmarks=cluster_boot
+2015-07-23 12:11:09,147 27993cb9 MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7fd5efc959d0> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7fd5f1795150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-23 12:11:09,148 27993cb9 MainThread cluster_boot(1/1) pkb.py:194 INFO     Preparing benchmark cluster_boot
+2015-07-23 12:11:09,150 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:11:09,150 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit27993cb9014dc3113 perfkit27993cb9014dc3113
+2015-07-23 12:11:12,414 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group create --location=East US --label=perfkit27993cb9014dc3113 perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    account affinity-group create command OK
+
+STDERR: 
+2015-07-23 12:11:12,414 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:11:12,415 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit27993cb9014dc3113
+2015-07-23 12:11:15,127 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {
+  "capabilities": [
+    "PersistentVMRole",
+    "HighMemory"
+  ],
+  "hostedServices": [],
+  "storageServices": [],
+  "name": "perfkit27993cb9014dc3113",
+  "label": "perfkit27993cb9014dc3113",
+  "location": "East US",
+  "createdTime": "2015-07-23T12:11:22.000Z",
+  "statusCode": 200,
+  "requestId": "5a91da304d7cc49a818bcfda4cfd4949"
+}
+
+STDERR: 
+2015-07-23 12:11:15,127 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:11:15,127 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkit27993cb9014dc3113 --type=LRS perfkit27993cb9014dc3113
+2015-07-23 12:11:52,717 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure storage account create --affinity-group=perfkit27993cb9014dc3113 --type=LRS perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    storage account create command OK
+
+STDERR: 
+2015-07-23 12:11:52,717 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:11:52,717 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkit27993cb9014dc3113
+2015-07-23 12:11:55,470 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {
+  "extendedProperties": {
+    "ResourceGroup": "Default-Storage-EastUS",
+    "ResourceLocation": "East US"
+  },
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/storageservices/perfkit27993cb9014dc3113",
+  "name": "perfkit27993cb9014dc3113",
+  "properties": {
+    "endpoints": [
+      "https://perfkit27993cb9014dc3113.blob.core.windows.net/",
+      "https://perfkit27993cb9014dc3113.queue.core.windows.net/",
+      "https://perfkit27993cb9014dc3113.table.core.windows.net/"
+    ],
+    "affinityGroup": "perfkit27993cb9014dc3113",
+    "label": "perfkit27993cb9014dc3113",
+    "status": "Created",
+    "geoPrimaryRegion": "East US",
+    "statusOfGeoPrimaryRegion": "Available",
+    "geoSecondaryRegion": "",
+    "accountType": "Standard_LRS"
+  },
+  "resourceGroup": ""
+}
+
+STDERR: 
+2015-07-23 12:11:55,470 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:11:55,470 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet create --affinity-group=perfkit27993cb9014dc3113 perfkit27993cb9014dc3113
+2015-07-23 12:12:32,680 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet create --affinity-group=perfkit27993cb9014dc3113 perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet create
+info:    Using default address space start IP: 10.0.0.0
+info:    Using default address space cidr: 8
+info:    Using default subnet start IP: 10.0.0.0
+info:    Using default subnet cidr: 11
+info:    Looking up network configuration
+info:    Looking up affinity groups
+info:    Using affinity group perfkit27993cb9014dc3113
+info:    Setting network configuration
+info:    network vnet create command OK
+
+STDERR: 
+2015-07-23 12:12:32,681 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:12:32,681 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:12:35,892 27993cb9 Thread-1 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {
+  "dnsServers": [],
+  "subnets": [
+    {
+      "name": "Subnet-1",
+      "addressPrefix": "10.0.0.0/11"
+    }
+  ],
+  "name": "perfkit27993cb9014dc3113",
+  "id": "419f5c4a-f6d0-4ebb-8801-d48157d44ade",
+  "affinityGroup": "perfkit27993cb9014dc3113",
+  "state": "Created",
+  "addressSpace": {
+    "addressPrefixes": [
+      "10.0.0.0/8"
+    ]
+  }
+}
+
+STDERR: 
+2015-07-23 12:12:35,908 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:12:35,908 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure service create --affinitygroup=perfkit27993cb9014dc3113 pkb-27993cb9-0
+2015-07-23 12:12:39,597 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure service create --affinitygroup=perfkit27993cb9014dc3113 pkb-27993cb9-0. Got return code (0).
+STDOUT: info:    Executing command service create
+info:    Creating cloud service
+data:    Cloud service name pkb-27993cb9-0
+info:    service create command OK
+
+STDERR: 
+2015-07-23 12:12:39,597 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:12:39,597 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-27993cb9-0
+2015-07-23 12:12:42,370 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-27993cb9-0. Got return code (0).
+STDOUT: {
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/hostedservices/pkb-27993cb9-0",
+  "serviceName": "pkb-27993cb9-0",
+  "properties": {
+    "extendedProperties": {},
+    "affinityGroup": "perfkit27993cb9014dc3113",
+    "label": "pkb-27993cb9-0",
+    "status": "Created",
+    "dateCreated": "2015-07-23T12:12:49.000Z",
+    "dateLastModified": "2015-07-23T12:12:50.000Z"
+  },
+  "statusCode": 200,
+  "requestId": "f619fb5c175fc83c86f6fe7ab1a6a258"
+}
+
+STDERR: 
+2015-07-23 12:12:42,371 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:12:42,371 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkit27993cb9014dc3113 --virtual-network-name=perfkit27993cb9014dc3113 --vm-size=Standard_D2 pkb-27993cb9-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker.pem --no-ssh-password
+2015-07-23 12:17:42,376 27993cb9 Thread-11 vm_util.py:401 ERROR    IssueCommand timed out after 300 seconds. Killing command "azure vm create --affinity-group=perfkit27993cb9014dc3113 --virtual-network-name=perfkit27993cb9014dc3113 --vm-size=Standard_D2 pkb-27993cb9-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker.pem --no-ssh-password".
+2015-07-23 12:17:42,390 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkit27993cb9014dc3113 --virtual-network-name=perfkit27993cb9014dc3113 --vm-size=Standard_D2 pkb-27993cb9-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker.pem --no-ssh-password. Got return code (-9).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Creating a new storage account 'portalvhds1437653576871'
+info:    Configuring certificate
+info:    Creating VM
+
+STDERR: 
+2015-07-23 12:17:42,391 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:17:42,392 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-27993cb9-0
+2015-07-23 12:17:48,059 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-27993cb9-0. Got return code (1).
+STDOUT: 
+STDERR: Parameter 'url' must be a string, not undefined
+Error information has been recorded to /root/.azure/azure.err
+
+2015-07-23 12:17:48,060 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-23 12:18:10,353 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:18:10,353 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkit27993cb9014dc3113 --virtual-network-name=perfkit27993cb9014dc3113 --vm-size=Standard_D2 pkb-27993cb9-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker.pem --no-ssh-password
+2015-07-23 12:18:21,733 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkit27993cb9014dc3113 --virtual-network-name=perfkit27993cb9014dc3113 --vm-size=Standard_D2 pkb-27993cb9-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+help:    Specify --connect option to connect the new VM to an existing VM
+
+STDERR: error:   A VM with dns prefix "pkb-27993cb9-0" already exists
+error:   vm create command failed
+
+
+2015-07-23 12:18:21,734 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:18:21,734 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-27993cb9-0
+2015-07-23 12:18:26,764 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-27993cb9-0. Got return code (1).
+STDOUT: 
+STDERR: Parameter 'url' must be a string, not undefined
+Error information has been recorded to /root/.azure/azure.err
+
+2015-07-23 12:18:26,765 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-23 12:18:44,000 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:18:44,001 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkit27993cb9014dc3113 --virtual-network-name=perfkit27993cb9014dc3113 --vm-size=Standard_D2 pkb-27993cb9-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker.pem --no-ssh-password
+2015-07-23 12:18:55,131 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkit27993cb9014dc3113 --virtual-network-name=perfkit27993cb9014dc3113 --vm-size=Standard_D2 pkb-27993cb9-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+help:    Specify --connect option to connect the new VM to an existing VM
+
+STDERR: error:   A VM with dns prefix "pkb-27993cb9-0" already exists
+error:   vm create command failed
+
+
+2015-07-23 12:18:55,133 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:18:55,133 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-27993cb9-0
+2015-07-23 12:19:00,491 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-27993cb9-0. Got return code (1).
+STDOUT: 
+STDERR: Parameter 'url' must be a string, not undefined
+Error information has been recorded to /root/.azure/azure.err
+
+2015-07-23 12:19:00,491 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-23 12:19:15,951 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:19:15,951 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkit27993cb9014dc3113 --virtual-network-name=perfkit27993cb9014dc3113 --vm-size=Standard_D2 pkb-27993cb9-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker.pem --no-ssh-password
+2015-07-23 12:19:26,962 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkit27993cb9014dc3113 --virtual-network-name=perfkit27993cb9014dc3113 --vm-size=Standard_D2 pkb-27993cb9-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+help:    Specify --connect option to connect the new VM to an existing VM
+
+STDERR: error:   A VM with dns prefix "pkb-27993cb9-0" already exists
+error:   vm create command failed
+
+
+2015-07-23 12:19:26,963 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:19:26,963 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-27993cb9-0
+2015-07-23 12:19:34,414 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-27993cb9-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-27993cb9-0.cloudapp.net",
+  "AffinityGroup": "perfkit27993cb9014dc3113",
+  "VMName": "pkb-27993cb9-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "StoppedVM",
+  "InstanceSize": "Standard_D2",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069",
+    "mediaLink": "https://portalvhds1437653576871.blob.core.windows.net/vhd-store/pkb-27993cb9-0-321a9495904fcdc5.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "23.96.7.211",
+      "name": "pkb-27993cb9-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "23.96.7.211",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-23 12:19:34,415 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:19:34,415 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-27993cb9-0
+2015-07-23 12:19:38,440 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-27993cb9-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-27993cb9-0.cloudapp.net",
+  "AffinityGroup": "perfkit27993cb9014dc3113",
+  "VMName": "pkb-27993cb9-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "RoleStateUnknown",
+  "InstanceSize": "Standard_D2",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069",
+    "mediaLink": "https://portalvhds1437653576871.blob.core.windows.net/vhd-store/pkb-27993cb9-0-321a9495904fcdc5.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "23.96.7.211",
+      "name": "pkb-27993cb9-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "23.96.7.211",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-23 12:19:38,441 27993cb9 Thread-8 cluster_boot(1/1) benchmark_spec.py:322 INFO     VM: 23.96.7.211
+2015-07-23 12:19:38,441 27993cb9 Thread-8 cluster_boot(1/1) benchmark_spec.py:323 INFO     Waiting for boot completion.
+2015-07-23 12:19:38,441 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:19:38,442 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:19:43,453 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection timed out
+
+2015-07-23 12:19:44,392 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:19:44,393 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:19:49,409 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection timed out
+
+2015-07-23 12:19:49,993 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:19:49,993 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:19:55,010 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection timed out
+
+2015-07-23 12:19:55,841 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:19:55,842 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:00,859 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection timed out
+
+2015-07-23 12:20:01,620 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:01,620 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:06,638 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection timed out
+
+2015-07-23 12:20:07,417 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:07,417 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:12,435 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection timed out
+
+2015-07-23 12:20:13,381 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:13,381 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:18,399 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection timed out
+
+2015-07-23 12:20:19,111 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:19,111 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:24,124 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection timed out
+
+2015-07-23 12:20:24,713 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:24,714 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:29,731 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection timed out
+
+2015-07-23 12:20:30,326 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:30,327 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:35,344 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection timed out
+
+2015-07-23 12:20:36,277 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:36,277 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:36,380 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:37,192 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:37,193 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:38,289 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:39,277 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:39,278 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:39,373 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:40,076 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:40,076 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:40,172 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:40,828 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:40,828 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:40,922 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:41,710 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:41,710 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:41,804 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:42,774 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:42,775 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:42,872 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:43,840 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:43,840 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:43,943 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:44,861 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:44,862 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:44,960 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:45,621 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:45,622 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:45,713 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:46,498 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:46,499 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:46,600 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:47,601 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:47,601 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:47,698 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:48,207 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:48,208 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:48,308 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:49,185 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:49,186 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:49,286 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:49,923 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:49,923 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:50,020 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:50,590 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:50,590 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:50,688 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:51,311 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:51,312 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:51,411 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:51,998 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:51,998 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:52,099 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:52,918 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:52,918 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:53,020 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:53,976 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:53,977 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:54,072 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:54,723 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:54,724 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:54,823 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:55,499 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:55,499 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:55,594 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:56,326 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:56,326 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:56,423 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:57,125 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:57,126 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:57,224 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:57,812 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:57,813 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:57,903 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:58,865 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:58,865 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:58,961 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:20:59,540 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:20:59,540 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:20:59,645 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:21:00,434 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:21:00,434 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:21:00,536 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.7.211 port 22: Connection refused
+
+2015-07-23 12:21:01,452 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:21:01,452 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname
+2015-07-23 12:21:03,016 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile hostname. Got return code (0).
+STDOUT: pkb-27993cb9-0
+
+STDERR: Warning: Permanently added '23.96.7.211' (ECDSA) to the list of known hosts.
+
+2015-07-23 12:21:03,017 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:21:03,017 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile sudo apt-get update
+2015-07-23 12:21:12,544 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile sudo apt-get update. Got return code (0).
+STDOUT: Ign http://security.ubuntu.com trusty-security InRelease
+Get:1 http://security.ubuntu.com trusty-security Release.gpg [933 B]
+Ign http://archive.ubuntu.com trusty InRelease
+Get:2 http://security.ubuntu.com trusty-security Release [63.5 kB]
+Ign http://archive.ubuntu.com trusty-updates InRelease
+Hit http://archive.ubuntu.com trusty Release.gpg
+Get:3 http://archive.ubuntu.com trusty-updates Release.gpg [933 B]
+Hit http://archive.ubuntu.com trusty Release
+Get:4 http://archive.ubuntu.com trusty-updates Release [63.5 kB]
+Get:5 http://security.ubuntu.com trusty-security/main amd64 Packages [315 kB]
+Hit http://archive.ubuntu.com trusty/main amd64 Packages
+Hit http://archive.ubuntu.com trusty/restricted amd64 Packages
+Hit http://archive.ubuntu.com trusty/universe amd64 Packages
+Hit http://archive.ubuntu.com trusty/multiverse amd64 Packages
+Get:6 http://security.ubuntu.com trusty-security/restricted amd64 Packages [8,875 B]
+Hit http://archive.ubuntu.com trusty/main Translation-en
+Get:7 http://security.ubuntu.com trusty-security/universe amd64 Packages [111 kB]
+Hit http://archive.ubuntu.com trusty/multiverse Translation-en
+Get:8 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [3,683 B]
+Get:9 http://security.ubuntu.com trusty-security/main Translation-en [169 kB]
+Hit http://archive.ubuntu.com trusty/restricted Translation-en
+Get:10 http://security.ubuntu.com trusty-security/multiverse Translation-en [1,679 B]
+Hit http://archive.ubuntu.com trusty/universe Translation-en
+Hit http://security.ubuntu.com trusty-security/restricted Translation-en
+Get:11 http://archive.ubuntu.com trusty-updates/main amd64 Packages [575 kB]
+Get:12 http://security.ubuntu.com trusty-security/universe Translation-en [64.0 kB]
+Get:13 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [11.8 kB]
+Get:14 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [296 kB]
+Get:15 http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages [12.0 kB]
+Get:16 http://archive.ubuntu.com trusty-updates/main Translation-en [278 kB]
+Get:17 http://archive.ubuntu.com trusty-updates/multiverse Translation-en [6,148 B]
+Get:18 http://archive.ubuntu.com trusty-updates/restricted Translation-en [2,774 B]
+Get:19 http://archive.ubuntu.com trusty-updates/universe Translation-en [157 kB]
+Ign http://archive.ubuntu.com trusty/main Translation-en_US
+Ign http://archive.ubuntu.com trusty/multiverse Translation-en_US
+Ign http://archive.ubuntu.com trusty/restricted Translation-en_US
+Ign http://archive.ubuntu.com trusty/universe Translation-en_US
+Fetched 2,140 kB in 2s (970 kB/s)
+Reading package lists...
+
+STDERR: Warning: Permanently added '23.96.7.211' (ECDSA) to the list of known hosts.
+
+2015-07-23 12:21:12,545 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:21:12,545 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile mkdir -p /tmp/pkb
+2015-07-23 12:21:20,329 27993cb9 Thread-8 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile mkdir -p /tmp/pkb. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '23.96.7.211' (ECDSA) to the list of known hosts.
+
+2015-07-23 12:21:20,348 27993cb9 MainThread cluster_boot(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-23 12:21:20,362 27993cb9 MainThread cluster_boot(1/1) vm_util.py:563 INFO     ssh to VMs in this benchmark by name with: ssh -F /tmp/perfkitbenchmarker/run_27993cb9/ssh_config <vm name>
+2015-07-23 12:21:20,365 27993cb9 MainThread cluster_boot(1/1) pkb.py:221 INFO     Running benchmark cluster_boot
+2015-07-23 12:21:20,366 27993cb9 MainThread cluster_boot(1/1) cluster_boot_benchmark.py:63 INFO     Boot Results:
+2015-07-23 12:21:20,367 27993cb9 Thread-61 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:21:20,367 27993cb9 Thread-61 cluster_boot(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile cat /proc/cpuinfo | grep processor | wc -l
+2015-07-23 12:21:21,697 27993cb9 Thread-61 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.7.211 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_keyfile cat /proc/cpuinfo | grep processor | wc -l. Got return code (0).
+STDOUT: 2
+
+STDERR: Warning: Permanently added '23.96.7.211' (ECDSA) to the list of known hosts.
+
+2015-07-23 12:21:21,736 27993cb9 MainThread cluster_boot(1/1) cluster_boot_benchmark.py:67 INFO     [Sample(metric='Boot Time', value=500.64535212516785, unit='seconds', metadata={'num_cpus': 2, 'machine_instance': 0, 'machine_type': 'Standard_D2'})]
+2015-07-23 12:21:21,737 27993cb9 MainThread cluster_boot(1/1) pkb.py:241 INFO     Cleaning up benchmark cluster_boot
+2015-07-23 12:21:21,738 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:21:21,738 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-27993cb9-0
+2015-07-23 12:22:01,251 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure vm delete --quiet pkb-27993cb9-0. Got return code (0).
+STDOUT: info:    Executing command vm delete
+info:    Getting virtual machines
+info:    Deleting VM
+info:    Deleting Cloud Service
+info:    vm delete command OK
+
+STDERR: 
+2015-07-23 12:22:01,252 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:22:01,252 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-27993cb9-0
+2015-07-23 12:22:05,119 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-27993cb9-0. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-23 12:22:05,120 27993cb9 Thread-63 cluster_boot(1/1) azure_disk.py:76 INFO     Deleting disk pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. This may fail while the associated VM is deleted, but will be retried.
+2015-07-23 12:22:05,120 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:22:05,120 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+2015-07-23 12:22:09,407 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+error:   Windows Azure is currently performing an operation on deployment 'pkb-27993cb9-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-23 12:22:09,408 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:22:09,408 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+2015-07-23 12:22:12,415 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkit27993cb9014dc3113",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437653576871.blob.core.windows.net/vhd-store/pkb-27993cb9-0-321a9495904fcdc5.vhd",
+  "name": "pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "usageDetails": {
+    "hostedServiceName": "pkb-27993cb9-0",
+    "deploymentName": "pkb-27993cb9-0",
+    "roleName": "pkb-27993cb9-0"
+  },
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-23 12:22:12,415 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-23 12:22:32,213 27993cb9 Thread-63 cluster_boot(1/1) azure_disk.py:76 INFO     Deleting disk pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. This may fail while the associated VM is deleted, but will be retried.
+2015-07-23 12:22:32,214 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:22:32,214 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+2015-07-23 12:22:36,842 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+error:   Windows Azure is currently performing an operation on deployment 'pkb-27993cb9-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-23 12:22:36,842 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:22:36,842 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+2015-07-23 12:22:39,781 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkit27993cb9014dc3113",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437653576871.blob.core.windows.net/vhd-store/pkb-27993cb9-0-321a9495904fcdc5.vhd",
+  "name": "pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "usageDetails": {
+    "hostedServiceName": "pkb-27993cb9-0",
+    "deploymentName": "pkb-27993cb9-0",
+    "roleName": "pkb-27993cb9-0"
+  },
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-23 12:22:39,782 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-23 12:22:55,747 27993cb9 Thread-63 cluster_boot(1/1) azure_disk.py:76 INFO     Deleting disk pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. This may fail while the associated VM is deleted, but will be retried.
+2015-07-23 12:22:55,748 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:22:55,748 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+2015-07-23 12:23:00,450 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+error:   Windows Azure is currently performing an operation on deployment 'pkb-27993cb9-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-23 12:23:00,451 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:23:00,451 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+2015-07-23 12:23:03,420 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkit27993cb9014dc3113",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437653576871.blob.core.windows.net/vhd-store/pkb-27993cb9-0-321a9495904fcdc5.vhd",
+  "name": "pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "usageDetails": {
+    "hostedServiceName": "pkb-27993cb9-0",
+    "deploymentName": "pkb-27993cb9-0",
+    "roleName": "pkb-27993cb9-0"
+  },
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-23 12:23:03,420 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-23 12:23:23,174 27993cb9 Thread-63 cluster_boot(1/1) azure_disk.py:76 INFO     Deleting disk pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. This may fail while the associated VM is deleted, but will be retried.
+2015-07-23 12:23:23,174 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:23:23,175 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+2015-07-23 12:23:27,823 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+error:   Windows Azure is currently performing an operation on deployment 'pkb-27993cb9-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-23 12:23:27,824 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:23:27,825 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+2015-07-23 12:23:30,707 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkit27993cb9014dc3113",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437653576871.blob.core.windows.net/vhd-store/pkb-27993cb9-0-321a9495904fcdc5.vhd",
+  "name": "pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "usageDetails": {
+    "hostedServiceName": "pkb-27993cb9-0",
+    "deploymentName": "pkb-27993cb9-0",
+    "roleName": "pkb-27993cb9-0"
+  },
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-23 12:23:30,708 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-23 12:23:48,602 27993cb9 Thread-63 cluster_boot(1/1) azure_disk.py:76 INFO     Deleting disk pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. This may fail while the associated VM is deleted, but will be retried.
+2015-07-23 12:23:48,603 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:23:48,603 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+2015-07-23 12:23:52,751 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+error:   Windows Azure is currently performing an operation on deployment 'pkb-27993cb9-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-23 12:23:52,751 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:23:52,752 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+2015-07-23 12:23:55,679 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkit27993cb9014dc3113",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437653576871.blob.core.windows.net/vhd-store/pkb-27993cb9-0-321a9495904fcdc5.vhd",
+  "name": "pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-23 12:23:55,680 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-23 12:24:22,400 27993cb9 Thread-63 cluster_boot(1/1) azure_disk.py:76 INFO     Deleting disk pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. This may fail while the associated VM is deleted, but will be retried.
+2015-07-23 12:24:22,401 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:24:22,401 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+2015-07-23 12:24:27,759 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure vm disk delete --blob-delete pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. Got return code (0).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Disk deleted: pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+info:    vm disk delete command OK
+
+STDERR: 
+2015-07-23 12:24:27,759 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:24:27,759 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069
+2015-07-23 12:24:31,079 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-27993cb9-0-pkb-27993cb9-0-0-201507231215260069. Got return code (1).
+STDOUT: 
+STDERR: The disk with the specified name does not exist.
+Error information has been recorded to /root/.azure/azure.err
+vm disk show command failed
+
+
+2015-07-23 12:24:31,080 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:24:31,080 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure service delete --quiet pkb-27993cb9-0
+2015-07-23 12:24:34,119 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:418 INFO     Ran azure service delete --quiet pkb-27993cb9-0. Got return code (1).
+STDOUT: info:    Executing command service delete
+info:    Deleting cloud service
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The hosted service does not exist.
+error:   service delete command failed
+
+
+2015-07-23 12:24:34,121 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:24:34,121 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-27993cb9-0
+2015-07-23 12:24:37,303 27993cb9 Thread-63 cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-27993cb9-0. Got return code (1).
+STDOUT: 
+STDERR: The hosted service does not exist.
+Error information has been recorded to /root/.azure/azure.err
+service show command failed
+
+
+2015-07-23 12:24:37,354 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:24:37,354 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:25:12,685 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    Setting network configuration
+info:    network vnet delete command OK
+
+STDERR: 
+2015-07-23 12:25:12,686 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:25:12,686 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:25:15,721 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:25:15,722 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:25:44,120 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:25:44,120 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:25:47,251 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:25:47,252 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:25:47,252 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:25:50,462 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:25:50,463 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:26:05,796 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:26:05,796 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:26:09,091 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:26:09,091 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:26:09,091 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:26:12,359 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:26:12,359 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:26:28,554 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:26:28,554 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:26:31,721 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:26:31,722 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:26:31,722 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:26:34,815 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:26:34,816 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:26:53,794 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:26:53,794 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:26:56,758 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:26:56,759 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:26:56,759 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:26:59,904 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:26:59,905 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:27:18,828 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:27:18,828 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:27:22,113 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:27:22,114 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:27:22,114 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:27:25,250 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:27:25,251 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:27:43,605 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:27:43,606 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:27:46,812 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:27:46,812 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:27:46,812 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:27:50,127 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:27:50,128 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:28:10,298 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:28:10,298 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:28:13,381 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:28:13,382 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:28:13,382 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:28:16,643 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:28:16,643 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:28:41,859 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:28:41,859 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:28:45,264 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:28:45,264 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:28:45,265 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:28:48,639 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:28:48,639 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:29:14,565 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:29:14,565 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:29:17,698 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:29:17,698 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:29:17,698 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:29:20,802 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:29:20,803 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:29:39,668 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:29:39,668 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:29:42,974 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:29:42,975 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:29:42,975 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:29:45,966 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:29:45,967 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:30:07,146 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:30:07,146 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:30:10,360 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:30:10,360 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:30:10,361 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:30:13,477 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:30:13,478 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:30:31,306 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:30:31,306 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:30:34,323 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:30:34,324 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:30:34,324 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:30:37,679 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:30:37,679 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:30:54,397 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:30:54,398 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:30:57,796 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:30:57,797 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:30:57,797 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:31:01,068 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:31:01,068 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:31:24,640 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:31:24,641 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:31:27,924 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:31:27,924 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:31:27,924 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:31:31,139 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:31:31,140 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:31:51,164 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:31:51,165 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:31:54,328 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:31:54,328 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:31:54,328 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:31:57,751 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:31:57,751 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:32:18,878 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:32:18,878 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:32:21,948 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:32:21,948 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:32:21,948 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:32:25,047 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:32:25,048 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:32:50,467 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:32:50,467 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:32:53,608 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:32:53,608 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:32:53,608 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:32:56,903 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:32:56,904 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:33:25,400 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:33:25,400 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:33:28,603 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:33:28,603 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:33:28,603 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:33:31,720 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:33:31,721 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:33:52,464 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:33:52,464 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:33:55,628 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:33:55,629 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:33:55,629 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:33:58,854 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:33:58,854 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:34:22,451 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:34:22,451 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:34:25,534 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:34:25,535 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:34:25,535 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:34:28,803 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:34:28,804 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:34:57,008 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:34:57,009 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:35:00,216 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:35:00,217 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:35:00,217 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:35:03,413 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:35:03,414 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:35:31,217 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:35:31,217 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:35:34,229 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:35:34,229 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:35:34,229 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:35:37,299 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:35:37,300 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:35:56,357 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:35:56,358 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:35:59,420 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:35:59,420 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:35:59,420 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:36:02,997 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:36:02,998 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:36:21,200 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:36:21,201 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:36:24,240 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:36:24,240 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:36:24,240 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:36:27,512 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:36:27,513 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:36:47,649 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:36:47,649 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:36:50,513 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:36:50,513 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:36:50,513 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:36:53,667 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:36:53,667 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:37:16,138 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:37:16,138 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:37:19,244 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:37:19,244 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:37:19,244 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:37:22,227 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:37:22,228 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:37:47,140 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:37:47,140 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:37:50,145 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:37:50,145 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:37:50,145 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:37:53,294 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:37:53,294 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:38:18,039 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:38:18,039 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:38:21,167 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:38:21,168 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:38:21,168 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:38:24,391 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:38:24,392 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:38:48,009 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:38:48,009 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:38:50,974 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:38:50,975 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:38:50,975 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:38:54,223 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:38:54,223 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:39:22,499 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:39:22,499 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:39:25,538 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:39:25,538 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:39:25,538 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:39:28,563 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:39:28,563 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:39:55,172 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:39:55,172 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:39:58,537 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:39:58,537 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:39:58,538 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:40:01,628 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:40:01,628 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:40:18,535 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:40:18,535 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:40:21,814 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:40:21,815 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:40:21,815 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:40:24,803 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:40:24,804 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:40:53,180 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:40:53,180 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:40:56,166 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:40:56,167 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:40:56,167 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:40:59,463 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:40:59,464 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:41:29,178 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:41:29,179 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:41:32,392 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:41:32,393 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:41:32,393 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:41:35,488 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:41:35,488 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:41:50,830 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:41:50,830 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:41:54,028 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:41:54,029 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:41:54,029 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:41:57,277 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:41:57,277 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:42:22,525 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:42:22,526 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:42:25,428 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:42:25,429 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:42:25,429 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:42:28,875 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:42:28,876 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:42:46,282 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:42:46,282 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:42:49,879 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:42:49,880 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:42:49,880 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:42:53,153 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:42:53,154 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:43:15,359 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:43:15,360 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:43:18,408 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:43:18,408 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:43:18,408 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:43:21,771 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:43:21,772 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:43:47,150 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:43:47,151 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:43:50,356 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:43:50,356 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:43:50,356 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:43:53,759 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:43:53,760 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:44:09,465 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:44:09,465 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:44:12,564 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:44:12,565 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:44:12,565 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:44:15,688 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:44:15,688 27993cb9 MainThread cluster_boot(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:44:35,484 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:44:35,484 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit27993cb9014dc3113
+2015-07-23 12:44:38,650 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit27993cb9014dc3113" not found
+
+2015-07-23 12:44:38,650 27993cb9 MainThread cluster_boot(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 12:44:38,650 27993cb9 MainThread cluster_boot(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit27993cb9014dc3113
+2015-07-23 12:44:41,868 27993cb9 MainThread cluster_boot(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit27993cb9014dc3113. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-23 12:44:41,868 27993cb9 MainThread cluster_boot(1/1) benchmark_spec.py:242 ERROR    Got an exception deleting networks. Attempting to continue tearing down.
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 240, in Delete
+    net.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/azure/azure_network.py", line 228, in Delete
+    self.vnet.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/resource.py", line 135, in Delete
+    self._DeleteResource()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 354, in WrappedFunction
+    raise e
+RetryableDeletionError: Deletion of AzureVirtualNetwork failed.
+2015-07-23 12:44:41,873 27993cb9 MainThread publisher.py:329 INFO     
+-------------------------PerfKitBenchmarker Complete Results-------------------------
+{'timestamp': 1437654081.737297, 'metric': 'Boot Time', 'official': False, 'value': 500.64535212516785, 'owner': 'root', 'run_uri': 'b7c08c9f-ec36-41d6-98d7-c80a1583f043', 'test': 'cluster_boot', 'sample_uri': '70a77425-2c20-4ff8-86bf-9d347c29d995', 'product_name': 'PerfKitBenchmarker', 'unit': 'seconds', 'metadata': {'num_cpus': 2, 'zones': 'East US', 'machine_instance': 0, 'machine_type': 'Standard_D2', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'cloud': 'Azure'}}
+{'timestamp': 1437655481.870723, 'metric': 'End to End Runtime', 'official': False, 'value': 2012.7224259376526, 'owner': 'root', 'run_uri': 'b7c08c9f-ec36-41d6-98d7-c80a1583f043', 'test': 'cluster_boot', 'sample_uri': 'bfd1d735-e6ee-454c-8e69-d0dd121acc80', 'product_name': 'PerfKitBenchmarker', 'unit': 'seconds', 'metadata': {'zones': 'East US', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB', 'machine_type': 'Standard_D2', 'cloud': 'Azure'}}
+
+2015-07-23 12:44:41,874 27993cb9 MainThread publisher.py:303 DEBUG    Pretty-printing results to <open file '<stdout>', mode 'w' at 0x7fd5f1795150>:
+
+-------------------------PerfKitBenchmarker Results Summary-------------------------
+CLUSTER_BOOT:
+  machine_instance="0" num_cpus="2"
+  Boot Time                           500.645352 seconds                       
+  End to End Runtime                 2012.722426 seconds                       
+
+-------------------------
+For all tests: cloud="Azure" image="b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB" machine_type="Standard_D2" perfkitbenchmarker_version="v0.18.0-2-gf593091" zones="East US"
+
+2015-07-23 12:44:41,874 27993cb9 MainThread publisher.py:359 INFO     Publishing 2 samples to /tmp/perfkitbenchmarker/run_27993cb9/perfkitbenchmarker_results.json
+2015-07-23 12:44:41,875 27993cb9 MainThread pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_27993cb9/pkb.log

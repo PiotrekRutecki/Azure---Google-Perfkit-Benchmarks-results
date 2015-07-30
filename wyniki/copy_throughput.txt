@@ -1,0 +1,8 @@
+
+-------------------------PerfKitBenchmarker Results Summary-------------------------
+COPY_THROUGHPUT:
+  cp throughput                         9.951041 MB/sec                        
+  End to End Runtime                 2205.759140 seconds                       
+
+-------------------------
+For all tests: cloud="Azure" image="b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB" machine_type="Standard_D2" num_striped_disks="1" perfkitbenchmarker_version="v0.18.0-2-gf593091" scratch_disk_size="500" scratch_disk_type="standard" zones="East US"

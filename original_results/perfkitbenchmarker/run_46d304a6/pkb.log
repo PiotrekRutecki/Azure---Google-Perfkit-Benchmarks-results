@@ -1,0 +1,51 @@
+2015-07-21 12:05:27,051 46d304a6 MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D2
+--cloud=Azure
+--benchmarks=iperf
+2015-07-21 12:05:27,203 46d304a6 MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7fcebad2e990> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7fcebc82d150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_46d304a6/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-21 12:05:27,203 46d304a6 MainThread iperf(1/1) pkb.py:194 INFO     Preparing benchmark iperf
+2015-07-21 12:05:27,206 46d304a6 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:05:27,206 46d304a6 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit46d304a696f7a55c7 perfkit46d304a696f7a55c7
+2015-07-21 12:05:28,617 46d304a6 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit46d304a696f7a55c7 perfkit46d304a696f7a55c7. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:05:28,617 46d304a6 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:05:28,617 46d304a6 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit46d304a696f7a55c7
+2015-07-21 12:05:30,018 46d304a6 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit46d304a696f7a55c7. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:05:30,018 46d304a6 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:05:41,708 46d304a6 Thread-4 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:05:41,709 46d304a6 Thread-4 iperf(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-46d304a6-1
+2015-07-21 12:05:41,712 46d304a6 Thread-5 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:05:41,713 46d304a6 Thread-5 iperf(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-46d304a6-0
+2015-07-21 12:05:43,405 46d304a6 Thread-5 iperf(1/1) vm_util.py:418 INFO     Ran azure vm delete --quiet pkb-46d304a6-0. Got return code (1).
+STDOUT: info:    Executing command vm delete
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   vm delete command failed
+
+
+2015-07-21 12:05:43,406 46d304a6 Thread-5 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:05:43,406 46d304a6 Thread-5 iperf(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-46d304a6-0
+2015-07-21 12:05:43,446 46d304a6 Thread-4 iperf(1/1) vm_util.py:418 INFO     Ran azure vm delete --quiet pkb-46d304a6-1. Got return code (1).
+STDOUT: info:    Executing command vm delete
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   vm delete command failed
+
+
+2015-07-21 12:05:43,446 46d304a6 Thread-4 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:05:43,446 46d304a6 Thread-4 iperf(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-46d304a6-1
+2015-07-21 12:05:43,840 46d304a6 MainThread iperf(1/1) pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_46d304a6/pkb.log

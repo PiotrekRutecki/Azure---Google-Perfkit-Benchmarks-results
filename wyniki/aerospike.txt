@@ -1,0 +1,24 @@
+
+-------------------------PerfKitBenchmarker Results Summary-------------------------
+AEROSPIKE:
+  Average Latency                       0.423451 ms                             (Average Transactions Per Second="18713.0" Client Threads="8" Storage Type="memory")
+  Average Latency                       0.532038 ms                             (Average Transactions Per Second="29652.9090909" Client Threads="16" Storage Type="memory")
+  Average Latency                       0.625685 ms                             (Average Transactions Per Second="37617.4545455" Client Threads="24" Storage Type="memory")
+  Average Latency                       0.762643 ms                             (Average Transactions Per Second="40974.3636364" Client Threads="32" Storage Type="memory")
+  Average Latency                       0.916509 ms                             (Average Transactions Per Second="42377.8181818" Client Threads="40" Storage Type="memory")
+  Average Latency                       1.076629 ms                             (Average Transactions Per Second="43031.6363636" Client Threads="48" Storage Type="memory")
+  Average Latency                       1.268475 ms                             (Average Transactions Per Second="42494.9090909" Client Threads="56" Storage Type="memory")
+  Average Latency                       1.463508 ms                             (Average Transactions Per Second="41482.5454545" Client Threads="64" Storage Type="memory")
+  Average Latency                       1.613476 ms                             (Average Transactions Per Second="42704.3636364" Client Threads="72" Storage Type="memory")
+  Average Latency                       1.788504 ms                             (Average Transactions Per Second="42653.4545455" Client Threads="80" Storage Type="memory")
+  Average Latency                       1.954682 ms                             (Average Transactions Per Second="42614.5454545" Client Threads="88" Storage Type="memory")
+  Average Latency                       2.166732 ms                             (Average Transactions Per Second="42220.9090909" Client Threads="96" Storage Type="memory")
+  Average Latency                       2.318443 ms                             (Average Transactions Per Second="41947.5454545" Client Threads="104" Storage Type="memory")
+  Average Latency                       2.548445 ms                             (Average Transactions Per Second="41725.8181818" Client Threads="112" Storage Type="memory")
+  Average Latency                       2.788439 ms                             (Average Transactions Per Second="40311.3636364" Client Threads="120" Storage Type="memory")
+  Average Latency                       2.870859 ms                             (Average Transactions Per Second="42015.4545455" Client Threads="128" Storage Type="memory")
+  max_throughput_for_completion_latency_under_1ms    42377.818182 req/s                         
+  End to End Runtime                 2371.205373 seconds                       
+
+-------------------------
+For all tests: cloud="Azure" image="b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB" machine_type="Standard_D2" perfkitbenchmarker_version="v0.18.0-2-gf593091" zones="East US"

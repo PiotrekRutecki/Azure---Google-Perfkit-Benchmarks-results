@@ -1,0 +1,10 @@
+
+-------------------------PerfKitBenchmarker Results Summary-------------------------
+OLDISIM:
+  num_cpus="2"
+  Scaling efficiency of 1 leaves        1.000000                               
+  Scaling efficiency of 4 leaves        0.960000                               
+  End to End Runtime                 3100.036908 seconds                       
+
+-------------------------
+For all tests: cloud="Azure" image="b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB" machine_type="Standard_D2" perfkitbenchmarker_version="v0.18.0-2-gf593091" zones="East US"

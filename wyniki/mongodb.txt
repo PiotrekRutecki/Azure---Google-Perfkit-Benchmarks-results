@@ -1,0 +1,27 @@
+
+-------------------------PerfKitBenchmarker Results Summary-------------------------
+MONGODB:
+  RunTime                             615.000000 ms                             (stage="OVERALL")
+  Throughput                         1626.016260 ops/sec                        (stage="OVERALL")
+  AverageLatency                     4345.939331 us                             (stage="UPDATE")
+  MinLatency                          726.000000 us                             (stage="UPDATE")
+  MaxLatency                        55570.000000 us                             (stage="UPDATE")
+  95thPercentileLatency                14.000000 ms                             (stage="UPDATE")
+  99thPercentileLatency                26.000000 ms                             (stage="UPDATE")
+  AverageLatency                     2884.404215 us                             (stage="READ")
+  MinLatency                          635.000000 us                             (stage="READ")
+  MaxLatency                        41626.000000 us                             (stage="READ")
+  95thPercentileLatency                 5.000000 ms                             (stage="READ")
+  99thPercentileLatency                39.000000 ms                             (stage="READ")
+  AverageLatency                      160.200000 us                             (stage="CLEANUP")
+  MinLatency                            2.000000 us                             (stage="CLEANUP")
+  MaxLatency                         1579.000000 us                             (stage="CLEANUP")
+  95thPercentileLatency                 1.000000 ms                             (stage="CLEANUP")
+  99thPercentileLatency                 1.000000 ms                             (stage="CLEANUP")
+  Operations                          478.000000                                (stage="UPDATE")
+  Operations                          522.000000                                (stage="READ")
+  Operations                           10.000000                                (stage="CLEANUP")
+  End to End Runtime                 2560.627848 seconds                       
+
+-------------------------
+For all tests: cloud="Azure" image="b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB" machine_type="Standard_D2" perfkitbenchmarker_version="v0.18.0-2-gf593091" zones="East US"

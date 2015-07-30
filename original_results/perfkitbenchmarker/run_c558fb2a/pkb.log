@@ -1,0 +1,1452 @@
+2015-07-27 12:00:56,135 c558fb2a MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D2
+--cloud=Azure
+--benchmarks=silo
+2015-07-27 12:00:56,379 c558fb2a MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7fd3a528c990> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7fd3a6d8b150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_c558fb2a/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-27 12:00:56,379 c558fb2a MainThread silo(1/1) pkb.py:194 INFO     Preparing benchmark silo
+2015-07-27 12:00:56,382 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:00:56,382 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkitc558fb2ac6258fd5d perfkitc558fb2ac6258fd5d
+2015-07-27 12:00:59,565 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group create --location=East US --label=perfkitc558fb2ac6258fd5d perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    account affinity-group create command OK
+
+STDERR: 
+2015-07-27 12:00:59,565 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:00:59,565 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:01:03,103 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {
+  "capabilities": [
+    "PersistentVMRole",
+    "HighMemory"
+  ],
+  "hostedServices": [],
+  "storageServices": [],
+  "name": "perfkitc558fb2ac6258fd5d",
+  "label": "perfkitc558fb2ac6258fd5d",
+  "location": "East US",
+  "createdTime": "2015-07-27T12:01:15.000Z",
+  "statusCode": 200,
+  "requestId": "9f7dc2883a59c312815bfe3f59955b21"
+}
+
+STDERR: 
+2015-07-27 12:01:03,104 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:01:03,104 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:01:15,583 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:01:15,584 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:01:15,584 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:01:18,630 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:01:18,630 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:01:41,126 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:01:41,126 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:01:51,982 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:01:51,983 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:01:51,983 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:01:54,991 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:01:54,991 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:02:21,138 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:02:21,138 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:02:42,653 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:02:42,654 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:02:42,654 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:02:45,637 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:02:45,637 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:03:01,593 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:03:01,593 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:03:16,009 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:03:16,010 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:03:16,010 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:03:19,274 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:03:19,274 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:03:34,954 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:03:34,955 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:03:53,023 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:03:53,025 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:03:53,025 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:03:55,883 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:03:55,883 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:04:25,114 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:04:25,114 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:04:35,646 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:04:35,647 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:04:35,647 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:04:38,575 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:04:38,576 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:04:54,987 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:04:54,987 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:05:09,692 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:05:09,692 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:05:09,692 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:05:12,724 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:05:12,724 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:05:33,970 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:05:33,970 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:05:45,657 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:05:45,659 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:05:45,659 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:05:48,535 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:05:48,536 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:06:06,974 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:06:06,974 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:06:19,220 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:06:19,221 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:06:19,221 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:06:22,352 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:06:22,352 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:06:46,632 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:06:46,632 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:07:08,548 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:07:08,550 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:07:08,550 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:07:11,480 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:07:11,480 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:07:28,289 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:07:28,289 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:07:40,199 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:07:40,200 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:07:40,201 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:07:43,374 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:07:43,374 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:08:08,440 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:08:08,441 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:08:21,843 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:08:21,843 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:08:21,843 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:08:25,334 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:08:25,334 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:08:51,778 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:08:51,778 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:09:03,129 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:09:03,130 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:09:03,130 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:09:05,952 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:09:05,953 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:09:31,568 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:09:31,568 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:09:42,582 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:09:42,583 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:09:42,583 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:09:45,577 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:09:45,578 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:10:05,833 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:10:05,834 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:10:21,004 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:10:21,005 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:10:21,005 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:10:23,891 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:10:23,892 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:10:52,973 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:10:52,973 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:11:03,588 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:11:03,589 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:11:03,589 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:11:06,485 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:11:06,486 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:11:25,606 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:11:25,607 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:11:37,979 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:11:37,980 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:11:37,980 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:11:40,774 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:11:40,775 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:12:09,053 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:12:09,053 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:12:21,153 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:12:21,154 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:12:21,154 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:12:24,027 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:12:24,027 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:12:43,552 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:12:43,553 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:12:54,836 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:12:54,837 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:12:54,837 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:12:57,910 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:12:57,911 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:13:19,500 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:13:19,500 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:13:30,469 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:13:30,470 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:13:30,471 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:13:33,267 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:13:33,268 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:13:53,706 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:13:53,706 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:14:05,447 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:14:05,448 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:14:05,448 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:14:08,186 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:14:08,186 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:14:28,758 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:14:28,758 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:14:39,642 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:14:39,643 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:14:39,643 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:14:42,967 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:14:42,967 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:15:03,949 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:15:03,949 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:15:17,489 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:15:17,491 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:15:17,491 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:15:20,377 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:15:20,377 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:15:45,612 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:15:45,612 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:15:56,191 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:15:56,192 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:15:56,192 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:15:59,108 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:15:59,108 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:16:16,595 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:16:16,596 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:16:31,193 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:16:31,193 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:16:31,193 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:16:34,142 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:16:34,142 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:16:51,534 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:16:51,535 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:17:02,689 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:17:02,689 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:17:02,689 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:17:05,742 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:17:05,742 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:17:24,774 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:17:24,774 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:17:40,326 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:17:40,327 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:17:40,327 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:17:43,242 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:17:43,243 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:18:06,369 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:18:06,370 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:18:18,551 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:18:18,552 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:18:18,552 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:18:21,298 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:18:21,298 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:18:42,181 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:18:42,182 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:18:52,652 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:18:52,652 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:18:52,652 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:18:55,444 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:18:55,444 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:19:10,500 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:19:10,501 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:19:20,687 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:19:20,687 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:19:20,687 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:19:23,400 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:19:23,400 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:19:46,208 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:19:46,208 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:19:58,308 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:19:58,309 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:19:58,309 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:20:01,078 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:20:01,078 c558fb2a Thread-1 silo(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:20:25,537 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:20:25,537 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d
+2015-07-27 12:20:36,246 c558fb2a Thread-1 silo(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc558fb2ac6258fd5d --type=LRS perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:20:36,247 c558fb2a Thread-1 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:20:36,247 c558fb2a Thread-1 silo(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:20:38,984 c558fb2a Thread-1 silo(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc558fb2ac6258fd5d. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc558fb2ac6258fd5d' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:20:39,026 c558fb2a MainThread silo(1/1) pkb.py:317 ERROR    Error during benchmark silo
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/pkb.py", line 290, in RunBenchmark
+    DoPreparePhase(benchmark, benchmark_name, spec, detailed_timer)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/pkb.py", line 200, in DoPreparePhase
+    spec.Prepare()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 215, in Prepare
+    vm_util.RunThreaded(self.PrepareNetwork, prepare_args)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 292, in RunThreaded
+    '\n'.join([stacktrace for stacktrace in exceptions]))
+ThreadException: The following exceptions occurred during threaded execution: Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 276, in RunThreaded
+    thread.join(1000)  # Set timeout so that join is interruptable.
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 216, in join
+    raise errors.VmUtil.ThreadException(self.exception)
+ThreadException: Exception occured in thread 140546957387520:
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 203, in run
+    self.RunWithExceptions()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 210, in RunWithExceptions
+    super(ThreadWithExceptions, self).run()
+  File "/usr/lib/python2.7/threading.py", line 763, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 248, in PrepareNetwork
+    network.Create()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 354, in WrappedFunction
+    raise e
+RetryableCreationError: Creation of AzureStorageAccount failed.
+
+
+2015-07-27 12:20:39,029 c558fb2a Thread-68 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:20:39,029 c558fb2a Thread-68 silo(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-c558fb2a-0
+2015-07-27 12:20:44,059 c558fb2a Thread-68 silo(1/1) vm_util.py:420 DEBUG    Ran azure vm delete --quiet pkb-c558fb2a-0. Got return code (0).
+STDOUT: info:    Executing command vm delete
+info:    Getting virtual machines
+warn:    No VMs found
+info:    vm delete command OK
+
+STDERR: 
+2015-07-27 12:20:44,060 c558fb2a Thread-68 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:20:44,060 c558fb2a Thread-68 silo(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-c558fb2a-0
+2015-07-27 12:20:48,839 c558fb2a Thread-68 silo(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-c558fb2a-0. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-27 12:20:48,839 c558fb2a Thread-68 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:20:48,839 c558fb2a Thread-68 silo(1/1) vm_util.py:392 INFO     Running: azure service delete --quiet pkb-c558fb2a-0
+2015-07-27 12:20:51,808 c558fb2a Thread-68 silo(1/1) vm_util.py:418 INFO     Ran azure service delete --quiet pkb-c558fb2a-0. Got return code (1).
+STDOUT: info:    Executing command service delete
+info:    Deleting cloud service
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The hosted service does not exist.
+error:   service delete command failed
+
+
+2015-07-27 12:20:51,809 c558fb2a Thread-68 silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:20:51,809 c558fb2a Thread-68 silo(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-c558fb2a-0
+2015-07-27 12:20:54,541 c558fb2a Thread-68 silo(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-c558fb2a-0. Got return code (1).
+STDOUT: 
+STDERR: The hosted service does not exist.
+Error information has been recorded to /root/.azure/azure.err
+service show command failed
+
+
+2015-07-27 12:20:54,584 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:20:54,584 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:20:58,088 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:20:58,089 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:20:58,089 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:21:01,964 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:21:01,965 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:21:17,682 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:21:17,682 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:21:21,035 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:21:21,035 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:21:21,036 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:21:24,932 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:21:24,932 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:21:44,869 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:21:44,870 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:21:47,753 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:21:47,754 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:21:47,754 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:21:51,181 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:21:51,182 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:22:08,625 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:22:08,625 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:22:11,926 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:22:11,926 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:22:11,927 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:22:14,973 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:22:14,974 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:22:42,387 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:22:42,388 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:22:45,974 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:22:45,974 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:22:45,974 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:22:49,028 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:22:49,028 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:23:14,567 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:23:14,567 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:23:17,486 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:23:17,486 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:23:17,487 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:23:20,431 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:23:20,432 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:23:39,791 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:23:39,792 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:23:42,711 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:23:42,711 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:23:42,711 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:23:45,892 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:23:45,892 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:24:05,873 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:24:05,873 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:24:09,386 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:24:09,386 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:24:09,386 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:24:12,479 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:24:12,479 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:24:42,183 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:24:42,184 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:24:45,133 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:24:45,133 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:24:45,133 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:24:48,682 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:24:48,683 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:25:11,602 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:25:11,603 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:25:15,268 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:25:15,269 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:25:15,269 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:25:18,760 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:25:18,760 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:25:41,072 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:25:41,072 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:25:44,122 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:25:44,122 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:25:44,122 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:25:48,033 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:25:48,033 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:26:15,403 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:26:15,403 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:26:18,397 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:26:18,398 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:26:18,398 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:26:21,952 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:26:21,953 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:26:51,417 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:26:51,418 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:26:54,665 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:26:54,665 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:26:54,665 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:26:57,645 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:26:57,646 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:27:12,760 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:27:12,760 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:27:15,759 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:27:15,759 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:27:15,759 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:27:18,907 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:27:18,908 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:27:45,096 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:27:45,096 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:27:48,226 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:27:48,227 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:27:48,227 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:27:51,575 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:27:51,575 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:28:18,306 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:28:18,307 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:28:21,290 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:28:21,290 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:28:21,290 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:28:24,379 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:28:24,379 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:28:42,168 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:28:42,169 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:28:45,261 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:28:45,261 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:28:45,261 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:28:48,437 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:28:48,437 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:29:14,164 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:29:14,164 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:29:17,345 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:29:17,345 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:29:17,345 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:29:20,874 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:29:20,874 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:29:47,226 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:29:47,226 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:29:50,222 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:29:50,222 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:29:50,222 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:29:53,342 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:29:53,342 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:30:14,535 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:30:14,536 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:30:17,580 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:30:17,581 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:30:17,581 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:30:20,578 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:30:20,578 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:30:42,693 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:30:42,693 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:30:46,152 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:30:46,152 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:30:46,152 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:30:49,247 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:30:49,247 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:31:07,502 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:31:07,502 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:31:10,974 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:31:10,975 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:31:10,975 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:31:14,285 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:31:14,285 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:31:39,292 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:31:39,292 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:31:42,221 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:31:42,221 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:31:42,221 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:31:45,404 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:31:45,405 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:32:03,727 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:32:03,727 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:32:06,727 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:32:06,727 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:32:06,727 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:32:09,973 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:32:09,973 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:32:25,062 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:32:25,062 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:32:28,226 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:32:28,226 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:32:28,227 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:32:32,252 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:32:32,253 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:33:01,954 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:33:01,954 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:33:05,453 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:33:05,453 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:33:05,453 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:33:08,469 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:33:08,469 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:33:35,237 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:33:35,237 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:33:38,817 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:33:38,817 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:33:38,817 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:33:41,972 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:33:41,972 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:34:11,649 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:34:11,650 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:34:14,742 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:34:14,743 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:34:14,743 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:34:18,019 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:34:18,020 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:34:44,799 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:34:44,799 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:34:47,778 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:34:47,779 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:34:47,779 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:34:50,971 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:34:50,971 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:35:09,684 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:35:09,684 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:35:13,148 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:35:13,148 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:35:13,148 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:35:16,934 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:35:16,934 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:35:41,512 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:35:41,512 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:35:44,505 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:35:44,505 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:35:44,505 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:35:47,689 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:35:47,690 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:36:09,473 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:36:09,473 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:36:12,438 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:36:12,438 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:36:12,439 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:36:15,801 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:36:15,801 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:36:44,529 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:36:44,529 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:36:47,659 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:36:47,659 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:36:47,659 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:36:50,710 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:36:50,711 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:37:15,253 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:37:15,253 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:37:18,761 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:37:18,761 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:37:18,761 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:37:22,294 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:37:22,294 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:37:37,778 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:37:37,779 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:37:40,911 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:37:40,911 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:37:40,911 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:37:44,184 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:37:44,185 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:38:02,566 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:38:02,566 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:38:06,202 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:38:06,202 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:38:06,203 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:38:09,233 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:38:09,233 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:38:27,745 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:38:27,746 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:38:30,829 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:38:30,829 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:38:30,829 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:38:34,652 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:38:34,653 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:39:02,957 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:39:02,958 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:39:06,190 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:39:06,191 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:39:06,191 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:39:09,447 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:39:09,447 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:39:24,615 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:39:24,615 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:39:27,753 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:39:27,754 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:39:27,754 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:39:30,951 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:39:30,952 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:39:57,916 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:39:57,916 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:40:01,181 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:40:01,181 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:40:01,181 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:40:04,593 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:40:04,594 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:40:27,990 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:40:27,990 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:40:31,094 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:40:31,094 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:40:31,094 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:40:34,289 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:40:34,290 c558fb2a MainThread silo(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:40:54,369 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:40:54,369 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc558fb2ac6258fd5d
+2015-07-27 12:40:57,868 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc558fb2ac6258fd5d" not found
+
+2015-07-27 12:40:57,868 c558fb2a MainThread silo(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:40:57,868 c558fb2a MainThread silo(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc558fb2ac6258fd5d
+2015-07-27 12:41:00,920 c558fb2a MainThread silo(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc558fb2ac6258fd5d. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 12:41:00,921 c558fb2a MainThread silo(1/1) benchmark_spec.py:242 ERROR    Got an exception deleting networks. Attempting to continue tearing down.
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 240, in Delete
+    net.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/azure/azure_network.py", line 228, in Delete
+    self.vnet.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/resource.py", line 135, in Delete
+    self._DeleteResource()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 354, in WrappedFunction
+    raise e
+RetryableDeletionError: Deletion of AzureVirtualNetwork failed.
+2015-07-27 12:41:00,923 c558fb2a MainThread silo(1/1) pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_c558fb2a/pkb.log

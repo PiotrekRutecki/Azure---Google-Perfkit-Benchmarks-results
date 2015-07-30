@@ -1,0 +1,6 @@
+2015-07-28 07:48:03,278 0c46dc51 MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D2
+--cloud=Azure
+--benchmarks=specpu2006
+2015-07-28 07:48:03,490 0c46dc51 MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7f434282e9d0> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7f434432e150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_0c46dc51/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-28 07:48:03,491 0c46dc51 MainThread pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_0c46dc51/pkb.log

@@ -1,0 +1,2927 @@
+2015-07-22 09:07:47,447 145dd773 MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D3
+--cloud=Azure
+--benchmarks=fio
+2015-07-22 09:07:47,688 145dd773 MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7f06ddb53990> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7f06df652150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-22 09:07:47,688 145dd773 MainThread fio(1/1) pkb.py:194 INFO     Preparing benchmark fio
+2015-07-22 09:07:47,691 145dd773 Thread-1 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:07:47,691 145dd773 Thread-1 fio(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit145dd7739c6403a5e perfkit145dd7739c6403a5e
+2015-07-22 09:07:50,659 145dd773 Thread-1 fio(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group create --location=East US --label=perfkit145dd7739c6403a5e perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    account affinity-group create command OK
+
+STDERR: 
+2015-07-22 09:07:50,659 145dd773 Thread-1 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:07:50,659 145dd773 Thread-1 fio(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit145dd7739c6403a5e
+2015-07-22 09:07:53,349 145dd773 Thread-1 fio(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {
+  "capabilities": [
+    "PersistentVMRole",
+    "HighMemory"
+  ],
+  "hostedServices": [],
+  "storageServices": [],
+  "name": "perfkit145dd7739c6403a5e",
+  "label": "perfkit145dd7739c6403a5e",
+  "location": "East US",
+  "createdTime": "2015-07-22T09:07:58.000Z",
+  "statusCode": 200,
+  "requestId": "e70345e34592cc97adf93b36c9ab741e"
+}
+
+STDERR: 
+2015-07-22 09:07:53,350 145dd773 Thread-1 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:07:53,350 145dd773 Thread-1 fio(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkit145dd7739c6403a5e --type=LRS perfkit145dd7739c6403a5e
+2015-07-22 09:08:30,455 145dd773 Thread-1 fio(1/1) vm_util.py:420 DEBUG    Ran azure storage account create --affinity-group=perfkit145dd7739c6403a5e --type=LRS perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    storage account create command OK
+
+STDERR: 
+2015-07-22 09:08:30,455 145dd773 Thread-1 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:08:30,455 145dd773 Thread-1 fio(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkit145dd7739c6403a5e
+2015-07-22 09:08:33,739 145dd773 Thread-1 fio(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {
+  "extendedProperties": {
+    "ResourceGroup": "Default-Storage-EastUS",
+    "ResourceLocation": "East US"
+  },
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/storageservices/perfkit145dd7739c6403a5e",
+  "name": "perfkit145dd7739c6403a5e",
+  "properties": {
+    "endpoints": [
+      "https://perfkit145dd7739c6403a5e.blob.core.windows.net/",
+      "https://perfkit145dd7739c6403a5e.queue.core.windows.net/",
+      "https://perfkit145dd7739c6403a5e.table.core.windows.net/"
+    ],
+    "affinityGroup": "perfkit145dd7739c6403a5e",
+    "label": "perfkit145dd7739c6403a5e",
+    "status": "Created",
+    "geoPrimaryRegion": "East US",
+    "statusOfGeoPrimaryRegion": "Available",
+    "geoSecondaryRegion": "",
+    "accountType": "Standard_LRS"
+  },
+  "resourceGroup": ""
+}
+
+STDERR: 
+2015-07-22 09:08:33,739 145dd773 Thread-1 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:08:33,740 145dd773 Thread-1 fio(1/1) vm_util.py:392 INFO     Running: azure network vnet create --affinity-group=perfkit145dd7739c6403a5e perfkit145dd7739c6403a5e
+2015-07-22 09:09:10,020 145dd773 Thread-1 fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet create --affinity-group=perfkit145dd7739c6403a5e perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet create
+info:    Using default address space start IP: 10.0.0.0
+info:    Using default address space cidr: 8
+info:    Using default subnet start IP: 10.0.0.0
+info:    Using default subnet cidr: 11
+info:    Looking up network configuration
+info:    Looking up affinity groups
+info:    Using affinity group perfkit145dd7739c6403a5e
+info:    Setting network configuration
+info:    network vnet create command OK
+
+STDERR: 
+2015-07-22 09:09:10,020 145dd773 Thread-1 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:09:10,020 145dd773 Thread-1 fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:09:13,709 145dd773 Thread-1 fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {
+  "dnsServers": [],
+  "subnets": [
+    {
+      "name": "Subnet-1",
+      "addressPrefix": "10.0.0.0/11"
+    }
+  ],
+  "name": "perfkit145dd7739c6403a5e",
+  "id": "03db032f-c006-4c71-880c-45d9ceac9f53",
+  "affinityGroup": "perfkit145dd7739c6403a5e",
+  "state": "Created",
+  "addressSpace": {
+    "addressPrefixes": [
+      "10.0.0.0/8"
+    ]
+  }
+}
+
+STDERR: 
+2015-07-22 09:09:13,727 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:09:13,727 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: azure service create --affinitygroup=perfkit145dd7739c6403a5e pkb-145dd773-0
+2015-07-22 09:09:17,552 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran azure service create --affinitygroup=perfkit145dd7739c6403a5e pkb-145dd773-0. Got return code (0).
+STDOUT: info:    Executing command service create
+info:    Creating cloud service
+data:    Cloud service name pkb-145dd773-0
+info:    service create command OK
+
+STDERR: 
+2015-07-22 09:09:17,552 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:09:17,552 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-145dd773-0
+2015-07-22 09:09:20,260 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-145dd773-0. Got return code (0).
+STDOUT: {
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/hostedservices/pkb-145dd773-0",
+  "serviceName": "pkb-145dd773-0",
+  "properties": {
+    "extendedProperties": {
+      "ResourceGroup": "pkb-145dd773-0",
+      "ResourceLocation": "East US"
+    },
+    "affinityGroup": "perfkit145dd7739c6403a5e",
+    "label": "pkb-145dd773-0",
+    "status": "Created",
+    "dateCreated": "2015-07-22T09:09:25.000Z",
+    "dateLastModified": "2015-07-22T09:09:28.000Z"
+  },
+  "statusCode": 200,
+  "requestId": "331df6bace21c6949a16dcf284c4c90f"
+}
+
+STDERR: 
+2015-07-22 09:09:20,260 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:09:20,261 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkit145dd7739c6403a5e --virtual-network-name=perfkit145dd7739c6403a5e --vm-size=Standard_D3 pkb-145dd773-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker.pem --no-ssh-password
+2015-07-22 09:11:46,187 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran azure vm create --affinity-group=perfkit145dd7739c6403a5e --virtual-network-name=perfkit145dd7739c6403a5e --vm-size=Standard_D3 pkb-145dd773-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker.pem --no-ssh-password. Got return code (0).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Creating a new storage account 'portalvhds1437556172357'
+info:    Configuring certificate
+info:    Creating VM
+info:    OK
+info:    vm create command OK
+
+STDERR: 
+2015-07-22 09:11:46,187 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:11:46,187 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-145dd773-0
+2015-07-22 09:11:53,707 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-145dd773-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-145dd773-0.cloudapp.net",
+  "AffinityGroup": "perfkit145dd7739c6403a5e",
+  "VMName": "pkb-145dd773-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "RoleStateUnknown",
+  "InstanceSize": "Standard_D3",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101",
+    "mediaLink": "https://portalvhds1437556172357.blob.core.windows.net/vhd-store/pkb-145dd773-0-3c71b50e4e9d288f.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "104.45.140.231",
+      "name": "pkb-145dd773-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "104.45.140.231",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-22 09:11:53,708 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:11:53,708 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-145dd773-0
+2015-07-22 09:11:58,876 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-145dd773-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-145dd773-0.cloudapp.net",
+  "AffinityGroup": "perfkit145dd7739c6403a5e",
+  "VMName": "pkb-145dd773-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "RoleStateUnknown",
+  "InstanceSize": "Standard_D3",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101",
+    "mediaLink": "https://portalvhds1437556172357.blob.core.windows.net/vhd-store/pkb-145dd773-0-3c71b50e4e9d288f.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "104.45.140.231",
+      "name": "pkb-145dd773-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "104.45.140.231",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-22 09:11:58,877 145dd773 Thread-8 fio(1/1) benchmark_spec.py:322 INFO     VM: 104.45.140.231
+2015-07-22 09:11:58,877 145dd773 Thread-8 fio(1/1) benchmark_spec.py:323 INFO     Waiting for boot completion.
+2015-07-22 09:11:58,878 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:11:58,878 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:03,892 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection timed out
+
+2015-07-22 09:12:04,694 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:04,694 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:09,709 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection timed out
+
+2015-07-22 09:12:10,240 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:10,240 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:15,252 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection timed out
+
+2015-07-22 09:12:15,851 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:15,851 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:20,865 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection timed out
+
+2015-07-22 09:12:21,580 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:21,581 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:26,596 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection timed out
+
+2015-07-22 09:12:27,163 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:27,163 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:32,177 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection timed out
+
+2015-07-22 09:12:32,873 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:32,874 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:37,888 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection timed out
+
+2015-07-22 09:12:38,641 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:38,641 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:43,657 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection timed out
+
+2015-07-22 09:12:44,323 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:44,323 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:49,338 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection timed out
+
+2015-07-22 09:12:50,010 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:50,011 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:50,109 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:12:50,972 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:50,973 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:51,066 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:12:51,880 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:51,880 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:51,976 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:12:52,707 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:52,707 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:52,797 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:12:53,711 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:53,711 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:53,801 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:12:54,457 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:54,458 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:54,554 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:12:55,080 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:55,080 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:55,171 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:12:55,920 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:55,920 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:56,015 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:12:56,878 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:56,878 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:56,983 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:12:57,965 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:57,965 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:58,064 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:12:58,712 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:58,712 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:58,804 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:12:59,574 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:12:59,574 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:12:59,670 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:00,490 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:00,491 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:00,586 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:01,121 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:01,122 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:01,219 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:02,130 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:02,130 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:02,220 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:02,900 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:02,900 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:02,997 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:03,694 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:03,694 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:03,793 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:04,449 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:04,449 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:04,545 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:05,412 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:05,413 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:05,508 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:06,135 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:06,136 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:06,235 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:06,792 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:06,793 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:06,884 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:07,450 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:07,450 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:07,546 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:08,466 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:08,466 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:08,558 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:09,336 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:09,337 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:09,430 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:10,197 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:10,197 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:10,349 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:11,291 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:11,291 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:11,391 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:12,284 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:12,285 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:12,382 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:13,149 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:13,150 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:13,247 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:14,145 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:14,146 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:14,240 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:14,949 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:14,949 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:15,044 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:15,560 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:15,560 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:15,720 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:16,640 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:16,640 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:16,732 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:17,578 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:17,578 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:17,682 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:18,296 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:18,297 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:18,390 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 104.45.140.231 port 22: Connection refused
+
+2015-07-22 09:13:19,328 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:19,328 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname
+2015-07-22 09:13:20,911 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile hostname. Got return code (0).
+STDOUT: pkb-145dd773-0
+
+STDERR: Warning: Permanently added '104.45.140.231' (ECDSA) to the list of known hosts.
+
+2015-07-22 09:13:20,912 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:20,912 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: azure vm disk attach-new pkb-145dd773-0 500
+2015-07-22 09:13:57,307 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran azure vm disk attach-new pkb-145dd773-0 500. Got return code (0).
+STDOUT: info:    Executing command vm disk attach-new
+info:    Getting virtual machines
+info:    Adding Data-Disk
+info:    vm disk attach-new command OK
+
+STDERR: 
+2015-07-22 09:13:57,307 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:13:57,307 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-145dd773-0
+2015-07-22 09:14:04,060 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-145dd773-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-145dd773-0.cloudapp.net",
+  "AffinityGroup": "perfkit145dd7739c6403a5e",
+  "VMName": "pkb-145dd773-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "RoleStateUnknown",
+  "InstanceSize": "Standard_D3",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101",
+    "mediaLink": "https://portalvhds1437556172357.blob.core.windows.net/vhd-store/pkb-145dd773-0-3c71b50e4e9d288f.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [
+    {
+      "hostCaching": "None",
+      "label": "pkb-145dd773-0-pkb-145dd773-0-pkb-145dd773-0-0",
+      "name": "pkb-145dd773-0-pkb-145dd773-0-0-201507220913360259",
+      "logicalDiskSizeInGB": 500,
+      "mediaLink": "https://portalvhds1437556172357.blob.core.windows.net/vhd-store/pkb-145dd773-0-1c5695060de78249.vhd",
+      "iOType": "Standard"
+    }
+  ],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "104.45.140.231",
+      "name": "pkb-145dd773-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "104.45.140.231",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-22 09:14:04,060 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:14:04,060 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile sudo mke2fs -F -E lazy_itable_init=0 -O ^has_journal -t ext4 -b 4096 /dev/sdc
+2015-07-22 09:16:36,556 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile sudo mke2fs -F -E lazy_itable_init=0 -O ^has_journal -t ext4 -b 4096 /dev/sdc. Got return code (0).
+STDOUT: Discarding device blocks:      4096/131072000 39325696/131072000 90181632/131072000                   done                            
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+32768000 inodes, 131072000 blocks
+6553600 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=4294967296
+4000 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968, 
+	102400000
+
+Allocating group tables:    0/4000         done                            
+Writing inode tables:    0/4000  42/4000 974/40001159/40001257/40001321/40001370/40001418/40001466/40001514/40001559/40001596/40001625/40001654/40001684/40001713/40001743/40001771/40001795/40001823/40001852/40001881/40001908/40001936/40001963/40001990/40002017/40002044/40002071/40002098/40002126/40002153/40002180/40002207/40002234/40002261/40002290/40002320/40002351/40002381/40002412/40002442/40002474/40002505/40002535/40002566/40002597/40002627/40002657/40002688/40002720/40002750/40002781/40002812/40002842/40002873/40002903/40002935/40002964/40002996/40003027/40003057/40003088/40003118/40003149/40003180/40003211/40003241/40003273/40003303/40003333/40003364/40003395/40003426/40003457/40003487/40003517/40003548/40003580/40003610/40003641/40003672/40003703/40003733/40003764/40003794/40003826/40003856/40003887/40003917/40003948/40003979/4000         done                            
+Writing superblocks and filesystem accounting information:    0/4000   2/4000   8/40002402/4000         done
+
+
+STDERR: Warning: Permanently added '104.45.140.231' (ECDSA) to the list of known hosts.
+mke2fs 1.42.9 (4-Feb-2014)
+
+2015-07-22 09:16:36,557 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:16:36,557 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile sudo mkdir -p /scratch0;sudo mount /dev/sdc /scratch0;sudo chown -R $USER:$USER /scratch0;
+2015-07-22 09:16:39,137 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile sudo mkdir -p /scratch0;sudo mount /dev/sdc /scratch0;sudo chown -R $USER:$USER /scratch0;. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '104.45.140.231' (ECDSA) to the list of known hosts.
+
+2015-07-22 09:16:39,138 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:16:39,138 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile sudo apt-get update
+2015-07-22 09:16:50,034 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile sudo apt-get update. Got return code (0).
+STDOUT: Ign http://security.ubuntu.com trusty-security InRelease
+Get:1 http://security.ubuntu.com trusty-security Release.gpg [933 B]
+Ign http://azure.archive.ubuntu.com trusty InRelease
+Ign http://azure.archive.ubuntu.com trusty-updates InRelease
+Hit http://azure.archive.ubuntu.com trusty Release.gpg
+Get:2 http://azure.archive.ubuntu.com trusty-updates Release.gpg [933 B]
+Hit http://azure.archive.ubuntu.com trusty Release
+Get:3 http://security.ubuntu.com trusty-security Release [63.5 kB]
+Get:4 http://azure.archive.ubuntu.com trusty-updates Release [63.5 kB]
+Get:5 http://security.ubuntu.com trusty-security/main Sources [87.9 kB]
+Get:6 http://security.ubuntu.com trusty-security/universe Sources [28.1 kB]
+Get:7 http://security.ubuntu.com trusty-security/main amd64 Packages [310 kB]
+Get:8 http://azure.archive.ubuntu.com trusty/main Sources [1,064 kB]
+Get:9 http://security.ubuntu.com trusty-security/universe amd64 Packages [111 kB]
+Get:10 http://security.ubuntu.com trusty-security/main Translation-en [164 kB]
+Get:11 http://security.ubuntu.com trusty-security/universe Translation-en [64.0 kB]
+Get:12 http://azure.archive.ubuntu.com trusty/universe Sources [6,399 kB]
+Hit http://azure.archive.ubuntu.com trusty/main amd64 Packages
+Hit http://azure.archive.ubuntu.com trusty/universe amd64 Packages
+Hit http://azure.archive.ubuntu.com trusty/main Translation-en
+Hit http://azure.archive.ubuntu.com trusty/universe Translation-en
+Get:13 http://azure.archive.ubuntu.com trusty-updates/main Sources [215 kB]
+Get:14 http://azure.archive.ubuntu.com trusty-updates/universe Sources [125 kB]
+Get:15 http://azure.archive.ubuntu.com trusty-updates/main amd64 Packages [570 kB]
+Get:16 http://azure.archive.ubuntu.com trusty-updates/universe amd64 Packages [296 kB]
+Get:17 http://azure.archive.ubuntu.com trusty-updates/main Translation-en [275 kB]
+Get:18 http://azure.archive.ubuntu.com trusty-updates/universe Translation-en [157 kB]
+Ign http://azure.archive.ubuntu.com trusty/main Translation-en_US
+Ign http://azure.archive.ubuntu.com trusty/universe Translation-en_US
+Fetched 9,994 kB in 4s (2,129 kB/s)
+Reading package lists...
+
+STDERR: Warning: Permanently added '104.45.140.231' (ECDSA) to the list of known hosts.
+
+2015-07-22 09:16:50,035 145dd773 Thread-8 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:16:50,035 145dd773 Thread-8 fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile mkdir -p /tmp/pkb
+2015-07-22 09:16:51,311 145dd773 Thread-8 fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile mkdir -p /tmp/pkb. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '104.45.140.231' (ECDSA) to the list of known hosts.
+
+2015-07-22 09:16:51,360 145dd773 MainThread fio(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-22 09:16:51,372 145dd773 MainThread fio(1/1) vm_util.py:563 INFO     ssh to VMs in this benchmark by name with: ssh -F /tmp/perfkitbenchmarker/run_145dd773/ssh_config <vm name>
+2015-07-22 09:16:51,375 145dd773 MainThread fio(1/1) fio_benchmark.py:73 INFO     FIO prepare on 104.45.140.231
+2015-07-22 09:16:51,375 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:16:51,375 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install libaio-dev libaio1 bc
+2015-07-22 09:17:08,705 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install libaio-dev libaio1 bc. Got return code (0).
+STDOUT: Reading package lists...
+Building dependency tree...
+Reading state information...
+bc is already the newest version.
+The following NEW packages will be installed:
+  libaio-dev libaio1
+0 upgraded, 2 newly installed, 0 to remove and 142 not upgraded.
+Need to get 20.2 kB of archives.
+After this operation, 141 kB of additional disk space will be used.
+Get:1 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libaio1 amd64 0.3.109-4 [6,364 B]
+Get:2 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libaio-dev amd64 0.3.109-4 [13.8 kB]
+Fetched 20.2 kB in 0s (33.1 kB/s)
+Selecting previously unselected package libaio1:amd64.
+(Reading database ... 27030 files and directories currently installed.)
+Preparing to unpack .../libaio1_0.3.109-4_amd64.deb ...
+Unpacking libaio1:amd64 (0.3.109-4) ...
+Selecting previously unselected package libaio-dev.
+Preparing to unpack .../libaio-dev_0.3.109-4_amd64.deb ...
+Unpacking libaio-dev (0.3.109-4) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up libaio1:amd64 (0.3.109-4) ...
+Setting up libaio-dev (0.3.109-4) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.5) ...
+
+STDERR: Warning: Permanently added '104.45.140.231' (ECDSA) to the list of known hosts.
+
+2015-07-22 09:17:08,706 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:17:08,706 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install build-essential git libtool autoconf automake
+2015-07-22 09:19:04,093 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install build-essential git libtool autoconf automake. Got return code (0).
+STDOUT: Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  autotools-dev binutils cpp cpp-4.8 dpkg-dev fakeroot g++ g++-4.8 gcc gcc-4.8
+  gcc-4.8-base git-man libalgorithm-diff-perl libalgorithm-diff-xs-perl
+  libalgorithm-merge-perl libasan0 libatomic1 libc-dev-bin libc6 libc6-dev
+  libcloog-isl4 libdpkg-perl liberror-perl libfakeroot libfile-fcntllock-perl
+  libgcc-4.8-dev libgomp1 libisl10 libitm1 libltdl-dev libltdl7 libmpc3
+  libmpfr4 libquadmath0 libstdc++-4.8-dev libstdc++6 libtsan0 linux-libc-dev
+  m4 make manpages-dev
+Suggested packages:
+  autoconf2.13 autoconf-archive gnu-standards autoconf-doc gettext
+  binutils-doc cpp-doc gcc-4.8-locales debian-keyring g++-multilib
+  g++-4.8-multilib gcc-4.8-doc libstdc++6-4.8-dbg gcc-multilib automake1.9
+  flex bison gdb gcc-doc gcc-4.8-multilib libgcc1-dbg libgomp1-dbg libitm1-dbg
+  libatomic1-dbg libasan0-dbg libtsan0-dbg libquadmath0-dbg git-daemon-run
+  git-daemon-sysvinit git-doc git-el git-email git-gui gitk gitweb git-arch
+  git-bzr git-cvs git-mediawiki git-svn glibc-doc libtool-doc
+  libstdc++-4.8-doc automaken gfortran fortran95-compiler gcj-jdk make-doc
+The following NEW packages will be installed:
+  autoconf automake autotools-dev binutils build-essential cpp cpp-4.8
+  dpkg-dev fakeroot g++ g++-4.8 gcc gcc-4.8 git git-man libalgorithm-diff-perl
+  libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan0 libatomic1
+  libc-dev-bin libc6-dev libcloog-isl4 libdpkg-perl liberror-perl libfakeroot
+  libfile-fcntllock-perl libgcc-4.8-dev libgomp1 libisl10 libitm1 libltdl-dev
+  libltdl7 libmpc3 libmpfr4 libquadmath0 libstdc++-4.8-dev libtool libtsan0
+  linux-libc-dev m4 make manpages-dev
+The following packages will be upgraded:
+  gcc-4.8-base libc6 libstdc++6
+3 upgraded, 43 newly installed, 0 to remove and 139 not upgraded.
+Need to get 46.1 MB of archives.
+After this operation, 140 MB of additional disk space will be used.
+Get:1 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main gcc-4.8-base amd64 4.8.4-2ubuntu1~14.04 [15.9 kB]
+Get:2 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main libstdc++6 amd64 4.8.4-2ubuntu1~14.04 [259 kB]
+Get:3 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main libc6 amd64 2.19-0ubuntu6.6 [4,735 kB]
+Get:4 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main libasan0 amd64 4.8.4-2ubuntu1~14.04 [63.0 kB]
+Get:5 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main libatomic1 amd64 4.8.4-2ubuntu1~14.04 [8,650 B]
+Get:6 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libisl10 amd64 0.12.2-1 [419 kB]
+Get:7 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libcloog-isl4 amd64 0.18.2-1 [57.5 kB]
+Get:8 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main libgomp1 amd64 4.8.4-2ubuntu1~14.04 [23.1 kB]
+Get:9 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main libitm1 amd64 4.8.4-2ubuntu1~14.04 [28.6 kB]
+Get:10 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libltdl7 amd64 2.4.2-1.7ubuntu1 [35.0 kB]
+Get:11 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libmpfr4 amd64 3.1.2-1 [203 kB]
+Get:12 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main libquadmath0 amd64 4.8.4-2ubuntu1~14.04 [126 kB]
+Get:13 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main libtsan0 amd64 4.8.4-2ubuntu1~14.04 [94.7 kB]
+Get:14 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libmpc3 amd64 1.0.1-1ubuntu1 [38.4 kB]
+Get:15 http://azure.archive.ubuntu.com/ubuntu/ trusty/main m4 amd64 1.4.17-2ubuntu1 [195 kB]
+Get:16 http://azure.archive.ubuntu.com/ubuntu/ trusty/main autoconf all 2.69-6 [322 kB]
+Get:17 http://azure.archive.ubuntu.com/ubuntu/ trusty/main autotools-dev all 20130810.1 [44.3 kB]
+Get:18 http://azure.archive.ubuntu.com/ubuntu/ trusty/main automake all 1:1.14.1-2ubuntu1 [510 kB]
+Get:19 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main binutils amd64 2.24-5ubuntu13 [2,076 kB]
+Get:20 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main libc-dev-bin amd64 2.19-0ubuntu6.6 [68.9 kB]
+Get:21 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main linux-libc-dev amd64 3.13.0-57.95 [774 kB]
+Get:22 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main libc6-dev amd64 2.19-0ubuntu6.6 [1,910 kB]
+Get:23 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main cpp-4.8 amd64 4.8.4-2ubuntu1~14.04 [4,597 kB]
+Get:24 http://azure.archive.ubuntu.com/ubuntu/ trusty/main cpp amd64 4:4.8.2-1ubuntu6 [27.5 kB]
+Get:25 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main libgcc-4.8-dev amd64 4.8.4-2ubuntu1~14.04 [1,687 kB]
+Get:26 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main gcc-4.8 amd64 4.8.4-2ubuntu1~14.04 [5,049 kB]
+Get:27 http://azure.archive.ubuntu.com/ubuntu/ trusty/main gcc amd64 4:4.8.2-1ubuntu6 [5,098 B]
+Get:28 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main libstdc++-4.8-dev amd64 4.8.4-2ubuntu1~14.04 [1,052 kB]
+Get:29 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main g++-4.8 amd64 4.8.4-2ubuntu1~14.04 [15.0 MB]
+Get:30 http://azure.archive.ubuntu.com/ubuntu/ trusty/main g++ amd64 4:4.8.2-1ubuntu6 [1,490 B]
+Get:31 http://azure.archive.ubuntu.com/ubuntu/ trusty/main make amd64 3.81-8.2ubuntu3 [119 kB]
+Get:32 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main libdpkg-perl all 1.17.5ubuntu5.4 [179 kB]
+Get:33 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main dpkg-dev all 1.17.5ubuntu5.4 [726 kB]
+Get:34 http://azure.archive.ubuntu.com/ubuntu/ trusty/main build-essential amd64 11.6ubuntu6 [4,838 B]
+Get:35 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libfakeroot amd64 1.20-3ubuntu2 [25.4 kB]
+Get:36 http://azure.archive.ubuntu.com/ubuntu/ trusty/main fakeroot amd64 1.20-3ubuntu2 [55.0 kB]
+Get:37 http://azure.archive.ubuntu.com/ubuntu/ trusty/main liberror-perl all 0.17-1.1 [21.1 kB]
+Get:38 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main git-man all 1:1.9.1-1ubuntu0.1 [698 kB]
+Get:39 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main git amd64 1:1.9.1-1ubuntu0.1 [2,627 kB]
+Get:40 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libalgorithm-diff-perl all 1.19.02-3 [50.0 kB]
+Get:41 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libalgorithm-diff-xs-perl amd64 0.04-2build4 [12.6 kB]
+Get:42 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libalgorithm-merge-perl all 0.08-2 [12.7 kB]
+Get:43 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libfile-fcntllock-perl amd64 0.14-2build1 [15.9 kB]
+Get:44 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libltdl-dev amd64 2.4.2-1.7ubuntu1 [157 kB]
+Get:45 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libtool amd64 2.4.2-1.7ubuntu1 [188 kB]
+Get:46 http://azure.archive.ubuntu.com/ubuntu/ trusty/main manpages-dev all 3.54-1ubuntu1 [1,820 kB]
+Preconfiguring packages ...
+Fetched 46.1 MB in 3s (13.8 MB/s)
+(Reading database ... 27052 files and directories currently installed.)
+Preparing to unpack .../gcc-4.8-base_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking gcc-4.8-base:amd64 (4.8.4-2ubuntu1~14.04) over (4.8.2-19ubuntu1) ...
+Setting up gcc-4.8-base:amd64 (4.8.4-2ubuntu1~14.04) ...
+(Reading database ... 27052 files and directories currently installed.)
+Preparing to unpack .../libstdc++6_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking libstdc++6:amd64 (4.8.4-2ubuntu1~14.04) over (4.8.2-19ubuntu1) ...
+Preparing to unpack .../libc6_2.19-0ubuntu6.6_amd64.deb ...
+Unpacking libc6:amd64 (2.19-0ubuntu6.6) over (2.19-0ubuntu6.5) ...
+Setting up libc6:amd64 (2.19-0ubuntu6.6) ...
+Setting up libstdc++6:amd64 (4.8.4-2ubuntu1~14.04) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.5) ...
+Selecting previously unselected package libasan0:amd64.
+(Reading database ... 27065 files and directories currently installed.)
+Preparing to unpack .../libasan0_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking libasan0:amd64 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package libatomic1:amd64.
+Preparing to unpack .../libatomic1_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking libatomic1:amd64 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package libisl10:amd64.
+Preparing to unpack .../libisl10_0.12.2-1_amd64.deb ...
+Unpacking libisl10:amd64 (0.12.2-1) ...
+Selecting previously unselected package libcloog-isl4:amd64.
+Preparing to unpack .../libcloog-isl4_0.18.2-1_amd64.deb ...
+Unpacking libcloog-isl4:amd64 (0.18.2-1) ...
+Selecting previously unselected package libgomp1:amd64.
+Preparing to unpack .../libgomp1_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking libgomp1:amd64 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package libitm1:amd64.
+Preparing to unpack .../libitm1_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking libitm1:amd64 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package libltdl7:amd64.
+Preparing to unpack .../libltdl7_2.4.2-1.7ubuntu1_amd64.deb ...
+Unpacking libltdl7:amd64 (2.4.2-1.7ubuntu1) ...
+Selecting previously unselected package libmpfr4:amd64.
+Preparing to unpack .../libmpfr4_3.1.2-1_amd64.deb ...
+Unpacking libmpfr4:amd64 (3.1.2-1) ...
+Selecting previously unselected package libquadmath0:amd64.
+Preparing to unpack .../libquadmath0_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking libquadmath0:amd64 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package libtsan0:amd64.
+Preparing to unpack .../libtsan0_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking libtsan0:amd64 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package libmpc3:amd64.
+Preparing to unpack .../libmpc3_1.0.1-1ubuntu1_amd64.deb ...
+Unpacking libmpc3:amd64 (1.0.1-1ubuntu1) ...
+Selecting previously unselected package m4.
+Preparing to unpack .../m4_1.4.17-2ubuntu1_amd64.deb ...
+Unpacking m4 (1.4.17-2ubuntu1) ...
+Selecting previously unselected package autoconf.
+Preparing to unpack .../autoconf_2.69-6_all.deb ...
+Unpacking autoconf (2.69-6) ...
+Selecting previously unselected package autotools-dev.
+Preparing to unpack .../autotools-dev_20130810.1_all.deb ...
+Unpacking autotools-dev (20130810.1) ...
+Selecting previously unselected package automake.
+Preparing to unpack .../automake_1%3a1.14.1-2ubuntu1_all.deb ...
+Unpacking automake (1:1.14.1-2ubuntu1) ...
+Selecting previously unselected package binutils.
+Preparing to unpack .../binutils_2.24-5ubuntu13_amd64.deb ...
+Unpacking binutils (2.24-5ubuntu13) ...
+Selecting previously unselected package libc-dev-bin.
+Preparing to unpack .../libc-dev-bin_2.19-0ubuntu6.6_amd64.deb ...
+Unpacking libc-dev-bin (2.19-0ubuntu6.6) ...
+Selecting previously unselected package linux-libc-dev:amd64.
+Preparing to unpack .../linux-libc-dev_3.13.0-57.95_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (3.13.0-57.95) ...
+Selecting previously unselected package libc6-dev:amd64.
+Preparing to unpack .../libc6-dev_2.19-0ubuntu6.6_amd64.deb ...
+Unpacking libc6-dev:amd64 (2.19-0ubuntu6.6) ...
+Selecting previously unselected package cpp-4.8.
+Preparing to unpack .../cpp-4.8_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking cpp-4.8 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package cpp.
+Preparing to unpack .../cpp_4%3a4.8.2-1ubuntu6_amd64.deb ...
+Unpacking cpp (4:4.8.2-1ubuntu6) ...
+Selecting previously unselected package libgcc-4.8-dev:amd64.
+Preparing to unpack .../libgcc-4.8-dev_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking libgcc-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package gcc-4.8.
+Preparing to unpack .../gcc-4.8_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking gcc-4.8 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../gcc_4%3a4.8.2-1ubuntu6_amd64.deb ...
+Unpacking gcc (4:4.8.2-1ubuntu6) ...
+Selecting previously unselected package libstdc++-4.8-dev:amd64.
+Preparing to unpack .../libstdc++-4.8-dev_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking libstdc++-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package g++-4.8.
+Preparing to unpack .../g++-4.8_4.8.4-2ubuntu1~14.04_amd64.deb ...
+Unpacking g++-4.8 (4.8.4-2ubuntu1~14.04) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../g++_4%3a4.8.2-1ubuntu6_amd64.deb ...
+Unpacking g++ (4:4.8.2-1ubuntu6) ...
+Selecting previously unselected package make.
+Preparing to unpack .../make_3.81-8.2ubuntu3_amd64.deb ...
+Unpacking make (3.81-8.2ubuntu3) ...
+Selecting previously unselected package libdpkg-perl.
+Preparing to unpack .../libdpkg-perl_1.17.5ubuntu5.4_all.deb ...
+Unpacking libdpkg-perl (1.17.5ubuntu5.4) ...
+Selecting previously unselected package dpkg-dev.
+Preparing to unpack .../dpkg-dev_1.17.5ubuntu5.4_all.deb ...
+Unpacking dpkg-dev (1.17.5ubuntu5.4) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../build-essential_11.6ubuntu6_amd64.deb ...
+Unpacking build-essential (11.6ubuntu6) ...
+Selecting previously unselected package libfakeroot:amd64.
+Preparing to unpack .../libfakeroot_1.20-3ubuntu2_amd64.deb ...
+Unpacking libfakeroot:amd64 (1.20-3ubuntu2) ...
+Selecting previously unselected package fakeroot.
+Preparing to unpack .../fakeroot_1.20-3ubuntu2_amd64.deb ...
+Unpacking fakeroot (1.20-3ubuntu2) ...
+Selecting previously unselected package liberror-perl.
+Preparing to unpack .../liberror-perl_0.17-1.1_all.deb ...
+Unpacking liberror-perl (0.17-1.1) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../git-man_1%3a1.9.1-1ubuntu0.1_all.deb ...
+Unpacking git-man (1:1.9.1-1ubuntu0.1) ...
+Selecting previously unselected package git.
+Preparing to unpack .../git_1%3a1.9.1-1ubuntu0.1_amd64.deb ...
+Unpacking git (1:1.9.1-1ubuntu0.1) ...
+Selecting previously unselected package libalgorithm-diff-perl.
+Preparing to unpack .../libalgorithm-diff-perl_1.19.02-3_all.deb ...
+Unpacking libalgorithm-diff-perl (1.19.02-3) ...
+Selecting previously unselected package libalgorithm-diff-xs-perl.
+Preparing to unpack .../libalgorithm-diff-xs-perl_0.04-2build4_amd64.deb ...
+Unpacking libalgorithm-diff-xs-perl (0.04-2build4) ...
+Selecting previously unselected package libalgorithm-merge-perl.
+Preparing to unpack .../libalgorithm-merge-perl_0.08-2_all.deb ...
+Unpacking libalgorithm-merge-perl (0.08-2) ...
+Selecting previously unselected package libfile-fcntllock-perl.
+Preparing to unpack .../libfile-fcntllock-perl_0.14-2build1_amd64.deb ...
+Unpacking libfile-fcntllock-perl (0.14-2build1) ...
+Selecting previously unselected package libltdl-dev:amd64.
+Preparing to unpack .../libltdl-dev_2.4.2-1.7ubuntu1_amd64.deb ...
+Unpacking libltdl-dev:amd64 (2.4.2-1.7ubuntu1) ...
+Selecting previously unselected package libtool.
+Preparing to unpack .../libtool_2.4.2-1.7ubuntu1_amd64.deb ...
+Unpacking libtool (2.4.2-1.7ubuntu1) ...
+Selecting previously unselected package manpages-dev.
+Preparing to unpack .../manpages-dev_3.54-1ubuntu1_all.deb ...
+Unpacking manpages-dev (3.54-1ubuntu1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for install-info (5.2.0.dfsg.1-2) ...
+Setting up libasan0:amd64 (4.8.4-2ubuntu1~14.04) ...
+Setting up libatomic1:amd64 (4.8.4-2ubuntu1~14.04) ...
+Setting up libisl10:amd64 (0.12.2-1) ...
+Setting up libcloog-isl4:amd64 (0.18.2-1) ...
+Setting up libgomp1:amd64 (4.8.4-2ubuntu1~14.04) ...
+Setting up libitm1:amd64 (4.8.4-2ubuntu1~14.04) ...
+Setting up libltdl7:amd64 (2.4.2-1.7ubuntu1) ...
+Setting up libmpfr4:amd64 (3.1.2-1) ...
+Setting up libquadmath0:amd64 (4.8.4-2ubuntu1~14.04) ...
+Setting up libtsan0:amd64 (4.8.4-2ubuntu1~14.04) ...
+Setting up libmpc3:amd64 (1.0.1-1ubuntu1) ...
+Setting up m4 (1.4.17-2ubuntu1) ...
+Setting up autoconf (2.69-6) ...
+Setting up autotools-dev (20130810.1) ...
+Setting up automake (1:1.14.1-2ubuntu1) ...
+update-alternatives: using /usr/bin/automake-1.14 to provide /usr/bin/automake (automake) in auto mode
+Setting up binutils (2.24-5ubuntu13) ...
+Setting up libc-dev-bin (2.19-0ubuntu6.6) ...
+Setting up linux-libc-dev:amd64 (3.13.0-57.95) ...
+Setting up libc6-dev:amd64 (2.19-0ubuntu6.6) ...
+Setting up cpp-4.8 (4.8.4-2ubuntu1~14.04) ...
+Setting up cpp (4:4.8.2-1ubuntu6) ...
+Setting up libgcc-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04) ...
+Setting up gcc-4.8 (4.8.4-2ubuntu1~14.04) ...
+Setting up gcc (4:4.8.2-1ubuntu6) ...
+Setting up libstdc++-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04) ...
+Setting up g++-4.8 (4.8.4-2ubuntu1~14.04) ...
+Setting up g++ (4:4.8.2-1ubuntu6) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up make (3.81-8.2ubuntu3) ...
+Setting up libdpkg-perl (1.17.5ubuntu5.4) ...
+Setting up dpkg-dev (1.17.5ubuntu5.4) ...
+Setting up build-essential (11.6ubuntu6) ...
+Setting up libfakeroot:amd64 (1.20-3ubuntu2) ...
+Setting up fakeroot (1.20-3ubuntu2) ...
+update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+Setting up liberror-perl (0.17-1.1) ...
+Setting up git-man (1:1.9.1-1ubuntu0.1) ...
+Setting up git (1:1.9.1-1ubuntu0.1) ...
+Setting up libalgorithm-diff-perl (1.19.02-3) ...
+Setting up libalgorithm-diff-xs-perl (0.04-2build4) ...
+Setting up libalgorithm-merge-perl (0.08-2) ...
+Setting up libfile-fcntllock-perl (0.14-2build1) ...
+Setting up libltdl-dev:amd64 (2.4.2-1.7ubuntu1) ...
+Setting up libtool (2.4.2-1.7ubuntu1) ...
+Setting up manpages-dev (3.54-1ubuntu1) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.5) ...
+
+STDERR: Warning: Permanently added '104.45.140.231' (ECDSA) to the list of known hosts.
+Extracting templates from packages: 65%Extracting templates from packages: 100%
+
+2015-07-22 09:19:04,094 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:19:04,094 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile git clone http://git.kernel.dk/fio.git /tmp/pkb/fio
+2015-07-22 09:19:12,813 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile git clone http://git.kernel.dk/fio.git /tmp/pkb/fio. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '104.45.140.231' (ECDSA) to the list of known hosts.
+Cloning into '/tmp/pkb/fio'...
+
+2015-07-22 09:19:12,813 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:19:12,813 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile cd /tmp/pkb/fio && git checkout fio-2.1.14
+2015-07-22 09:19:14,154 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile cd /tmp/pkb/fio && git checkout fio-2.1.14. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '104.45.140.231' (ECDSA) to the list of known hosts.
+Note: checking out 'fio-2.1.14'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD is now at e9353e1... Fio 2.1.14
+
+2015-07-22 09:19:14,154 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:19:14,154 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile cd /tmp/pkb/fio && ./configure && make
+2015-07-22 09:19:47,100 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile cd /tmp/pkb/fio && ./configure && make. Got return code (0).
+STDOUT: Operating system              Linux
+CPU                           x86_64
+Big endian                    no
+Compiler                      gcc
+Cross compile                 no
+
+Static build                  no
+Wordsize                      64
+zlib                          no
+Linux AIO support             yes
+POSIX AIO support             yes
+POSIX AIO support needs -lrt  yes
+POSIX AIO fsync               yes
+Solaris AIO support           no
+__sync_fetch_and_add          yes
+libverbs                      no
+rdmacm                        no
+Linux fallocate               yes
+POSIX fadvise                 yes
+POSIX fallocate               yes
+sched_setaffinity(3 arg)      yes
+sched_setaffinity(2 arg)      no
+clock_gettime                 yes
+CLOCK_MONOTONIC               yes
+CLOCK_MONOTONIC_PRECISE       no
+gettimeofday                  yes
+fdatasync                     yes
+sync_file_range               yes
+EXT4 move extent              yes
+Linux splice(2)               yes
+GUASI                         no
+Fusion-io atomic engine       no
+libnuma                       no
+strsep                        yes
+strcasestr                    yes
+getopt_long_only()            yes
+inet_aton                     yes
+socklen_t                     yes
+__thread                      yes
+RUSAGE_THREAD                 yes
+SCHED_IDLE                    yes
+TCP_NODELAY                   yes
+Net engine window_size        yes
+TCP_MAXSEG                    yes
+RLIMIT_MEMLOCK                yes
+pwritev/preadv                yes
+IPv6 helpers                  yes
+Rados Block Device engine     no
+setvbuf                       yes
+Gluster API engine            no
+s390_z196_facilities          no
+HDFS engine                   no
+lex/yacc for arithmetic       no
+Consider installing zlib-dev (zlib-devel), some fio features depend on it.
+    CC gettime.o
+    CC ioengines.o
+    CC init.o
+    CC stat.o
+    CC log.o
+    CC time.o
+    CC filesetup.o
+    CC eta.o
+    CC verify.o
+    CC memory.o
+    CC io_u.o
+    CC parse.o
+    CC mutex.o
+    CC options.o
+    CC lib/rbtree.o
+    CC smalloc.o
+    CC filehash.o
+    CC profile.o
+    CC debug.o
+    CC lib/rand.o
+    CC lib/num2str.o
+    CC lib/ieee754.o
+    CC crc/crc16.o
+    CC crc/crc32.o
+    CC crc/crc32c.o
+    CC crc/crc32c-intel.o
+    CC crc/crc64.o
+    CC crc/crc7.o
+    CC crc/fnv.o
+    CC crc/md5.o
+    CC crc/murmur3.o
+    CC crc/sha1.o
+    CC crc/sha256.o
+    CC crc/sha512.o
+    CC crc/test.o
+    CC crc/xxhash.o
+    CC engines/cpu.o
+    CC engines/mmap.o
+    CC engines/sync.o
+    CC engines/null.o
+    CC engines/net.o
+    CC memalign.o
+    CC server.o
+    CC client.o
+    CC iolog.o
+    CC backend.o
+    CC libfio.o
+    CC flow.o
+    CC cconv.o
+    CC lib/prio_tree.o
+    CC json.o
+    CC lib/zipf.o
+    CC lib/axmap.o
+    CC lib/lfsr.o
+    CC gettime-thread.o
+    CC helpers.o
+    CC lib/flist_sort.o
+    CC lib/hweight.o
+    CC lib/getrusage.o
+    CC idletime.o
+    CC td_error.o
+    CC profiles/tiobench.o
+    CC profiles/act.o
+    CC io_u_queue.o
+    CC filelock.o
+    CC lib/tp.o
+    CC lib/bloom.o
+    CC engines/libaio.o
+    CC engines/posixaio.o
+    CC engines/falloc.o
+    CC engines/e4defrag.o
+    CC engines/splice.o
+    CC diskutil.o
+    CC fifo.o
+    CC blktrace.o
+    CC cgroup.o
+    CC trim.o
+    CC engines/sg.o
+    CC engines/binject.o
+    CC lib/linux-dev-lookup.o
+    CC fio.o
+  LINK fio
+    CC t/log.o
+    CC t/genzipf.o
+  LINK t/fio-genzipf
+    CC t/btrace2fio.o
+  LINK t/fio-btrace2fio
+    CC t/dedupe.o
+    CC t/debug.o
+  LINK t/fio-dedupe
+    CC t/stest.o
+  LINK t/stest
+    CC t/ieee754.o
+  LINK t/ieee754
+    CC t/axmap.o
+  LINK t/axmap
+    CC t/lfsr-test.o
+  LINK t/lfsr-test
+
+STDERR: Warning: Permanently added '104.45.140.231' (ECDSA) to the list of known hosts.
+FIO_VERSION = fio-2.1.14
+
+2015-07-22 09:19:47,101 145dd773 MainThread fio(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-22 09:19:47,102 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:19:47,102 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile df -k -P /scratch0 | tail -n +2 | awk '{ print $2 }'
+2015-07-22 09:19:48,460 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile df -k -P /scratch0 | tail -n +2 | awk '{ print $2 }'. Got return code (0).
+STDOUT: 516061624
+
+STDERR: Warning: Permanently added '104.45.140.231' (ECDSA) to the list of known hosts.
+
+2015-07-22 09:19:48,461 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:19:48,461 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile cat /proc/meminfo | grep MemTotal | awk '{print $2}'
+2015-07-22 09:19:49,731 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile cat /proc/meminfo | grep MemTotal | awk '{print $2}'. Got return code (0).
+STDOUT: 14362916
+
+STDERR: Warning: Permanently added '104.45.140.231' (ECDSA) to the list of known hosts.
+
+2015-07-22 09:19:49,732 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:19:49,732 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: scp -P 22 -pr -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile /home/final/PerfKitBenchmarker/perfkitbenchmarker/data/fio.job perfkit@104.45.140.231:
+2015-07-22 09:19:51,446 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran scp -P 22 -pr -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile /home/final/PerfKitBenchmarker/perfkitbenchmarker/data/fio.job perfkit@104.45.140.231:. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '104.45.140.231' (ECDSA) to the list of known hosts.
+
+2015-07-22 09:19:51,446 145dd773 MainThread fio(1/1) pkb.py:221 INFO     Running benchmark fio
+2015-07-22 09:19:51,447 145dd773 MainThread fio(1/1) fio_benchmark.py:126 INFO     FIO running on 104.45.140.231
+2015-07-22 09:19:51,447 145dd773 MainThread fio(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-22 09:19:51,448 145dd773 MainThread fio(1/1) fio_benchmark.py:139 INFO     FIO Results:
+2015-07-22 09:19:51,448 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:19:51,448 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile sudo /tmp/pkb/fio/fio --output-format=json --directory=/scratch0 fio.job
+2015-07-22 09:45:54,134 145dd773 MainThread fio(1/1) vm_util.py:418 INFO     Ran ssh -A -p 22 perfkit@104.45.140.231 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_145dd773/perfkitbenchmarker_keyfile sudo /tmp/pkb/fio/fio --output-format=json --directory=/scratch0 fio.job. Got return code (0).
+STDOUT: {
+  "fio version" : "fio-2.1.14",
+  "jobs" : [
+    {
+      "jobname" : "sequential_write",
+      "groupid" : 0,
+      "error" : 0,
+      "read" : {
+        "io_bytes" : 0,
+        "bw" : 0,
+        "iops" : 0,
+        "runtime" : 0,
+        "total_ios" : 0,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "clat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00,
+          "percentile" : {
+            "1.000000" : 0,
+            "5.000000" : 0,
+            "10.000000" : 0,
+            "20.000000" : 0,
+            "30.000000" : 0,
+            "40.000000" : 0,
+            "50.000000" : 0,
+            "60.000000" : 0,
+            "70.000000" : 0,
+            "80.000000" : 0,
+            "90.000000" : 0,
+            "95.000000" : 0,
+            "99.000000" : 0,
+            "99.500000" : 0,
+            "99.900000" : 0,
+            "99.950000" : 0,
+            "99.990000" : 0,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "bw_min" : 0,
+        "bw_max" : 0,
+        "bw_agg" : 0.00,
+        "bw_mean" : 0.00,
+        "bw_dev" : 0.00
+      },
+      "write" : {
+        "io_bytes" : 1369600,
+        "bw" : 52804,
+        "iops" : 103,
+        "runtime" : 25937,
+        "total_ios" : 2675,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 50,
+          "max" : 1986493,
+          "mean" : 9543.82,
+          "stddev" : 63810.78
+        },
+        "clat" : {
+          "min" : 216222,
+          "max" : 2789897,
+          "mean" : 608370.88,
+          "stddev" : 483904.03,
+          "percentile" : {
+            "1.000000" : 252928,
+            "5.000000" : 284672,
+            "10.000000" : 301056,
+            "20.000000" : 333824,
+            "30.000000" : 362496,
+            "40.000000" : 391168,
+            "50.000000" : 423936,
+            "60.000000" : 485376,
+            "70.000000" : 577536,
+            "80.000000" : 724992,
+            "90.000000" : 1171456,
+            "95.000000" : 1826816,
+            "99.000000" : 2441216,
+            "99.500000" : 2506752,
+            "99.900000" : 2736128,
+            "99.950000" : 2736128,
+            "99.990000" : 2801664,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 216333,
+          "max" : 2789967,
+          "mean" : 617916.50,
+          "stddev" : 486998.50
+        },
+        "bw_min" : 4013,
+        "bw_max" : 100657,
+        "bw_agg" : 100.00,
+        "bw_mean" : 62303.74,
+        "bw_dev" : 26737.11
+      },
+      "trim" : {
+        "io_bytes" : 0,
+        "bw" : 0,
+        "iops" : 0,
+        "runtime" : 0,
+        "total_ios" : 0,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "clat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00,
+          "percentile" : {
+            "1.000000" : 0,
+            "5.000000" : 0,
+            "10.000000" : 0,
+            "20.000000" : 0,
+            "30.000000" : 0,
+            "40.000000" : 0,
+            "50.000000" : 0,
+            "60.000000" : 0,
+            "70.000000" : 0,
+            "80.000000" : 0,
+            "90.000000" : 0,
+            "95.000000" : 0,
+            "99.000000" : 0,
+            "99.500000" : 0,
+            "99.900000" : 0,
+            "99.950000" : 0,
+            "99.990000" : 0,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "bw_min" : 0,
+        "bw_max" : 0,
+        "bw_agg" : 0.00,
+        "bw_mean" : 0.00,
+        "bw_dev" : 0.00
+      },
+      "usr_cpu" : 0.29,
+      "sys_cpu" : 1.16,
+      "ctx" : 460,
+      "majf" : 0,
+      "minf" : 9,
+      "iodepth_level" : {
+        "1" : 0.10,
+        "2" : 0.10,
+        "4" : 0.15,
+        "8" : 0.30,
+        "16" : 0.60,
+        "32" : 1.20,
+        ">=64" : 97.64
+      },
+      "latency_us" : {
+        "2" : 0.00,
+        "4" : 0.00,
+        "10" : 0.00,
+        "20" : 0.00,
+        "50" : 0.00,
+        "100" : 0.00,
+        "250" : 0.00,
+        "500" : 0.00,
+        "750" : 0.00,
+        "1000" : 0.00
+      },
+      "latency_ms" : {
+        "2" : 0.00,
+        "4" : 0.00,
+        "10" : 0.00,
+        "20" : 0.00,
+        "50" : 0.00,
+        "100" : 0.00,
+        "250" : 0.90,
+        "500" : 61.53,
+        "750" : 18.99,
+        "1000" : 6.80,
+        "2000" : 6.99,
+        ">=2000" : 4.79
+      },
+      "latency_depth" : 64,
+      "latency_target" : 0,
+      "latency_percentile" : 100.00,
+      "latency_window" : 0
+    },
+    {
+      "jobname" : "sequential_read",
+      "groupid" : 1,
+      "error" : 0,
+      "read" : {
+        "io_bytes" : 1369600,
+        "bw" : 63949,
+        "iops" : 124,
+        "runtime" : 21417,
+        "total_ios" : 2675,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 38,
+          "max" : 152358,
+          "mean" : 7782.75,
+          "stddev" : 25899.30
+        },
+        "clat" : {
+          "min" : 30705,
+          "max" : 1360508,
+          "mean" : 503677.50,
+          "stddev" : 137865.27,
+          "percentile" : {
+            "1.000000" : 125440,
+            "5.000000" : 354304,
+            "10.000000" : 374784,
+            "20.000000" : 399360,
+            "30.000000" : 423936,
+            "40.000000" : 468992,
+            "50.000000" : 514048,
+            "60.000000" : 536576,
+            "70.000000" : 552960,
+            "80.000000" : 569344,
+            "90.000000" : 634880,
+            "95.000000" : 749568,
+            "99.000000" : 970752,
+            "99.500000" : 1028096,
+            "99.900000" : 1269760,
+            "99.950000" : 1302528,
+            "99.990000" : 1368064,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 55994,
+          "max" : 1360580,
+          "mean" : 511462.03,
+          "stddev" : 137450.34
+        },
+        "bw_min" : 10291,
+        "bw_max" : 81663,
+        "bw_agg" : 97.87,
+        "bw_mean" : 62590.00,
+        "bw_dev" : 9525.73
+      },
+      "write" : {
+        "io_bytes" : 0,
+        "bw" : 0,
+        "iops" : 0,
+        "runtime" : 0,
+        "total_ios" : 0,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "clat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00,
+          "percentile" : {
+            "1.000000" : 0,
+            "5.000000" : 0,
+            "10.000000" : 0,
+            "20.000000" : 0,
+            "30.000000" : 0,
+            "40.000000" : 0,
+            "50.000000" : 0,
+            "60.000000" : 0,
+            "70.000000" : 0,
+            "80.000000" : 0,
+            "90.000000" : 0,
+            "95.000000" : 0,
+            "99.000000" : 0,
+            "99.500000" : 0,
+            "99.900000" : 0,
+            "99.950000" : 0,
+            "99.990000" : 0,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "bw_min" : 0,
+        "bw_max" : 0,
+        "bw_agg" : 0.00,
+        "bw_mean" : 0.00,
+        "bw_dev" : 0.00
+      },
+      "trim" : {
+        "io_bytes" : 0,
+        "bw" : 0,
+        "iops" : 0,
+        "runtime" : 0,
+        "total_ios" : 0,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "clat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00,
+          "percentile" : {
+            "1.000000" : 0,
+            "5.000000" : 0,
+            "10.000000" : 0,
+            "20.000000" : 0,
+            "30.000000" : 0,
+            "40.000000" : 0,
+            "50.000000" : 0,
+            "60.000000" : 0,
+            "70.000000" : 0,
+            "80.000000" : 0,
+            "90.000000" : 0,
+            "95.000000" : 0,
+            "99.000000" : 0,
+            "99.500000" : 0,
+            "99.900000" : 0,
+            "99.950000" : 0,
+            "99.990000" : 0,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "bw_min" : 0,
+        "bw_max" : 0,
+        "bw_agg" : 0.00,
+        "bw_mean" : 0.00,
+        "bw_dev" : 0.00
+      },
+      "usr_cpu" : 0.02,
+      "sys_cpu" : 1.27,
+      "ctx" : 380,
+      "majf" : 0,
+      "minf" : 537,
+      "iodepth_level" : {
+        "1" : 0.10,
+        "2" : 0.10,
+        "4" : 0.15,
+        "8" : 0.30,
+        "16" : 0.60,
+        "32" : 1.20,
+        ">=64" : 97.64
+      },
+      "latency_us" : {
+        "2" : 0.00,
+        "4" : 0.00,
+        "10" : 0.00,
+        "20" : 0.00,
+        "50" : 0.00,
+        "100" : 0.00,
+        "250" : 0.00,
+        "500" : 0.00,
+        "750" : 0.00,
+        "1000" : 0.00
+      },
+      "latency_ms" : {
+        "2" : 0.00,
+        "4" : 0.00,
+        "10" : 0.00,
+        "20" : 0.00,
+        "50" : 0.04,
+        "100" : 0.41,
+        "250" : 2.62,
+        "500" : 41.72,
+        "750" : 50.43,
+        "1000" : 4.22,
+        "2000" : 0.56,
+        ">=2000" : 0.00
+      },
+      "latency_depth" : 64,
+      "latency_target" : 0,
+      "latency_percentile" : 100.00,
+      "latency_window" : 0
+    },
+    {
+      "jobname" : "random_write_test",
+      "groupid" : 2,
+      "error" : 0,
+      "read" : {
+        "io_bytes" : 0,
+        "bw" : 0,
+        "iops" : 0,
+        "runtime" : 0,
+        "total_ios" : 0,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "clat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00,
+          "percentile" : {
+            "1.000000" : 0,
+            "5.000000" : 0,
+            "10.000000" : 0,
+            "20.000000" : 0,
+            "30.000000" : 0,
+            "40.000000" : 0,
+            "50.000000" : 0,
+            "60.000000" : 0,
+            "70.000000" : 0,
+            "80.000000" : 0,
+            "90.000000" : 0,
+            "95.000000" : 0,
+            "99.000000" : 0,
+            "99.500000" : 0,
+            "99.900000" : 0,
+            "99.950000" : 0,
+            "99.990000" : 0,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "bw_min" : 0,
+        "bw_max" : 0,
+        "bw_agg" : 0.00,
+        "bw_mean" : 0.00,
+        "bw_dev" : 0.00
+      },
+      "write" : {
+        "io_bytes" : 136976,
+        "bw" : 319,
+        "iops" : 79,
+        "runtime" : 428735,
+        "total_ios" : 34244,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 13,
+          "max" : 2454,
+          "mean" : 27.33,
+          "stddev" : 17.36
+        },
+        "clat" : {
+          "min" : 5600,
+          "max" : 3450485,
+          "mean" : 12481.76,
+          "stddev" : 31548.81,
+          "percentile" : {
+            "1.000000" : 6496,
+            "5.000000" : 7008,
+            "10.000000" : 7264,
+            "20.000000" : 7776,
+            "30.000000" : 8160,
+            "40.000000" : 8640,
+            "50.000000" : 9024,
+            "60.000000" : 9792,
+            "70.000000" : 10688,
+            "80.000000" : 12608,
+            "90.000000" : 17024,
+            "95.000000" : 22400,
+            "99.000000" : 46848,
+            "99.500000" : 84480,
+            "99.900000" : 444416,
+            "99.950000" : 577536,
+            "99.990000" : 733184,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 5622,
+          "max" : 3450523,
+          "mean" : 12510.75,
+          "stddev" : 31548.93
+        },
+        "bw_min" : 6,
+        "bw_max" : 485,
+        "bw_agg" : 100.00,
+        "bw_mean" : 329.49,
+        "bw_dev" : 87.92
+      },
+      "trim" : {
+        "io_bytes" : 0,
+        "bw" : 0,
+        "iops" : 0,
+        "runtime" : 0,
+        "total_ios" : 0,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "clat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00,
+          "percentile" : {
+            "1.000000" : 0,
+            "5.000000" : 0,
+            "10.000000" : 0,
+            "20.000000" : 0,
+            "30.000000" : 0,
+            "40.000000" : 0,
+            "50.000000" : 0,
+            "60.000000" : 0,
+            "70.000000" : 0,
+            "80.000000" : 0,
+            "90.000000" : 0,
+            "95.000000" : 0,
+            "99.000000" : 0,
+            "99.500000" : 0,
+            "99.900000" : 0,
+            "99.950000" : 0,
+            "99.990000" : 0,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "bw_min" : 0,
+        "bw_max" : 0,
+        "bw_agg" : 0.00,
+        "bw_mean" : 0.00,
+        "bw_dev" : 0.00
+      },
+      "usr_cpu" : 0.11,
+      "sys_cpu" : 0.37,
+      "ctx" : 34250,
+      "majf" : 0,
+      "minf" : 7,
+      "iodepth_level" : {
+        "1" : 100.00,
+        "2" : 0.00,
+        "4" : 0.00,
+        "8" : 0.00,
+        "16" : 0.00,
+        "32" : 0.00,
+        ">=64" : 0.00
+      },
+      "latency_us" : {
+        "2" : 0.00,
+        "4" : 0.00,
+        "10" : 0.00,
+        "20" : 0.00,
+        "50" : 0.00,
+        "100" : 0.00,
+        "250" : 0.00,
+        "500" : 0.00,
+        "750" : 0.00,
+        "1000" : 0.00
+      },
+      "latency_ms" : {
+        "2" : 0.00,
+        "4" : 0.00,
+        "10" : 62.95,
+        "20" : 30.31,
+        "50" : 5.81,
+        "100" : 0.52,
+        "250" : 0.19,
+        "500" : 0.14,
+        "750" : 0.07,
+        "1000" : 0.01,
+        "2000" : 0.00,
+        ">=2000" : 0.01
+      },
+      "latency_depth" : 1,
+      "latency_target" : 0,
+      "latency_percentile" : 100.00,
+      "latency_window" : 0
+    },
+    {
+      "jobname" : "random_read_test",
+      "groupid" : 3,
+      "error" : 0,
+      "read" : {
+        "io_bytes" : 136976,
+        "bw" : 134,
+        "iops" : 33,
+        "runtime" : 1015604,
+        "total_ios" : 34244,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 11,
+          "max" : 695,
+          "mean" : 25.75,
+          "stddev" : 9.27
+        },
+        "clat" : {
+          "min" : 2,
+          "max" : 1060992,
+          "mean" : 29619.07,
+          "stddev" : 33045.04,
+          "percentile" : {
+            "1.000000" : 7904,
+            "5.000000" : 11584,
+            "10.000000" : 13504,
+            "20.000000" : 16064,
+            "30.000000" : 18048,
+            "40.000000" : 20352,
+            "50.000000" : 23424,
+            "60.000000" : 27008,
+            "70.000000" : 31616,
+            "80.000000" : 38144,
+            "90.000000" : 47872,
+            "95.000000" : 57088,
+            "99.000000" : 96768,
+            "99.500000" : 197632,
+            "99.900000" : 552960,
+            "99.950000" : 577536,
+            "99.990000" : 708608,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 16,
+          "max" : 1061018,
+          "mean" : 29646.47,
+          "stddev" : 33045.23
+        },
+        "bw_min" : 6,
+        "bw_max" : 218,
+        "bw_agg" : 100.00,
+        "bw_mean" : 136.73,
+        "bw_dev" : 33.22
+      },
+      "write" : {
+        "io_bytes" : 0,
+        "bw" : 0,
+        "iops" : 0,
+        "runtime" : 0,
+        "total_ios" : 0,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "clat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00,
+          "percentile" : {
+            "1.000000" : 0,
+            "5.000000" : 0,
+            "10.000000" : 0,
+            "20.000000" : 0,
+            "30.000000" : 0,
+            "40.000000" : 0,
+            "50.000000" : 0,
+            "60.000000" : 0,
+            "70.000000" : 0,
+            "80.000000" : 0,
+            "90.000000" : 0,
+            "95.000000" : 0,
+            "99.000000" : 0,
+            "99.500000" : 0,
+            "99.900000" : 0,
+            "99.950000" : 0,
+            "99.990000" : 0,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "bw_min" : 0,
+        "bw_max" : 0,
+        "bw_agg" : 0.00,
+        "bw_mean" : 0.00,
+        "bw_dev" : 0.00
+      },
+      "trim" : {
+        "io_bytes" : 0,
+        "bw" : 0,
+        "iops" : 0,
+        "runtime" : 0,
+        "total_ios" : 0,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "clat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00,
+          "percentile" : {
+            "1.000000" : 0,
+            "5.000000" : 0,
+            "10.000000" : 0,
+            "20.000000" : 0,
+            "30.000000" : 0,
+            "40.000000" : 0,
+            "50.000000" : 0,
+            "60.000000" : 0,
+            "70.000000" : 0,
+            "80.000000" : 0,
+            "90.000000" : 0,
+            "95.000000" : 0,
+            "99.000000" : 0,
+            "99.500000" : 0,
+            "99.900000" : 0,
+            "99.950000" : 0,
+            "99.990000" : 0,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "bw_min" : 0,
+        "bw_max" : 0,
+        "bw_agg" : 0.00,
+        "bw_mean" : 0.00,
+        "bw_dev" : 0.00
+      },
+      "usr_cpu" : 0.05,
+      "sys_cpu" : 0.15,
+      "ctx" : 34254,
+      "majf" : 0,
+      "minf" : 8,
+      "iodepth_level" : {
+        "1" : 100.00,
+        "2" : 0.00,
+        "4" : 0.00,
+        "8" : 0.00,
+        "16" : 0.00,
+        "32" : 0.00,
+        ">=64" : 0.00
+      },
+      "latency_us" : {
+        "2" : 0.00,
+        "4" : 0.01,
+        "10" : 0.01,
+        "20" : 0.00,
+        "50" : 0.00,
+        "100" : 0.00,
+        "250" : 0.00,
+        "500" : 0.00,
+        "750" : 0.00,
+        "1000" : 0.00
+      },
+      "latency_ms" : {
+        "2" : 0.00,
+        "4" : 0.00,
+        "10" : 2.83,
+        "20" : 35.53,
+        "50" : 53.12,
+        "100" : 7.55,
+        "250" : 0.51,
+        "500" : 0.28,
+        "750" : 0.16,
+        "1000" : 0.01,
+        "2000" : 0.01,
+        ">=2000" : 0.00
+      },
+      "latency_depth" : 1,
+      "latency_target" : 0,
+      "latency_percentile" : 100.00,
+      "latency_window" : 0
+    },
+    {
+      "jobname" : "random_read_test_parallel",
+      "groupid" : 4,
+      "error" : 0,
+      "read" : {
+        "io_bytes" : 136976,
+        "bw" : 2012,
+        "iops" : 503,
+        "runtime" : 68060,
+        "total_ios" : 34244,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 4,
+          "max" : 985,
+          "mean" : 16.94,
+          "stddev" : 12.97
+        },
+        "clat" : {
+          "min" : 1,
+          "max" : 1043979,
+          "mean" : 127166.47,
+          "stddev" : 83222.98,
+          "percentile" : {
+            "1.000000" : 8640,
+            "5.000000" : 13632,
+            "10.000000" : 18048,
+            "20.000000" : 30336,
+            "30.000000" : 49408,
+            "40.000000" : 136192,
+            "50.000000" : 154624,
+            "60.000000" : 164864,
+            "70.000000" : 175104,
+            "80.000000" : 185344,
+            "90.000000" : 199680,
+            "95.000000" : 216064,
+            "99.000000" : 378880,
+            "99.500000" : 460800,
+            "99.900000" : 626688,
+            "99.950000" : 708608,
+            "99.990000" : 880640,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 8,
+          "max" : 1043991,
+          "mean" : 127184.80,
+          "stddev" : 83221.84
+        },
+        "bw_min" : 1495,
+        "bw_max" : 6130,
+        "bw_agg" : 100.00,
+        "bw_mean" : 2018.17,
+        "bw_dev" : 416.08
+      },
+      "write" : {
+        "io_bytes" : 0,
+        "bw" : 0,
+        "iops" : 0,
+        "runtime" : 0,
+        "total_ios" : 0,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "clat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00,
+          "percentile" : {
+            "1.000000" : 0,
+            "5.000000" : 0,
+            "10.000000" : 0,
+            "20.000000" : 0,
+            "30.000000" : 0,
+            "40.000000" : 0,
+            "50.000000" : 0,
+            "60.000000" : 0,
+            "70.000000" : 0,
+            "80.000000" : 0,
+            "90.000000" : 0,
+            "95.000000" : 0,
+            "99.000000" : 0,
+            "99.500000" : 0,
+            "99.900000" : 0,
+            "99.950000" : 0,
+            "99.990000" : 0,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "bw_min" : 0,
+        "bw_max" : 0,
+        "bw_agg" : 0.00,
+        "bw_mean" : 0.00,
+        "bw_dev" : 0.00
+      },
+      "trim" : {
+        "io_bytes" : 0,
+        "bw" : 0,
+        "iops" : 0,
+        "runtime" : 0,
+        "total_ios" : 0,
+        "short_ios" : 0,
+        "drop_ios" : 0,
+        "slat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "clat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00,
+          "percentile" : {
+            "1.000000" : 0,
+            "5.000000" : 0,
+            "10.000000" : 0,
+            "20.000000" : 0,
+            "30.000000" : 0,
+            "40.000000" : 0,
+            "50.000000" : 0,
+            "60.000000" : 0,
+            "70.000000" : 0,
+            "80.000000" : 0,
+            "90.000000" : 0,
+            "95.000000" : 0,
+            "99.000000" : 0,
+            "99.500000" : 0,
+            "99.900000" : 0,
+            "99.950000" : 0,
+            "99.990000" : 0,
+            "0.00" : 0,
+            "0.00" : 0,
+            "0.00" : 0
+          }
+        },
+        "lat" : {
+          "min" : 0,
+          "max" : 0,
+          "mean" : 0.00,
+          "stddev" : 0.00
+        },
+        "bw_min" : 0,
+        "bw_max" : 0,
+        "bw_agg" : 0.00,
+        "bw_mean" : 0.00,
+        "bw_dev" : 0.00
+      },
+      "usr_cpu" : 0.38,
+      "sys_cpu" : 1.54,
+      "ctx" : 30112,
+      "majf" : 0,
+      "minf" : 71,
+      "iodepth_level" : {
+        "1" : 0.10,
+        "2" : 0.10,
+        "4" : 0.10,
+        "8" : 0.10,
+        "16" : 0.10,
+        "32" : 0.10,
+        ">=64" : 99.82
+      },
+      "latency_us" : {
+        "2" : 0.01,
+        "4" : 0.00,
+        "10" : 0.00,
+        "20" : 0.01,
+        "50" : 0.00,
+        "100" : 0.00,
+        "250" : 0.00,
+        "500" : 0.00,
+        "750" : 0.00,
+        "1000" : 0.00
+      },
+      "latency_ms" : {
+        "2" : 0.00,
+        "4" : 0.00,
+        "10" : 1.71,
+        "20" : 10.37,
+        "50" : 18.18,
+        "100" : 5.23,
+        "250" : 62.01,
+        "500" : 2.14,
+        "750" : 0.32,
+        "1000" : 0.03,
+        "2000" : 0.01,
+        ">=2000" : 0.00
+      },
+      "latency_depth" : 64,
+      "latency_target" : 0,
+      "latency_percentile" : 100.00,
+      "latency_window" : 0
+    }
+  ],
+  "disk_util" : [
+    {
+      "name" : "sdc",
+      "read_ios" : 79126,
+      "write_ios" : 44971,
+      "read_merges" : 0,
+      "write_merges" : 11,
+      "read_ticks" : 8356912,
+      "write_ticks" : 4138684,
+      "in_queue" : 12503740,
+      "util" : 99.93
+    }
+  ]
+}
+
+STDERR: Warning: Permanently added '104.45.140.231' (ECDSA) to the list of known hosts.
+
+2015-07-22 09:45:54,140 145dd773 MainThread fio(1/1) pkb.py:241 INFO     Cleaning up benchmark fio
+2015-07-22 09:45:54,140 145dd773 Thread-73 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:45:54,141 145dd773 Thread-73 fio(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-145dd773-0
+2015-07-22 09:47:12,265 145dd773 Thread-73 fio(1/1) vm_util.py:420 DEBUG    Ran azure vm delete --quiet pkb-145dd773-0. Got return code (0).
+STDOUT: info:    Executing command vm delete
+info:    Getting virtual machines
+info:    Deleting VM
+info:    Deleting Cloud Service
+info:    vm delete command OK
+
+STDERR: 
+2015-07-22 09:47:12,265 145dd773 Thread-73 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:47:12,265 145dd773 Thread-73 fio(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-145dd773-0
+2015-07-22 09:47:16,658 145dd773 Thread-73 fio(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-145dd773-0. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-22 09:47:16,658 145dd773 Thread-73 fio(1/1) azure_disk.py:76 INFO     Deleting disk pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101. This may fail while the associated VM is deleted, but will be retried.
+2015-07-22 09:47:16,659 145dd773 Thread-73 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:47:16,659 145dd773 Thread-73 fio(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101
+2015-07-22 09:47:20,993 145dd773 Thread-73 fio(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101
+error:   Windows Azure is currently performing an operation on deployment 'pkb-145dd773-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-22 09:47:20,994 145dd773 Thread-73 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:47:20,994 145dd773 Thread-73 fio(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101
+2015-07-22 09:47:24,090 145dd773 Thread-73 fio(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkit145dd7739c6403a5e",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437556172357.blob.core.windows.net/vhd-store/pkb-145dd773-0-3c71b50e4e9d288f.vhd",
+  "name": "pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "usageDetails": {
+    "hostedServiceName": "pkb-145dd773-0",
+    "deploymentName": "pkb-145dd773-0",
+    "roleName": "pkb-145dd773-0"
+  },
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-22 09:47:24,091 145dd773 Thread-73 fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-22 09:47:53,932 145dd773 Thread-73 fio(1/1) azure_disk.py:76 INFO     Deleting disk pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101. This may fail while the associated VM is deleted, but will be retried.
+2015-07-22 09:47:53,933 145dd773 Thread-73 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:47:53,933 145dd773 Thread-73 fio(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101
+2015-07-22 09:47:58,857 145dd773 Thread-73 fio(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101
+error:   Windows Azure is currently performing an operation on deployment 'pkb-145dd773-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-22 09:47:58,858 145dd773 Thread-73 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:47:58,858 145dd773 Thread-73 fio(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101
+2015-07-22 09:48:01,853 145dd773 Thread-73 fio(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkit145dd7739c6403a5e",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437556172357.blob.core.windows.net/vhd-store/pkb-145dd773-0-3c71b50e4e9d288f.vhd",
+  "name": "pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "usageDetails": {
+    "hostedServiceName": "pkb-145dd773-0",
+    "deploymentName": "pkb-145dd773-0",
+    "roleName": "pkb-145dd773-0"
+  },
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-22 09:48:01,853 145dd773 Thread-73 fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-22 09:48:21,965 145dd773 Thread-73 fio(1/1) azure_disk.py:76 INFO     Deleting disk pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101. This may fail while the associated VM is deleted, but will be retried.
+2015-07-22 09:48:21,966 145dd773 Thread-73 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:48:21,966 145dd773 Thread-73 fio(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101
+2015-07-22 09:48:27,355 145dd773 Thread-73 fio(1/1) vm_util.py:420 DEBUG    Ran azure vm disk delete --blob-delete pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101. Got return code (0).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Disk deleted: pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101
+info:    vm disk delete command OK
+
+STDERR: 
+2015-07-22 09:48:27,356 145dd773 Thread-73 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:48:27,356 145dd773 Thread-73 fio(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101
+2015-07-22 09:48:30,414 145dd773 Thread-73 fio(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-145dd773-0-pkb-145dd773-0-0-201507220910580101. Got return code (1).
+STDOUT: 
+STDERR: The disk with the specified name does not exist.
+Error information has been recorded to /root/.azure/azure.err
+vm disk show command failed
+
+
+2015-07-22 09:48:30,414 145dd773 Thread-73 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:48:30,415 145dd773 Thread-73 fio(1/1) vm_util.py:392 INFO     Running: azure service delete --quiet pkb-145dd773-0
+2015-07-22 09:48:33,259 145dd773 Thread-73 fio(1/1) vm_util.py:418 INFO     Ran azure service delete --quiet pkb-145dd773-0. Got return code (1).
+STDOUT: info:    Executing command service delete
+info:    Deleting cloud service
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The hosted service does not exist.
+error:   service delete command failed
+
+
+2015-07-22 09:48:33,260 145dd773 Thread-73 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:48:33,261 145dd773 Thread-73 fio(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-145dd773-0
+2015-07-22 09:48:35,847 145dd773 Thread-73 fio(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-145dd773-0. Got return code (1).
+STDOUT: 
+STDERR: The hosted service does not exist.
+Error information has been recorded to /root/.azure/azure.err
+service show command failed
+
+
+2015-07-22 09:48:35,848 145dd773 Thread-73 fio(1/1) azure_disk.py:76 INFO     Deleting disk pkb-145dd773-0-pkb-145dd773-0-0-201507220913360259. This may fail while the associated VM is deleted, but will be retried.
+2015-07-22 09:48:35,848 145dd773 Thread-73 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:48:35,849 145dd773 Thread-73 fio(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-145dd773-0-pkb-145dd773-0-0-201507220913360259
+2015-07-22 09:48:41,600 145dd773 Thread-73 fio(1/1) vm_util.py:420 DEBUG    Ran azure vm disk delete --blob-delete pkb-145dd773-0-pkb-145dd773-0-0-201507220913360259. Got return code (0).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Disk deleted: pkb-145dd773-0-pkb-145dd773-0-0-201507220913360259
+info:    vm disk delete command OK
+
+STDERR: 
+2015-07-22 09:48:41,600 145dd773 Thread-73 fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:48:41,600 145dd773 Thread-73 fio(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-145dd773-0-pkb-145dd773-0-0-201507220913360259
+2015-07-22 09:48:44,560 145dd773 Thread-73 fio(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-145dd773-0-pkb-145dd773-0-0-201507220913360259. Got return code (1).
+STDOUT: 
+STDERR: The disk with the specified name does not exist.
+Error information has been recorded to /root/.azure/azure.err
+vm disk show command failed
+
+
+2015-07-22 09:48:44,572 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:48:44,572 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:49:20,160 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    Setting network configuration
+info:    network vnet delete command OK
+
+STDERR: 
+2015-07-22 09:49:20,161 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:49:20,161 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:49:23,631 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:49:23,632 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:49:51,917 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:49:51,918 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:49:55,098 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:49:55,098 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:49:55,098 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:49:58,339 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:49:58,340 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:50:26,909 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:50:26,909 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:50:29,821 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:50:29,821 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:50:29,821 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:50:33,030 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:50:33,031 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:50:57,300 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:50:57,300 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:51:00,472 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:51:00,472 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:51:00,472 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:51:03,694 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:51:03,694 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:51:18,917 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:51:18,918 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:51:22,084 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:51:22,084 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:51:22,084 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:51:25,178 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:51:25,179 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:51:41,073 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:51:41,073 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:51:44,031 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:51:44,032 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:51:44,032 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:51:47,042 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:51:47,042 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:52:15,473 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:52:15,474 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:52:18,712 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:52:18,712 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:52:18,713 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:52:21,884 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:52:21,885 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:52:48,392 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:52:48,392 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:52:51,556 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:52:51,557 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:52:51,557 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:52:54,715 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:52:54,715 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:53:18,056 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:53:18,056 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:53:21,151 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:53:21,151 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:53:21,151 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:53:24,155 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:53:24,156 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:53:53,955 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:53:53,955 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:53:57,004 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:53:57,005 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:53:57,005 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:54:00,088 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:54:00,088 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:54:28,469 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:54:28,470 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:54:31,663 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:54:31,664 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:54:31,664 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:54:34,667 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:54:34,667 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:54:53,142 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:54:53,143 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:54:56,436 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:54:56,436 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:54:56,436 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:54:59,588 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:54:59,588 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:55:15,792 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:55:15,792 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:55:19,315 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:55:19,315 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:55:19,315 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:55:22,346 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:55:22,346 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:55:48,142 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:55:48,142 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:55:51,241 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:55:51,242 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:55:51,242 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:55:54,824 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:55:54,824 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:56:21,174 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:56:21,175 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:56:24,216 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:56:24,216 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:56:24,216 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:56:27,371 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:56:27,371 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:56:44,462 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:56:44,462 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:56:47,511 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:56:47,511 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:56:47,511 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:56:50,752 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:56:50,752 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:57:07,608 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:57:07,609 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:57:10,619 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:57:10,620 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:57:10,620 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:57:13,963 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:57:13,964 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:57:42,302 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:57:42,303 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:57:45,321 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:57:45,321 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:57:45,322 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:57:48,653 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:57:48,653 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:58:04,682 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:58:04,682 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:58:08,124 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:58:08,125 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:58:08,125 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:58:11,228 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:58:11,228 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:58:38,788 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:58:38,788 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:58:41,804 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:58:41,804 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:58:41,804 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:58:45,017 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:58:45,017 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:59:05,373 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:59:05,374 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:59:08,486 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:59:08,486 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:59:08,486 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:59:11,974 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:59:11,975 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 09:59:41,972 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:59:41,972 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 09:59:45,091 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 09:59:45,092 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 09:59:45,092 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 09:59:48,260 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 09:59:48,261 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 10:00:12,532 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:00:12,532 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 10:00:15,591 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 10:00:15,591 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:00:15,592 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 10:00:18,668 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 10:00:18,668 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 10:00:48,671 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:00:48,672 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 10:00:51,687 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 10:00:51,687 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:00:51,687 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 10:00:54,886 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 10:00:54,886 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 10:01:11,716 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:01:11,716 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 10:01:14,676 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 10:01:14,676 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:01:14,676 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 10:01:17,858 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 10:01:17,858 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 10:01:36,849 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:01:36,849 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 10:01:39,826 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 10:01:39,827 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:01:39,827 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 10:01:43,000 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 10:01:43,001 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 10:02:09,672 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:02:09,672 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 10:02:12,664 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 10:02:12,665 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:02:12,665 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 10:02:16,063 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 10:02:16,064 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 10:02:40,455 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:02:40,455 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 10:02:43,521 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 10:02:43,521 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:02:43,521 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 10:02:46,648 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 10:02:46,648 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 10:03:06,400 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:03:06,401 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 10:03:09,340 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 10:03:09,341 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:03:09,341 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 10:03:12,583 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 10:03:12,583 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 10:03:29,095 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:03:29,095 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 10:03:32,567 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 10:03:32,567 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:03:32,567 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 10:03:35,821 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 10:03:35,822 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 10:03:53,674 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:03:53,675 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 10:03:56,992 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 10:03:56,993 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:03:56,993 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 10:04:00,115 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 10:04:00,115 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 10:04:20,306 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:04:20,306 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 10:04:23,279 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 10:04:23,280 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:04:23,280 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 10:04:26,511 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 10:04:26,512 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 10:04:45,378 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:04:45,378 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit145dd7739c6403a5e
+2015-07-22 10:04:48,379 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit145dd7739c6403a5e" not found
+
+2015-07-22 10:04:48,380 145dd773 MainThread fio(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 10:04:48,380 145dd773 MainThread fio(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit145dd7739c6403a5e
+2015-07-22 10:04:51,596 145dd773 MainThread fio(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit145dd7739c6403a5e. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 10:04:51,596 145dd773 MainThread fio(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.

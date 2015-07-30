@@ -1,0 +1,1471 @@
+2015-07-28 08:56:35,064 c644c491 MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D2
+--cloud=Azure
+--benchmarks=netperf
+2015-07-28 08:56:35,174 c644c491 MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7f32613d79d0> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7f3262f1b150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_c644c491/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-28 08:56:35,176 c644c491 MainThread netperf(1/1) pkb.py:194 INFO     Preparing benchmark netperf
+2015-07-28 08:56:35,180 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 08:56:35,180 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkitc644c491ca5abf291 perfkitc644c491ca5abf291
+2015-07-28 08:56:38,199 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group create --location=East US --label=perfkitc644c491ca5abf291 perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    account affinity-group create command OK
+
+STDERR: 
+2015-07-28 08:56:38,199 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 08:56:38,199 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkitc644c491ca5abf291
+2015-07-28 08:56:40,939 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {
+  "capabilities": [
+    "PersistentVMRole",
+    "HighMemory"
+  ],
+  "hostedServices": [],
+  "storageServices": [],
+  "name": "perfkitc644c491ca5abf291",
+  "label": "perfkitc644c491ca5abf291",
+  "location": "East US",
+  "createdTime": "2015-07-28T08:56:55.000Z",
+  "statusCode": 200,
+  "requestId": "9db2a78ffbd2c39cb9d98406e8426567"
+}
+
+STDERR: 
+2015-07-28 08:56:40,939 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 08:56:40,939 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 08:56:53,035 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 08:56:53,036 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 08:56:53,036 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 08:56:55,839 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 08:56:55,840 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 08:57:20,511 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 08:57:20,511 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 08:57:33,037 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 08:57:33,038 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 08:57:33,038 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 08:57:36,002 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 08:57:36,003 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 08:58:03,379 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 08:58:03,380 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 08:58:14,174 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 08:58:14,175 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 08:58:14,176 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 08:58:17,106 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 08:58:17,106 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 08:58:40,693 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 08:58:40,693 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 08:58:51,379 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 08:58:51,379 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 08:58:51,379 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 08:58:54,183 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 08:58:54,183 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 08:59:13,352 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 08:59:13,352 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 08:59:23,597 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 08:59:23,598 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 08:59:23,598 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 08:59:26,360 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 08:59:26,361 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 08:59:46,405 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 08:59:46,405 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 08:59:58,284 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 08:59:58,285 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 08:59:58,285 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:00:01,111 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:00:01,111 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:00:26,895 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:00:26,895 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:00:40,003 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:00:40,004 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:00:40,005 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:00:43,180 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:00:43,180 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:01:05,952 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:01:05,952 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:01:18,036 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:01:18,038 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:01:18,038 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:01:20,986 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:01:20,987 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:01:45,244 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:01:45,244 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:01:56,701 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:01:56,703 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:01:56,703 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:01:59,955 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:01:59,956 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:02:19,682 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:02:19,682 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:02:34,815 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:02:34,817 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:02:34,817 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:02:38,035 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:02:38,035 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:02:54,897 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:02:54,897 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:03:07,500 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:03:07,502 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:03:07,502 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:03:10,298 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:03:10,298 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:03:32,402 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:03:32,402 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:03:43,841 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:03:43,842 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:03:43,842 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:03:46,558 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:03:46,558 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:04:08,997 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:04:08,998 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:04:20,270 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:04:20,271 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:04:20,271 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:04:22,944 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:04:22,944 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:04:40,699 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:04:40,700 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:04:54,022 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:04:54,023 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:04:54,023 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:04:56,871 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:04:56,872 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:05:15,851 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:05:15,851 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:05:26,429 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:05:26,430 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:05:26,430 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:05:29,211 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:05:29,211 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:05:52,460 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:05:52,460 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:06:05,676 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:06:05,677 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:06:05,677 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:06:08,454 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:06:08,454 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:06:36,344 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:06:36,344 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:06:48,430 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:06:48,431 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:06:48,431 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:06:51,283 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:06:51,284 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:07:12,441 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:07:12,441 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:07:23,657 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:07:23,657 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:07:23,657 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:07:26,590 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:07:26,590 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:07:50,167 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:07:50,168 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:08:00,709 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:08:00,711 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:08:00,711 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:08:03,575 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:08:03,576 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:08:20,015 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:08:20,015 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:08:32,781 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:08:32,782 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:08:32,782 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:08:35,478 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:08:35,479 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:08:54,856 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:08:54,856 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:09:06,313 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:09:06,314 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:09:06,314 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:09:09,192 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:09:09,193 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:09:24,441 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:09:24,441 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:09:34,854 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:09:34,855 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:09:34,855 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:09:37,551 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:09:37,551 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:10:07,432 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:10:07,432 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:10:17,888 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:10:17,889 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:10:17,889 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:10:20,625 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:10:20,625 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:10:45,807 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:10:45,807 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:11:00,751 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:11:00,752 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:11:00,752 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:11:03,583 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:11:03,584 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:11:27,085 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:11:27,085 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:11:38,229 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:11:38,230 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:11:38,230 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:11:40,972 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:11:40,973 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:12:03,866 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:12:03,866 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:12:14,965 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:12:14,966 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:12:14,966 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:12:17,923 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:12:17,923 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:12:39,152 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:12:39,152 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:12:50,586 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:12:50,586 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:12:50,587 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:12:53,541 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:12:53,542 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:13:08,835 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:13:08,835 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:13:25,632 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:13:25,633 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:13:25,633 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:13:28,401 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:13:28,402 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:13:49,375 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:13:49,375 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:14:12,251 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:14:12,252 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:14:12,252 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:14:15,157 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:14:15,157 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:14:42,386 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:14:42,387 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:15:00,794 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:15:00,795 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:15:00,795 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:15:03,706 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:15:03,707 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:15:27,662 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:15:27,662 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:15:41,140 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:15:41,141 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:15:41,141 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:15:44,260 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:15:44,260 c644c491 Thread-1 netperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-28 09:16:07,942 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:16:07,943 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291
+2015-07-28 09:16:19,442 c644c491 Thread-1 netperf(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitc644c491ca5abf291 --type=LRS perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-28 09:16:19,443 c644c491 Thread-1 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:16:19,443 c644c491 Thread-1 netperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitc644c491ca5abf291
+2015-07-28 09:16:22,085 c644c491 Thread-1 netperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitc644c491ca5abf291. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitc644c491ca5abf291' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-28 09:16:22,089 c644c491 MainThread netperf(1/1) pkb.py:317 ERROR    Error during benchmark netperf
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/pkb.py", line 290, in RunBenchmark
+    DoPreparePhase(benchmark, benchmark_name, spec, detailed_timer)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/pkb.py", line 200, in DoPreparePhase
+    spec.Prepare()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 215, in Prepare
+    vm_util.RunThreaded(self.PrepareNetwork, prepare_args)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 292, in RunThreaded
+    '\n'.join([stacktrace for stacktrace in exceptions]))
+ThreadException: The following exceptions occurred during threaded execution: Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 276, in RunThreaded
+    thread.join(1000)  # Set timeout so that join is interruptable.
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 216, in join
+    raise errors.VmUtil.ThreadException(self.exception)
+ThreadException: Exception occured in thread 139854327654144:
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 203, in run
+    self.RunWithExceptions()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 210, in RunWithExceptions
+    super(ThreadWithExceptions, self).run()
+  File "/usr/lib/python2.7/threading.py", line 763, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 248, in PrepareNetwork
+    network.Create()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 354, in WrappedFunction
+    raise e
+RetryableCreationError: Creation of AzureStorageAccount failed.
+
+
+2015-07-28 09:16:22,090 c644c491 Thread-68 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:16:22,090 c644c491 Thread-68 netperf(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-c644c491-1
+2015-07-28 09:16:22,091 c644c491 Thread-69 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:16:22,091 c644c491 Thread-69 netperf(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-c644c491-0
+2015-07-28 09:16:26,749 c644c491 Thread-68 netperf(1/1) vm_util.py:420 DEBUG    Ran azure vm delete --quiet pkb-c644c491-1. Got return code (0).
+STDOUT: info:    Executing command vm delete
+info:    Getting virtual machines
+warn:    No VMs found
+info:    vm delete command OK
+
+STDERR: 
+2015-07-28 09:16:26,750 c644c491 Thread-68 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:16:26,750 c644c491 Thread-68 netperf(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-c644c491-1
+2015-07-28 09:16:27,231 c644c491 Thread-69 netperf(1/1) vm_util.py:420 DEBUG    Ran azure vm delete --quiet pkb-c644c491-0. Got return code (0).
+STDOUT: info:    Executing command vm delete
+info:    Getting virtual machines
+warn:    No VMs found
+info:    vm delete command OK
+
+STDERR: 
+2015-07-28 09:16:27,231 c644c491 Thread-69 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:16:27,231 c644c491 Thread-69 netperf(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-c644c491-0
+2015-07-28 09:16:31,331 c644c491 Thread-68 netperf(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-c644c491-1. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-28 09:16:31,332 c644c491 Thread-68 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:16:31,332 c644c491 Thread-68 netperf(1/1) vm_util.py:392 INFO     Running: azure service delete --quiet pkb-c644c491-1
+2015-07-28 09:16:31,952 c644c491 Thread-69 netperf(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-c644c491-0. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-28 09:16:31,953 c644c491 Thread-69 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:16:31,953 c644c491 Thread-69 netperf(1/1) vm_util.py:392 INFO     Running: azure service delete --quiet pkb-c644c491-0
+2015-07-28 09:16:34,437 c644c491 Thread-68 netperf(1/1) vm_util.py:418 INFO     Ran azure service delete --quiet pkb-c644c491-1. Got return code (1).
+STDOUT: info:    Executing command service delete
+info:    Deleting cloud service
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The hosted service does not exist.
+error:   service delete command failed
+
+
+2015-07-28 09:16:34,438 c644c491 Thread-68 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:16:34,439 c644c491 Thread-68 netperf(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-c644c491-1
+2015-07-28 09:16:35,012 c644c491 Thread-69 netperf(1/1) vm_util.py:418 INFO     Ran azure service delete --quiet pkb-c644c491-0. Got return code (1).
+STDOUT: info:    Executing command service delete
+info:    Deleting cloud service
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The hosted service does not exist.
+error:   service delete command failed
+
+
+2015-07-28 09:16:35,012 c644c491 Thread-69 netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:16:35,012 c644c491 Thread-69 netperf(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-c644c491-0
+2015-07-28 09:16:37,052 c644c491 Thread-68 netperf(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-c644c491-1. Got return code (1).
+STDOUT: 
+STDERR: The hosted service does not exist.
+Error information has been recorded to /root/.azure/azure.err
+service show command failed
+
+
+2015-07-28 09:16:38,000 c644c491 Thread-69 netperf(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-c644c491-0. Got return code (1).
+STDOUT: 
+STDERR: The hosted service does not exist.
+Error information has been recorded to /root/.azure/azure.err
+service show command failed
+
+
+2015-07-28 09:16:38,025 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:16:38,026 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:16:41,061 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:16:41,062 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:16:41,062 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:16:44,349 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:16:44,349 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:17:03,232 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:17:03,232 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:17:06,609 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:17:06,609 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:17:06,609 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:17:10,335 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:17:10,336 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:17:37,629 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:17:37,630 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:17:40,982 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:17:40,982 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:17:40,982 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:17:44,659 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:17:44,660 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:18:06,730 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:18:06,731 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:18:10,342 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:18:10,342 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:18:10,342 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:18:13,398 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:18:13,398 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:18:42,639 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:18:42,640 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:18:46,111 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:18:46,111 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:18:46,111 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:18:49,708 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:18:49,709 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:19:10,414 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:19:10,415 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:19:13,378 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:19:13,378 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:19:13,378 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:19:17,059 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:19:17,059 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:19:45,218 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:19:45,218 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:19:48,122 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:19:48,122 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:19:48,122 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:19:51,586 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:19:51,586 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:20:18,911 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:20:18,912 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:20:22,180 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:20:22,181 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:20:22,181 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:20:25,211 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:20:25,211 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:20:43,817 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:20:43,817 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:20:47,573 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:20:47,573 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:20:47,573 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:20:51,036 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:20:51,036 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:21:17,933 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:21:17,933 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:21:21,435 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:21:21,435 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:21:21,435 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:21:25,040 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:21:25,041 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:21:47,642 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:21:47,642 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:21:50,908 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:21:50,909 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:21:50,909 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:21:54,141 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:21:54,142 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:22:09,990 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:22:09,991 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:22:12,947 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:22:12,947 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:22:12,947 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:22:16,541 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:22:16,542 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:22:39,250 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:22:39,250 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:22:42,662 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:22:42,662 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:22:42,662 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:22:46,016 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:22:46,017 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:23:06,014 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:23:06,015 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:23:09,583 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:23:09,583 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:23:09,583 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:23:13,103 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:23:13,103 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:23:36,417 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:23:36,417 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:23:39,861 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:23:39,862 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:23:39,862 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:23:43,260 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:23:43,261 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:24:03,124 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:24:03,124 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:24:06,700 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:24:06,700 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:24:06,700 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:24:10,340 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:24:10,340 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:24:32,774 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:24:32,774 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:24:36,306 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:24:36,307 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:24:36,307 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:24:39,879 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:24:39,880 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:25:08,858 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:25:08,859 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:25:12,347 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:25:12,347 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:25:12,347 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:25:15,585 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:25:15,586 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:25:35,256 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:25:35,256 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:25:38,563 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:25:38,564 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:25:38,564 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:25:41,907 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:25:41,907 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:26:10,383 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:26:10,383 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:26:13,318 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:26:13,318 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:26:13,318 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:26:16,532 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:26:16,532 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:26:44,033 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:26:44,033 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:26:47,196 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:26:47,196 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:26:47,197 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:26:50,506 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:26:50,507 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:27:16,518 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:27:16,519 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:27:20,180 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:27:20,181 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:27:20,181 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:27:23,858 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:27:23,859 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:27:43,002 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:27:43,003 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:27:46,308 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:27:46,308 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:27:46,309 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:27:49,553 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:27:49,553 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:28:12,001 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:28:12,001 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:28:15,362 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:28:15,363 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:28:15,363 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:28:18,422 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:28:18,422 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:28:38,885 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:28:38,885 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:28:42,077 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:28:42,077 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:28:42,077 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:28:45,754 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:28:45,754 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:29:01,691 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:29:01,691 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:29:04,880 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:29:04,880 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:29:04,880 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:29:08,042 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:29:08,042 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:29:34,728 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:29:34,729 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:29:37,825 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:29:37,825 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:29:37,825 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:29:40,885 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:29:40,885 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:30:01,050 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:30:01,051 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:30:04,441 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:30:04,441 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:30:04,442 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:30:07,753 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:30:07,754 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:30:28,864 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:30:28,864 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:30:31,782 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:30:31,782 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:30:31,782 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:30:34,875 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:30:34,876 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:30:58,339 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:30:58,339 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:31:01,326 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:31:01,326 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:31:01,326 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:31:05,138 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:31:05,138 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:31:33,119 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:31:33,119 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:31:36,506 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:31:36,507 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:31:36,507 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:31:39,670 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:31:39,671 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:32:07,868 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:32:07,868 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:32:11,124 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:32:11,125 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:32:11,125 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:32:14,297 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:32:14,297 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:32:43,294 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:32:43,294 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:32:46,243 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:32:46,243 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:32:46,244 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:32:49,707 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:32:49,708 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:33:19,322 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:33:19,322 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:33:22,712 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:33:22,713 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:33:22,713 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:33:26,169 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:33:26,170 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:33:50,632 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:33:50,632 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:33:53,893 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:33:53,894 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:33:53,894 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:33:56,947 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:33:56,948 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:34:23,948 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:34:23,948 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:34:27,028 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:34:27,028 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:34:27,028 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:34:30,613 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:34:30,613 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:34:50,516 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:34:50,516 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:34:53,770 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:34:53,771 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:34:53,771 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:34:57,150 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:34:57,150 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:35:19,502 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:35:19,502 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:35:22,597 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:35:22,597 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:35:22,597 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:35:26,154 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:35:26,154 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:35:44,481 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:35:44,481 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:35:47,970 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:35:47,970 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:35:47,971 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:35:51,466 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:35:51,466 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:36:11,778 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:36:11,779 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:36:14,729 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:36:14,729 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:36:14,729 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:36:17,697 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:36:17,697 c644c491 MainThread netperf(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:36:37,882 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:36:37,882 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitc644c491ca5abf291
+2015-07-28 09:36:41,419 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitc644c491ca5abf291" not found
+
+2015-07-28 09:36:41,419 c644c491 MainThread netperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-28 09:36:41,419 c644c491 MainThread netperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitc644c491ca5abf291
+2015-07-28 09:36:44,545 c644c491 MainThread netperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitc644c491ca5abf291. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-28 09:36:44,545 c644c491 MainThread netperf(1/1) benchmark_spec.py:242 ERROR    Got an exception deleting networks. Attempting to continue tearing down.
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 240, in Delete
+    net.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/azure/azure_network.py", line 228, in Delete
+    self.vnet.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/resource.py", line 135, in Delete
+    self._DeleteResource()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 354, in WrappedFunction
+    raise e
+RetryableDeletionError: Deletion of AzureVirtualNetwork failed.
+2015-07-28 09:36:44,549 c644c491 MainThread netperf(1/1) pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_c644c491/pkb.log

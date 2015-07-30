@@ -1,0 +1,44 @@
+2015-07-23 08:40:53,364 2cfdaff6 MainThread pkb.py:336 INFO     Flag values:
+--machine_type=ndra_ycsb
+--cloud=Azure
+2015-07-23 08:40:53,612 2cfdaff6 MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7efdb9c20950> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7efdbb71e150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_2cfdaff6/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-23 08:40:53,613 2cfdaff6 MainThread cluster_boot(1/19) pkb.py:194 INFO     Preparing benchmark cluster_boot
+2015-07-23 08:40:53,615 2cfdaff6 Thread-1 cluster_boot(1/19) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 08:40:53,615 2cfdaff6 Thread-1 cluster_boot(1/19) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit2cfdaff611e92c3ea perfkit2cfdaff611e92c3ea
+2015-07-23 08:40:56,683 2cfdaff6 Thread-1 cluster_boot(1/19) vm_util.py:420 DEBUG    Ran azure account affinity-group create --location=East US --label=perfkit2cfdaff611e92c3ea perfkit2cfdaff611e92c3ea. Got return code (0).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    account affinity-group create command OK
+
+STDERR: 
+2015-07-23 08:40:56,683 2cfdaff6 Thread-1 cluster_boot(1/19) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 08:40:56,683 2cfdaff6 Thread-1 cluster_boot(1/19) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit2cfdaff611e92c3ea
+2015-07-23 08:40:59,847 2cfdaff6 Thread-1 cluster_boot(1/19) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit2cfdaff611e92c3ea. Got return code (0).
+STDOUT: {
+  "capabilities": [
+    "PersistentVMRole",
+    "HighMemory"
+  ],
+  "hostedServices": [],
+  "storageServices": [],
+  "name": "perfkit2cfdaff611e92c3ea",
+  "label": "perfkit2cfdaff611e92c3ea",
+  "location": "East US",
+  "createdTime": "2015-07-23T08:41:07.000Z",
+  "statusCode": 200,
+  "requestId": "a590b9bc9948c9ef9049aac112ac8bd0"
+}
+
+STDERR: 
+2015-07-23 08:40:59,847 2cfdaff6 Thread-1 cluster_boot(1/19) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 08:40:59,847 2cfdaff6 Thread-1 cluster_boot(1/19) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkit2cfdaff611e92c3ea --type=LRS perfkit2cfdaff611e92c3ea
+2015-07-23 08:41:09,238 2cfdaff6 Thread-5 cluster_boot(1/19) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 08:41:09,238 2cfdaff6 Thread-5 cluster_boot(1/19) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-2cfdaff6-0
+2015-07-23 08:41:09,240 2cfdaff6 Thread-1 cluster_boot(1/19) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkit2cfdaff611e92c3ea --type=LRS perfkit2cfdaff611e92c3ea. Got return code (-2).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+
+STDERR: 
+2015-07-23 08:41:09,241 2cfdaff6 Thread-1 cluster_boot(1/19) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-23 08:41:09,241 2cfdaff6 Thread-1 cluster_boot(1/19) vm_util.py:392 INFO     Running: azure storage account show --json perfkit2cfdaff611e92c3ea
+2015-07-23 08:41:09,496 2cfdaff6 MainThread cluster_boot(1/19) pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_2cfdaff6/pkb.log

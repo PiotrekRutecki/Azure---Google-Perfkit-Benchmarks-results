@@ -1,0 +1,1473 @@
+2015-07-27 12:43:03,849 d3722c9b MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D2
+--cloud=Azure
+--benchmarks=scimark2
+2015-07-27 12:43:03,885 d3722c9b MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7f35c9eae9d0> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7f35cb9ae150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_d3722c9b/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-27 12:43:03,885 d3722c9b MainThread scimark2(1/1) pkb.py:194 INFO     Preparing benchmark scimark2
+2015-07-27 12:43:03,887 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:43:03,888 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkitd3722c9b18460a442 perfkitd3722c9b18460a442
+2015-07-27 12:43:06,662 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group create --location=East US --label=perfkitd3722c9b18460a442 perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    account affinity-group create command OK
+
+STDERR: 
+2015-07-27 12:43:06,662 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:43:06,662 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkitd3722c9b18460a442
+2015-07-27 12:43:09,605 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {
+  "capabilities": [
+    "PersistentVMRole",
+    "HighMemory"
+  ],
+  "hostedServices": [],
+  "storageServices": [],
+  "name": "perfkitd3722c9b18460a442",
+  "label": "perfkitd3722c9b18460a442",
+  "location": "East US",
+  "createdTime": "2015-07-27T12:43:22.000Z",
+  "statusCode": 200,
+  "requestId": "6ca02e536b15c522a056a0348d9fbab4"
+}
+
+STDERR: 
+2015-07-27 12:43:09,606 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:43:09,606 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:43:23,112 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:43:23,112 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:43:23,112 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:43:26,008 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:43:26,009 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:43:50,429 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:43:50,429 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:44:05,669 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:44:05,670 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:44:05,670 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:44:08,861 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:44:08,861 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:44:24,477 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:44:24,477 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:44:35,283 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:44:35,284 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:44:35,284 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:44:38,036 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:44:38,036 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:45:04,435 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:45:04,435 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:45:16,062 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:45:16,063 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:45:16,063 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:45:18,791 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:45:18,792 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:45:40,439 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:45:40,440 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:45:56,837 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:45:56,838 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:45:56,838 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:46:00,038 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:46:00,039 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:46:17,937 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:46:17,937 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:46:28,501 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:46:28,502 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:46:28,502 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:46:31,449 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:46:31,450 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:46:51,842 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:46:51,843 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:47:03,932 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:47:03,933 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:47:03,933 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:47:06,745 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:47:06,745 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:47:27,189 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:47:27,189 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:47:36,957 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:47:36,958 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:47:36,958 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:47:39,850 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:47:39,850 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:48:07,851 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:48:07,851 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:48:18,901 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:48:18,902 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:48:18,902 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:48:21,611 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:48:21,611 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:48:43,197 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:48:43,197 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:48:53,445 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:48:53,446 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:48:53,447 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:48:56,216 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:48:56,216 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:49:23,780 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:49:23,780 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:49:35,650 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:49:35,651 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:49:35,651 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:49:38,364 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:49:38,364 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:50:00,941 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:50:00,941 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:50:11,718 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:50:11,720 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:50:11,720 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:50:14,573 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:50:14,574 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:50:39,898 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:50:39,898 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:50:56,033 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:50:56,034 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:50:56,034 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:50:58,674 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:50:58,675 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:51:19,361 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:51:19,361 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:51:29,592 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:51:29,594 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:51:29,594 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:51:32,373 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:51:32,374 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:51:52,349 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:51:52,350 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:52:03,294 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:52:03,294 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:52:03,295 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:52:06,009 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:52:06,010 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:52:35,779 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:52:35,779 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:52:46,254 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:52:46,255 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:52:46,255 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:52:48,954 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:52:48,954 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:53:04,733 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:53:04,733 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:53:15,628 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:53:15,629 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:53:15,629 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:53:18,342 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:53:18,342 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:53:35,140 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:53:35,140 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:53:47,028 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:53:47,029 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:53:47,029 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:53:49,768 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:53:49,768 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:54:08,321 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:54:08,321 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:54:23,206 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:54:23,207 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:54:23,207 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:54:26,670 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:54:26,670 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:54:50,545 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:54:50,545 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:55:01,851 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:55:01,852 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:55:01,852 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:55:04,954 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:55:04,954 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:55:33,827 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:55:33,827 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:55:46,805 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:55:46,806 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:55:46,807 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:55:50,201 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:55:50,201 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:56:06,360 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:56:06,360 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:56:16,579 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:56:16,579 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:56:16,580 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:56:19,528 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:56:19,528 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:56:42,679 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:56:42,679 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:56:53,365 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:56:53,366 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:56:53,366 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:56:56,207 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:56:56,207 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:57:23,990 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:57:23,990 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:57:36,195 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:57:36,196 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:57:36,197 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:57:39,502 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:57:39,503 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:57:58,254 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:57:58,254 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:58:12,576 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:58:12,577 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:58:12,577 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:58:15,403 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:58:15,404 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:58:40,142 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:58:40,142 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:58:52,439 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:58:52,440 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:58:52,440 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:58:55,141 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:58:55,142 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 12:59:20,911 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:59:20,911 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 12:59:34,140 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 12:59:34,141 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 12:59:34,141 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 12:59:36,893 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 12:59:36,893 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 13:00:04,714 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:00:04,715 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 13:00:15,330 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 13:00:15,331 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:00:15,332 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 13:00:18,196 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 13:00:18,196 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 13:00:46,184 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:00:46,185 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 13:00:56,893 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 13:00:56,894 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:00:56,894 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 13:00:59,858 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 13:00:59,859 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 13:01:19,772 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:01:19,772 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 13:01:30,054 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 13:01:30,055 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:01:30,055 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 13:01:33,681 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 13:01:33,682 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 13:01:55,832 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:01:55,832 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 13:02:06,628 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 13:02:06,629 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:02:06,629 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 13:02:09,539 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 13:02:09,540 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 13:02:29,482 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:02:29,482 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 13:02:39,727 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 13:02:39,728 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:02:39,728 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 13:02:42,540 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 13:02:42,540 d3722c9b Thread-1 scimark2(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureStorageAccount failed.
+2015-07-27 13:03:07,793 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:03:07,793 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442
+2015-07-27 13:03:19,745 d3722c9b Thread-1 scimark2(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkitd3722c9b18460a442 --type=LRS perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The subscription policy limit for resource type 'storage account count' was exceeded. The limit for resource type 'storage account count' is 100 per subscription, the current count is 100, and the requested increment is 1.
+error:   storage account create command failed
+
+
+2015-07-27 13:03:19,746 d3722c9b Thread-1 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:03:19,746 d3722c9b Thread-1 scimark2(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitd3722c9b18460a442
+2015-07-27 13:03:22,762 d3722c9b Thread-1 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitd3722c9b18460a442. Got return code (1).
+STDOUT: 
+STDERR: The storage account 'perfkitd3722c9b18460a442' was not found.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-27 13:03:22,786 d3722c9b MainThread scimark2(1/1) pkb.py:317 ERROR    Error during benchmark scimark2
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/pkb.py", line 290, in RunBenchmark
+    DoPreparePhase(benchmark, benchmark_name, spec, detailed_timer)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/pkb.py", line 200, in DoPreparePhase
+    spec.Prepare()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 215, in Prepare
+    vm_util.RunThreaded(self.PrepareNetwork, prepare_args)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 292, in RunThreaded
+    '\n'.join([stacktrace for stacktrace in exceptions]))
+ThreadException: The following exceptions occurred during threaded execution: Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 276, in RunThreaded
+    thread.join(1000)  # Set timeout so that join is interruptable.
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 216, in join
+    raise errors.VmUtil.ThreadException(self.exception)
+ThreadException: Exception occured in thread 139868969260800:
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 203, in run
+    self.RunWithExceptions()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 210, in RunWithExceptions
+    super(ThreadWithExceptions, self).run()
+  File "/usr/lib/python2.7/threading.py", line 763, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 248, in PrepareNetwork
+    network.Create()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 354, in WrappedFunction
+    raise e
+RetryableCreationError: Creation of AzureStorageAccount failed.
+
+
+2015-07-27 13:03:22,788 d3722c9b Thread-70 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:03:22,789 d3722c9b Thread-70 scimark2(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-d3722c9b-0
+2015-07-27 13:03:30,632 d3722c9b Thread-70 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure vm delete --quiet pkb-d3722c9b-0. Got return code (0).
+STDOUT: info:    Executing command vm delete
+info:    Getting virtual machines
+warn:    No VMs found
+info:    vm delete command OK
+
+STDERR: 
+2015-07-27 13:03:30,632 d3722c9b Thread-70 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:03:30,632 d3722c9b Thread-70 scimark2(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-d3722c9b-0
+2015-07-27 13:03:35,244 d3722c9b Thread-70 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-d3722c9b-0. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-27 13:03:35,244 d3722c9b Thread-70 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:03:35,244 d3722c9b Thread-70 scimark2(1/1) vm_util.py:392 INFO     Running: azure service delete --quiet pkb-d3722c9b-0
+2015-07-27 13:03:38,708 d3722c9b Thread-70 scimark2(1/1) vm_util.py:418 INFO     Ran azure service delete --quiet pkb-d3722c9b-0. Got return code (1).
+STDOUT: info:    Executing command service delete
+info:    Deleting cloud service
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The hosted service does not exist.
+error:   service delete command failed
+
+
+2015-07-27 13:03:38,711 d3722c9b Thread-70 scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:03:38,711 d3722c9b Thread-70 scimark2(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-d3722c9b-0
+2015-07-27 13:03:41,404 d3722c9b Thread-70 scimark2(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-d3722c9b-0. Got return code (1).
+STDOUT: 
+STDERR: The hosted service does not exist.
+Error information has been recorded to /root/.azure/azure.err
+service show command failed
+
+
+2015-07-27 13:03:41,404 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:03:41,405 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:03:44,589 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:03:44,589 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:03:44,590 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:03:48,173 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:03:48,173 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:04:08,547 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:04:08,548 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:04:11,701 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:04:11,701 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:04:11,701 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:04:14,986 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:04:14,987 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:04:33,355 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:04:33,356 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:04:36,546 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:04:36,546 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:04:36,546 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:04:39,665 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:04:39,665 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:04:56,964 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:04:56,965 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:05:00,846 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:05:00,846 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:05:00,846 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:05:04,013 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:05:04,013 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:05:20,199 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:05:20,200 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:05:23,465 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:05:23,465 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:05:23,465 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:05:26,783 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:05:26,783 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:05:48,930 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:05:48,930 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:05:52,635 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:05:52,636 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:05:52,636 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:05:56,154 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:05:56,155 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:06:17,104 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:06:17,104 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:06:20,784 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:06:20,784 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:06:20,784 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:06:24,025 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:06:24,025 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:06:41,455 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:06:41,456 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:06:44,525 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:06:44,525 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:06:44,525 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:06:47,862 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:06:47,862 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:07:04,847 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:07:04,847 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:07:08,075 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:07:08,075 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:07:08,076 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:07:11,227 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:07:11,228 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:07:38,412 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:07:38,413 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:07:41,819 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:07:41,820 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:07:41,820 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:07:44,906 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:07:44,907 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:08:05,147 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:08:05,147 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:08:08,140 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:08:08,141 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:08:08,141 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:08:11,589 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:08:11,589 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:08:34,152 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:08:34,153 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:08:37,156 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:08:37,156 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:08:37,156 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:08:40,379 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:08:40,379 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:09:09,842 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:09:09,842 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:09:12,821 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:09:12,822 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:09:12,822 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:09:15,934 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:09:15,934 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:09:39,942 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:09:39,943 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:09:43,051 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:09:43,052 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:09:43,052 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:09:46,305 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:09:46,306 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:10:08,545 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:10:08,545 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:10:11,781 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:10:11,781 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:10:11,782 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:10:15,852 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:10:15,852 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:10:37,196 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:10:37,196 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:10:40,378 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:10:40,378 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:10:40,379 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:10:43,800 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:10:43,800 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:11:12,446 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:11:12,446 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:11:15,491 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:11:15,491 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:11:15,491 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:11:18,647 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:11:18,648 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:11:33,813 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:11:33,814 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:11:36,913 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:11:36,913 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:11:36,913 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:11:40,529 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:11:40,530 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:12:00,405 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:12:00,405 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:12:03,469 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:12:03,469 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:12:03,469 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:12:06,757 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:12:06,758 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:12:35,858 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:12:35,859 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:12:39,445 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:12:39,445 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:12:39,445 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:12:42,802 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:12:42,802 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:12:58,841 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:12:58,841 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:13:02,421 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:13:02,421 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:13:02,421 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:13:05,657 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:13:05,658 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:13:34,817 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:13:34,818 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:13:37,893 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:13:37,893 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:13:37,893 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:13:41,138 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:13:41,138 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:14:09,563 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:14:09,563 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:14:12,617 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:14:12,617 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:14:12,617 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:14:15,823 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:14:15,824 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:14:31,645 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:14:31,645 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:14:34,897 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:14:34,897 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:14:34,897 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:14:38,537 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:14:38,537 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:14:54,407 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:14:54,407 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:14:57,525 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:14:57,526 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:14:57,526 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:15:01,776 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:15:01,776 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:15:27,672 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:15:27,673 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:15:30,938 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:15:30,938 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:15:30,938 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:15:34,206 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:15:34,207 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:15:53,388 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:15:53,388 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:15:56,746 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:15:56,746 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:15:56,747 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:16:00,009 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:16:00,009 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:16:24,918 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:16:24,919 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:16:28,077 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:16:28,078 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:16:28,078 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:16:31,882 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:16:31,883 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:17:01,898 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:17:01,898 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:17:05,404 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:17:05,404 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:17:05,404 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:17:09,467 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:17:09,467 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:17:32,924 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:17:32,924 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:17:35,988 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:17:35,988 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:17:35,988 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:17:39,332 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:17:39,332 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:18:06,447 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:18:06,447 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:18:09,605 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:18:09,605 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:18:09,605 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:18:12,749 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:18:12,750 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:18:31,856 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:18:31,856 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:18:34,909 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:18:34,910 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:18:34,910 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:18:38,239 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:18:38,239 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:19:01,679 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:19:01,680 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:19:05,174 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:19:05,175 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:19:05,175 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:19:08,699 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:19:08,699 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:19:23,845 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:19:23,845 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:19:26,933 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:19:26,934 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:19:26,934 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:19:30,608 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:19:30,609 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:19:50,185 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:19:50,185 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:19:53,610 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:19:53,611 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:19:53,611 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:19:56,835 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:19:56,836 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:20:26,270 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:20:26,271 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:20:30,051 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:20:30,051 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:20:30,051 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:20:33,951 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:20:33,952 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:21:03,261 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:21:03,262 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:21:06,252 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:21:06,253 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:21:06,253 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:21:09,810 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:21:09,810 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:21:36,197 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:21:36,198 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:21:39,211 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:21:39,212 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:21:39,212 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:21:42,440 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:21:42,440 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:22:11,364 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:22:11,365 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:22:14,517 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:22:14,518 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:22:14,518 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:22:17,877 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:22:17,877 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:22:35,981 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:22:35,981 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:22:38,980 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:22:38,981 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:22:38,981 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:22:42,197 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:22:42,197 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:23:09,328 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:23:09,328 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:23:13,129 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:23:13,129 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:23:13,129 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:23:16,422 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:23:16,422 d3722c9b MainThread scimark2(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:23:37,330 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:23:37,330 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkitd3722c9b18460a442
+2015-07-27 13:23:40,591 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkitd3722c9b18460a442" not found
+
+2015-07-27 13:23:40,591 d3722c9b MainThread scimark2(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-27 13:23:40,591 d3722c9b MainThread scimark2(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitd3722c9b18460a442
+2015-07-27 13:23:43,833 d3722c9b MainThread scimark2(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitd3722c9b18460a442. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-27 13:23:43,833 d3722c9b MainThread scimark2(1/1) benchmark_spec.py:242 ERROR    Got an exception deleting networks. Attempting to continue tearing down.
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 240, in Delete
+    net.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/azure/azure_network.py", line 228, in Delete
+    self.vnet.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/resource.py", line 135, in Delete
+    self._DeleteResource()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 354, in WrappedFunction
+    raise e
+RetryableDeletionError: Deletion of AzureVirtualNetwork failed.
+2015-07-27 13:23:43,835 d3722c9b MainThread scimark2(1/1) pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_d3722c9b/pkb.log

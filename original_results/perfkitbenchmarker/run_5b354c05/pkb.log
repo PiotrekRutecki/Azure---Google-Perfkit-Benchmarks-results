@@ -1,0 +1,1129 @@
+2015-07-21 12:10:30,905 5b354c05 MainThread pkb.py:336 INFO     Flag values:
+--machine_type=ExtraSmall
+--cloud=Azure
+--benchmarks=iperf
+2015-07-21 12:10:31,014 5b354c05 MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7fdb605fc990> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7fdb620fb150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_5b354c05/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-21 12:10:31,015 5b354c05 MainThread iperf(1/1) pkb.py:194 INFO     Preparing benchmark iperf
+2015-07-21 12:10:31,018 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:10:31,018 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:10:32,440 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:10:32,440 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:10:32,440 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:10:33,820 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:10:33,820 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:10:49,713 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:10:49,713 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:10:51,131 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:10:51,132 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:10:51,132 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:10:52,520 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:10:52,520 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:11:18,556 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:11:18,556 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:11:19,998 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:11:19,999 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:11:19,999 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:11:21,423 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:11:21,424 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:11:39,141 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:11:39,142 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:11:40,566 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:11:40,566 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:11:40,567 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:11:41,964 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:11:41,964 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:12:08,256 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:12:08,256 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:12:09,655 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:12:09,656 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:12:09,656 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:12:11,075 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:12:11,075 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:12:35,524 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:12:35,524 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:12:37,029 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:12:37,029 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:12:37,029 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:12:38,441 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:12:38,441 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:12:57,937 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:12:57,937 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:12:59,327 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:12:59,328 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:12:59,328 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:13:00,699 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:13:00,700 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:13:28,178 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:13:28,178 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:13:29,583 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:13:29,583 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:13:29,583 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:13:30,964 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:13:30,964 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:14:00,539 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:14:00,539 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:14:01,936 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:14:01,937 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:14:01,937 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:14:03,359 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:14:03,360 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:14:27,864 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:14:27,864 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:14:29,339 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:14:29,340 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:14:29,340 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:14:30,793 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:14:30,794 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:14:59,655 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:14:59,656 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:15:01,141 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:15:01,141 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:15:01,142 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:15:02,599 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:15:02,599 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:15:32,018 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:15:32,018 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:15:33,399 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:15:33,400 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:15:33,400 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:15:34,786 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:15:34,786 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:16:00,276 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:16:00,277 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:16:01,703 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:16:01,704 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:16:01,705 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:16:03,152 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:16:03,153 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:16:21,993 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:16:21,993 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:16:23,486 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:16:23,486 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:16:23,486 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:16:24,894 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:16:24,894 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:16:47,949 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:16:47,949 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:16:49,363 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:16:49,364 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:16:49,364 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:16:50,774 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:16:50,774 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:17:08,461 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:17:08,462 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:17:09,978 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:17:09,979 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:17:09,979 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:17:11,405 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:17:11,405 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:17:33,651 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:17:33,651 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:17:35,041 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:17:35,042 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:17:35,042 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:17:36,446 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:17:36,447 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:18:05,985 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:18:05,985 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:18:07,497 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:18:07,497 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:18:07,498 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:18:08,958 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:18:08,958 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:18:34,636 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:18:34,636 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:18:36,166 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:18:36,167 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:18:36,167 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:18:37,571 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:18:37,571 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:19:03,485 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:19:03,485 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:19:04,915 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:19:04,915 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:19:04,915 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:19:06,324 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:19:06,325 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:19:22,020 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:19:22,020 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:19:23,539 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:19:23,540 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:19:23,540 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:19:24,969 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:19:24,970 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:19:47,885 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:19:47,886 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:19:49,288 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:19:49,288 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:19:49,288 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:19:50,671 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:19:50,672 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:20:06,375 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:20:06,375 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:20:07,835 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:20:07,836 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:20:07,836 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:20:09,317 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:20:09,318 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:20:31,937 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:20:31,937 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:20:33,391 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:20:33,392 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:20:33,392 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:20:34,867 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:20:34,867 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:21:03,345 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:21:03,345 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:21:04,764 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:21:04,764 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:21:04,765 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:21:06,130 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:21:06,130 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:21:27,851 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:21:27,852 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:21:29,237 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:21:29,238 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:21:29,238 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:21:30,602 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:21:30,602 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:21:54,358 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:21:54,358 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:21:55,843 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:21:55,844 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:21:55,844 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:21:57,227 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:21:57,227 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:22:17,454 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:22:17,454 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:22:18,888 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:22:18,889 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:22:18,889 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:22:20,317 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:22:20,317 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:22:39,146 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:22:39,146 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:22:40,690 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:22:40,691 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:22:40,692 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:22:42,136 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:22:42,136 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:23:04,595 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:23:04,595 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:23:05,987 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:23:05,987 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:23:05,987 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:23:07,416 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:23:07,417 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:23:29,333 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:23:29,333 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:23:30,747 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:23:30,747 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:23:30,747 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:23:32,142 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:23:32,142 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:23:49,942 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:23:49,943 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:23:51,430 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:23:51,430 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:23:51,430 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:23:52,955 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:23:52,955 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:24:18,728 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:24:18,728 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:24:20,120 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:24:20,120 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:24:20,121 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:24:21,595 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:24:21,595 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:24:42,017 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:24:42,017 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:24:43,439 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:24:43,440 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:24:43,440 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:24:44,860 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:24:44,860 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:25:08,792 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:25:08,793 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:25:10,211 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:25:10,211 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:25:10,212 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:25:11,585 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:25:11,585 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:25:26,898 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:25:26,898 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:25:28,325 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:25:28,326 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:25:28,326 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:25:29,706 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:25:29,707 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:25:56,418 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:25:56,418 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:25:57,894 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:25:57,894 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:25:57,894 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:25:59,299 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:25:59,300 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:26:17,337 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:26:17,337 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:26:18,791 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:26:18,792 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:26:18,792 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:26:20,243 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:26:20,244 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:26:43,917 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:26:43,918 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:26:45,334 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:26:45,335 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:26:45,335 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:26:46,785 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:26:46,785 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:27:14,015 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:27:14,016 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:27:15,417 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:27:15,418 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:27:15,418 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:27:16,849 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:27:16,849 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:27:38,063 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:27:38,063 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:27:39,459 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:27:39,460 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:27:39,460 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:27:40,905 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:27:40,906 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:27:58,648 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:27:58,649 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:28:00,037 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:28:00,038 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:28:00,038 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:28:01,424 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:28:01,424 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:28:21,489 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:28:21,489 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:28:22,953 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:28:22,954 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:28:22,954 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:28:24,376 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:28:24,377 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:28:42,832 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:28:42,833 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:28:44,248 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:28:44,249 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:28:44,249 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:28:45,628 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:28:45,628 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:29:00,954 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:29:00,954 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:29:02,358 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:29:02,358 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:29:02,358 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:29:03,737 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:29:03,738 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:29:23,995 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:29:23,996 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:29:25,411 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:29:25,411 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:29:25,411 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:29:26,785 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:29:26,786 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:29:50,317 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:29:50,317 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:29:51,756 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:29:51,757 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:29:51,757 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:29:53,170 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:29:53,171 5b354c05 Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 12:30:17,766 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:17,766 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050
+2015-07-21 12:30:19,148 5b354c05 Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit5b354c054b5abe050 perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 12:30:19,148 5b354c05 Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:19,149 5b354c05 Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:30:20,566 5b354c05 Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:30:20,576 5b354c05 MainThread iperf(1/1) pkb.py:317 ERROR    Error during benchmark iperf
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/pkb.py", line 290, in RunBenchmark
+    DoPreparePhase(benchmark, benchmark_name, spec, detailed_timer)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/pkb.py", line 200, in DoPreparePhase
+    spec.Prepare()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 215, in Prepare
+    vm_util.RunThreaded(self.PrepareNetwork, prepare_args)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 292, in RunThreaded
+    '\n'.join([stacktrace for stacktrace in exceptions]))
+ThreadException: The following exceptions occurred during threaded execution: Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 276, in RunThreaded
+    thread.join(1000)  # Set timeout so that join is interruptable.
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 216, in join
+    raise errors.VmUtil.ThreadException(self.exception)
+ThreadException: Exception occured in thread 140580163102464:
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 203, in run
+    self.RunWithExceptions()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 210, in RunWithExceptions
+    super(ThreadWithExceptions, self).run()
+  File "/usr/lib/python2.7/threading.py", line 763, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 248, in PrepareNetwork
+    network.Create()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 354, in WrappedFunction
+    raise e
+RetryableCreationError: Creation of AzureAffinityGroup failed.
+
+
+2015-07-21 12:30:20,578 5b354c05 Thread-98 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:20,579 5b354c05 Thread-98 iperf(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-5b354c05-1
+2015-07-21 12:30:20,579 5b354c05 Thread-99 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:20,579 5b354c05 Thread-99 iperf(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-5b354c05-0
+2015-07-21 12:30:22,198 5b354c05 Thread-99 iperf(1/1) vm_util.py:418 INFO     Ran azure vm delete --quiet pkb-5b354c05-0. Got return code (1).
+STDOUT: info:    Executing command vm delete
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   vm delete command failed
+
+
+2015-07-21 12:30:22,199 5b354c05 Thread-99 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:22,199 5b354c05 Thread-99 iperf(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-5b354c05-0
+2015-07-21 12:30:22,347 5b354c05 Thread-98 iperf(1/1) vm_util.py:418 INFO     Ran azure vm delete --quiet pkb-5b354c05-1. Got return code (1).
+STDOUT: info:    Executing command vm delete
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   vm delete command failed
+
+
+2015-07-21 12:30:22,347 5b354c05 Thread-98 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:22,347 5b354c05 Thread-98 iperf(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-5b354c05-1
+2015-07-21 12:30:23,938 5b354c05 Thread-99 iperf(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-5b354c05-0. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+vm show command failed
+
+
+2015-07-21 12:30:23,939 5b354c05 Thread-99 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:23,939 5b354c05 Thread-99 iperf(1/1) vm_util.py:392 INFO     Running: azure service delete --quiet pkb-5b354c05-0
+2015-07-21 12:30:24,077 5b354c05 Thread-98 iperf(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-5b354c05-1. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+vm show command failed
+
+
+2015-07-21 12:30:24,077 5b354c05 Thread-98 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:24,077 5b354c05 Thread-98 iperf(1/1) vm_util.py:392 INFO     Running: azure service delete --quiet pkb-5b354c05-1
+2015-07-21 12:30:25,463 5b354c05 Thread-99 iperf(1/1) vm_util.py:418 INFO     Ran azure service delete --quiet pkb-5b354c05-0. Got return code (1).
+STDOUT: info:    Executing command service delete
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   service delete command failed
+
+
+2015-07-21 12:30:25,463 5b354c05 Thread-99 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:25,463 5b354c05 Thread-99 iperf(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-5b354c05-0
+2015-07-21 12:30:25,488 5b354c05 Thread-98 iperf(1/1) vm_util.py:418 INFO     Ran azure service delete --quiet pkb-5b354c05-1. Got return code (1).
+STDOUT: info:    Executing command service delete
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   service delete command failed
+
+
+2015-07-21 12:30:25,489 5b354c05 Thread-98 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:25,489 5b354c05 Thread-98 iperf(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-5b354c05-1
+2015-07-21 12:30:26,941 5b354c05 Thread-99 iperf(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-5b354c05-0. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+service show command failed
+
+
+2015-07-21 12:30:26,955 5b354c05 Thread-98 iperf(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-5b354c05-1. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+service show command failed
+
+
+2015-07-21 12:30:26,960 5b354c05 MainThread iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:26,960 5b354c05 MainThread iperf(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit5b354c054b5abe050
+2015-07-21 12:30:36,762 5b354c05 MainThread iperf(1/1) vm_util.py:418 INFO     Ran azure network vnet delete --quiet perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command network vnet delete
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   network vnet delete command failed
+
+
+2015-07-21 12:30:36,762 5b354c05 MainThread iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:36,762 5b354c05 MainThread iperf(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit5b354c054b5abe050
+2015-07-21 12:30:38,322 5b354c05 MainThread iperf(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+network vnet show command failed
+
+
+2015-07-21 12:30:38,322 5b354c05 MainThread iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:38,322 5b354c05 MainThread iperf(1/1) vm_util.py:392 INFO     Running: azure storage account delete --quiet perfkit5b354c054b5abe050
+2015-07-21 12:30:41,521 5b354c05 MainThread iperf(1/1) vm_util.py:418 INFO     Ran azure storage account delete --quiet perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command storage account delete
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   storage account delete command failed
+
+
+2015-07-21 12:30:41,522 5b354c05 MainThread iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:41,522 5b354c05 MainThread iperf(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkit5b354c054b5abe050
+2015-07-21 12:30:43,112 5b354c05 MainThread iperf(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+storage account show command failed
+
+
+2015-07-21 12:30:43,113 5b354c05 MainThread iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:43,113 5b354c05 MainThread iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group delete --quiet perfkit5b354c054b5abe050
+2015-07-21 12:30:44,561 5b354c05 MainThread iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group delete --quiet perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: info:    Executing command account affinity-group delete
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group delete command failed
+
+
+2015-07-21 12:30:44,562 5b354c05 MainThread iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 12:30:44,562 5b354c05 MainThread iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit5b354c054b5abe050
+2015-07-21 12:30:46,060 5b354c05 MainThread iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit5b354c054b5abe050. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 12:30:46,062 5b354c05 MainThread iperf(1/1) pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_5b354c05/pkb.log

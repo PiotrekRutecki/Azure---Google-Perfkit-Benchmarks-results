@@ -1,0 +1,45 @@
+2015-07-22 12:34:06,050 eee93eb8 MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D2
+--cloud=Azure
+--benchmarks=bonnie++
+2015-07-22 12:34:06,245 eee93eb8 MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7f27534c09d0> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7f2754fc0150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_eee93eb8/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-22 12:34:06,246 eee93eb8 MainThread bonnie++(1/1) pkb.py:194 INFO     Preparing benchmark bonnie++
+2015-07-22 12:34:06,249 eee93eb8 Thread-1 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:34:06,249 eee93eb8 Thread-1 bonnie++(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkiteee93eb8727b0a3d9 perfkiteee93eb8727b0a3d9
+2015-07-22 12:34:09,206 eee93eb8 Thread-1 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group create --location=East US --label=perfkiteee93eb8727b0a3d9 perfkiteee93eb8727b0a3d9. Got return code (0).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    account affinity-group create command OK
+
+STDERR: 
+2015-07-22 12:34:09,206 eee93eb8 Thread-1 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:34:09,206 eee93eb8 Thread-1 bonnie++(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkiteee93eb8727b0a3d9
+2015-07-22 12:34:11,792 eee93eb8 Thread-1 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkiteee93eb8727b0a3d9. Got return code (0).
+STDOUT: {
+  "capabilities": [
+    "PersistentVMRole",
+    "HighMemory"
+  ],
+  "hostedServices": [],
+  "storageServices": [],
+  "name": "perfkiteee93eb8727b0a3d9",
+  "label": "perfkiteee93eb8727b0a3d9",
+  "location": "East US",
+  "createdTime": "2015-07-22T12:34:17.000Z",
+  "statusCode": 200,
+  "requestId": "cad20a815aefc875a3e890791cbc00bd"
+}
+
+STDERR: 
+2015-07-22 12:34:11,793 eee93eb8 Thread-1 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:34:11,793 eee93eb8 Thread-1 bonnie++(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkiteee93eb8727b0a3d9 --type=LRS perfkiteee93eb8727b0a3d9
+2015-07-22 12:34:26,343 eee93eb8 Thread-5 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:34:26,344 eee93eb8 Thread-5 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-eee93eb8-0
+2015-07-22 12:34:26,349 eee93eb8 Thread-1 bonnie++(1/1) vm_util.py:418 INFO     Ran azure storage account create --affinity-group=perfkiteee93eb8727b0a3d9 --type=LRS perfkiteee93eb8727b0a3d9. Got return code (-2).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+
+STDERR: 
+2015-07-22 12:34:26,349 eee93eb8 Thread-1 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:34:26,350 eee93eb8 Thread-1 bonnie++(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkiteee93eb8727b0a3d9
+2015-07-22 12:34:28,269 eee93eb8 MainThread bonnie++(1/1) pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_eee93eb8/pkb.log

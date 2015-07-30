@@ -1,0 +1,731 @@
+2015-07-24 07:17:42,890 cd49bc32 MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D2
+--cloud=Azure
+--benchmarks=hadoop_terasort
+2015-07-24 07:17:43,209 cd49bc32 MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7ff3ccb06990> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7ff3ce605150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-24 07:17:43,210 cd49bc32 MainThread hadoop_terasort(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-24 07:17:43,210 cd49bc32 MainThread hadoop_terasort(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-24 07:17:43,211 cd49bc32 MainThread hadoop_terasort(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-24 07:17:43,211 cd49bc32 MainThread hadoop_terasort(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-24 07:17:43,212 cd49bc32 MainThread hadoop_terasort(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-24 07:17:43,212 cd49bc32 MainThread hadoop_terasort(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-24 07:17:43,212 cd49bc32 MainThread hadoop_terasort(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-24 07:17:43,214 cd49bc32 MainThread hadoop_terasort(1/1) pkb.py:194 INFO     Preparing benchmark hadoop_terasort
+2015-07-24 07:17:43,220 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:17:43,220 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkitcd49bc32e88b21f04 perfkitcd49bc32e88b21f04
+2015-07-24 07:17:46,302 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group create --location=East US --label=perfkitcd49bc32e88b21f04 perfkitcd49bc32e88b21f04. Got return code (0).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    account affinity-group create command OK
+
+STDERR: 
+2015-07-24 07:17:46,302 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:17:46,302 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkitcd49bc32e88b21f04
+2015-07-24 07:17:49,006 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkitcd49bc32e88b21f04. Got return code (0).
+STDOUT: {
+  "capabilities": [
+    "PersistentVMRole",
+    "HighMemory"
+  ],
+  "hostedServices": [],
+  "storageServices": [],
+  "name": "perfkitcd49bc32e88b21f04",
+  "label": "perfkitcd49bc32e88b21f04",
+  "location": "East US",
+  "createdTime": "2015-07-24T07:17:57.000Z",
+  "statusCode": 200,
+  "requestId": "d268feef6dd4cc03ab8970e8c4b7a8eb"
+}
+
+STDERR: 
+2015-07-24 07:17:49,007 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:17:49,007 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkitcd49bc32e88b21f04 --type=LRS perfkitcd49bc32e88b21f04
+2015-07-24 07:18:26,261 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure storage account create --affinity-group=perfkitcd49bc32e88b21f04 --type=LRS perfkitcd49bc32e88b21f04. Got return code (0).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    storage account create command OK
+
+STDERR: 
+2015-07-24 07:18:26,261 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:18:26,261 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkitcd49bc32e88b21f04
+2015-07-24 07:18:29,170 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkitcd49bc32e88b21f04. Got return code (0).
+STDOUT: {
+  "extendedProperties": {
+    "ResourceGroup": "Default-Storage-EastUS",
+    "ResourceLocation": "East US"
+  },
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/storageservices/perfkitcd49bc32e88b21f04",
+  "name": "perfkitcd49bc32e88b21f04",
+  "properties": {
+    "endpoints": [
+      "https://perfkitcd49bc32e88b21f04.blob.core.windows.net/",
+      "https://perfkitcd49bc32e88b21f04.queue.core.windows.net/",
+      "https://perfkitcd49bc32e88b21f04.table.core.windows.net/"
+    ],
+    "affinityGroup": "perfkitcd49bc32e88b21f04",
+    "label": "perfkitcd49bc32e88b21f04",
+    "status": "Created",
+    "geoPrimaryRegion": "East US",
+    "statusOfGeoPrimaryRegion": "Available",
+    "geoSecondaryRegion": "",
+    "accountType": "Standard_LRS"
+  },
+  "resourceGroup": ""
+}
+
+STDERR: 
+2015-07-24 07:18:29,171 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:18:29,171 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure network vnet create --affinity-group=perfkitcd49bc32e88b21f04 perfkitcd49bc32e88b21f04
+2015-07-24 07:19:05,842 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure network vnet create --affinity-group=perfkitcd49bc32e88b21f04 perfkitcd49bc32e88b21f04. Got return code (0).
+STDOUT: info:    Executing command network vnet create
+info:    Using default address space start IP: 10.0.0.0
+info:    Using default address space cidr: 8
+info:    Using default subnet start IP: 10.0.0.0
+info:    Using default subnet cidr: 11
+info:    Looking up network configuration
+info:    Looking up affinity groups
+info:    Using affinity group perfkitcd49bc32e88b21f04
+info:    Setting network configuration
+info:    network vnet create command OK
+
+STDERR: 
+2015-07-24 07:19:05,843 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:05,843 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkitcd49bc32e88b21f04
+2015-07-24 07:19:08,951 cd49bc32 Thread-1 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkitcd49bc32e88b21f04. Got return code (0).
+STDOUT: {
+  "dnsServers": [],
+  "subnets": [
+    {
+      "name": "Subnet-1",
+      "addressPrefix": "10.0.0.0/11"
+    }
+  ],
+  "name": "perfkitcd49bc32e88b21f04",
+  "id": "6144fd9f-1ea7-476a-9bfd-574ff54483e0",
+  "affinityGroup": "perfkitcd49bc32e88b21f04",
+  "state": "Created",
+  "addressSpace": {
+    "addressPrefixes": [
+      "10.0.0.0/8"
+    ]
+  }
+}
+
+STDERR: 
+2015-07-24 07:19:08,975 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:08,975 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-8
+2015-07-24 07:19:08,978 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:08,979 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:08,978 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-7
+2015-07-24 07:19:08,979 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-6
+2015-07-24 07:19:08,984 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:08,984 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-5
+2015-07-24 07:19:08,994 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:08,997 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-4
+2015-07-24 07:19:09,002 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:09,002 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-3
+2015-07-24 07:19:09,010 cd49bc32 Thread-18 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:09,012 cd49bc32 Thread-18 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-2
+2015-07-24 07:19:09,033 cd49bc32 Thread-19 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:09,034 cd49bc32 Thread-19 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-1
+2015-07-24 07:19:09,036 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:09,037 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-0
+2015-07-24 07:19:19,866 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-8. Got return code (0).
+STDOUT: info:    Executing command service create
+info:    Creating cloud service
+data:    Cloud service name pkb-cd49bc32-8
+info:    service create command OK
+
+STDERR: 
+2015-07-24 07:19:19,866 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:19,866 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-cd49bc32-8
+2015-07-24 07:19:19,933 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-4. Got return code (0).
+STDOUT: info:    Executing command service create
+info:    Creating cloud service
+data:    Cloud service name pkb-cd49bc32-4
+info:    service create command OK
+
+STDERR: 
+2015-07-24 07:19:19,933 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:19,933 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-cd49bc32-4
+2015-07-24 07:19:20,191 cd49bc32 Thread-18 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-2. Got return code (0).
+STDOUT: info:    Executing command service create
+info:    Creating cloud service
+data:    Cloud service name pkb-cd49bc32-2
+info:    service create command OK
+
+STDERR: 
+2015-07-24 07:19:20,191 cd49bc32 Thread-18 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:20,191 cd49bc32 Thread-18 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-cd49bc32-2
+2015-07-24 07:19:20,613 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-3. Got return code (0).
+STDOUT: info:    Executing command service create
+info:    Creating cloud service
+data:    Cloud service name pkb-cd49bc32-3
+info:    service create command OK
+
+STDERR: 
+2015-07-24 07:19:20,614 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:20,614 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-cd49bc32-3
+2015-07-24 07:19:21,089 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-6. Got return code (0).
+STDOUT: info:    Executing command service create
+info:    Creating cloud service
+data:    Cloud service name pkb-cd49bc32-6
+info:    service create command OK
+
+STDERR: 
+2015-07-24 07:19:21,090 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:21,090 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-cd49bc32-6
+2015-07-24 07:19:21,268 cd49bc32 Thread-19 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-1. Got return code (0).
+STDOUT: info:    Executing command service create
+info:    Creating cloud service
+data:    Cloud service name pkb-cd49bc32-1
+info:    service create command OK
+
+STDERR: 
+2015-07-24 07:19:21,268 cd49bc32 Thread-19 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:21,268 cd49bc32 Thread-19 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-cd49bc32-1
+2015-07-24 07:19:21,971 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-5. Got return code (0).
+STDOUT: info:    Executing command service create
+info:    Creating cloud service
+data:    Cloud service name pkb-cd49bc32-5
+info:    service create command OK
+
+STDERR: 
+2015-07-24 07:19:21,972 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:21,972 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-cd49bc32-5
+2015-07-24 07:19:22,202 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-7. Got return code (0).
+STDOUT: info:    Executing command service create
+info:    Creating cloud service
+data:    Cloud service name pkb-cd49bc32-7
+info:    service create command OK
+
+STDERR: 
+2015-07-24 07:19:22,203 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:22,203 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-cd49bc32-7
+2015-07-24 07:19:22,288 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service create --affinitygroup=perfkitcd49bc32e88b21f04 pkb-cd49bc32-0. Got return code (0).
+STDOUT: info:    Executing command service create
+info:    Creating cloud service
+data:    Cloud service name pkb-cd49bc32-0
+info:    service create command OK
+
+STDERR: 
+2015-07-24 07:19:22,288 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:22,289 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-cd49bc32-0
+2015-07-24 07:19:25,784 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-cd49bc32-8. Got return code (0).
+STDOUT: {
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/hostedservices/pkb-cd49bc32-8",
+  "serviceName": "pkb-cd49bc32-8",
+  "properties": {
+    "extendedProperties": {},
+    "affinityGroup": "perfkitcd49bc32e88b21f04",
+    "label": "pkb-cd49bc32-8",
+    "status": "Created",
+    "dateCreated": "2015-07-24T07:19:30.000Z",
+    "dateLastModified": "2015-07-24T07:19:31.000Z"
+  },
+  "statusCode": 200,
+  "requestId": "c7fadc45688dc49a8b84d59993258981"
+}
+
+STDERR: 
+2015-07-24 07:19:25,785 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:25,785 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-8 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:19:26,561 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-cd49bc32-4. Got return code (0).
+STDOUT: {
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/hostedservices/pkb-cd49bc32-4",
+  "serviceName": "pkb-cd49bc32-4",
+  "properties": {
+    "extendedProperties": {},
+    "affinityGroup": "perfkitcd49bc32e88b21f04",
+    "label": "pkb-cd49bc32-4",
+    "status": "Created",
+    "dateCreated": "2015-07-24T07:19:30.000Z",
+    "dateLastModified": "2015-07-24T07:19:31.000Z"
+  },
+  "statusCode": 200,
+  "requestId": "8cf0ce709368ce11b6556f8460f3e4a6"
+}
+
+STDERR: 
+2015-07-24 07:19:26,562 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:26,562 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-4 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:19:27,580 cd49bc32 Thread-18 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-cd49bc32-2. Got return code (0).
+STDOUT: {
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/hostedservices/pkb-cd49bc32-2",
+  "serviceName": "pkb-cd49bc32-2",
+  "properties": {
+    "extendedProperties": {
+      "ResourceGroup": "pkb-cd49bc32-2",
+      "ResourceLocation": "East US"
+    },
+    "affinityGroup": "perfkitcd49bc32e88b21f04",
+    "label": "pkb-cd49bc32-2",
+    "status": "Created",
+    "dateCreated": "2015-07-24T07:19:30.000Z",
+    "dateLastModified": "2015-07-24T07:19:38.000Z"
+  },
+  "statusCode": 200,
+  "requestId": "6a632506d411cb6192320d19da00d09d"
+}
+
+STDERR: 
+2015-07-24 07:19:27,581 cd49bc32 Thread-18 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:27,581 cd49bc32 Thread-18 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-2 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:19:28,062 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-cd49bc32-3. Got return code (0).
+STDOUT: {
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/hostedservices/pkb-cd49bc32-3",
+  "serviceName": "pkb-cd49bc32-3",
+  "properties": {
+    "extendedProperties": {},
+    "affinityGroup": "perfkitcd49bc32e88b21f04",
+    "label": "pkb-cd49bc32-3",
+    "status": "Created",
+    "dateCreated": "2015-07-24T07:19:31.000Z",
+    "dateLastModified": "2015-07-24T07:19:32.000Z"
+  },
+  "statusCode": 200,
+  "requestId": "b64e7cbc1108cd3a968cffea337f4738"
+}
+
+STDERR: 
+2015-07-24 07:19:28,062 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:28,062 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-3 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:19:29,715 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-cd49bc32-6. Got return code (0).
+STDOUT: {
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/hostedservices/pkb-cd49bc32-6",
+  "serviceName": "pkb-cd49bc32-6",
+  "properties": {
+    "extendedProperties": {
+      "ResourceGroup": "pkb-cd49bc32-6",
+      "ResourceLocation": "East US"
+    },
+    "affinityGroup": "perfkitcd49bc32e88b21f04",
+    "label": "pkb-cd49bc32-6",
+    "status": "Created",
+    "dateCreated": "2015-07-24T07:19:32.000Z",
+    "dateLastModified": "2015-07-24T07:19:37.000Z"
+  },
+  "statusCode": 200,
+  "requestId": "613391b1bc2ac2a3934a8ef81843ac57"
+}
+
+STDERR: 
+2015-07-24 07:19:29,716 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:29,716 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-6 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:19:29,838 cd49bc32 Thread-19 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-cd49bc32-1. Got return code (0).
+STDOUT: {
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/hostedservices/pkb-cd49bc32-1",
+  "serviceName": "pkb-cd49bc32-1",
+  "properties": {
+    "extendedProperties": {},
+    "affinityGroup": "perfkitcd49bc32e88b21f04",
+    "label": "pkb-cd49bc32-1",
+    "status": "Created",
+    "dateCreated": "2015-07-24T07:19:32.000Z",
+    "dateLastModified": "2015-07-24T07:19:32.000Z"
+  },
+  "statusCode": 200,
+  "requestId": "cf24bf4e3bc3c90988845fd2e401857d"
+}
+
+STDERR: 
+2015-07-24 07:19:29,838 cd49bc32 Thread-19 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:29,838 cd49bc32 Thread-19 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-1 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:19:30,523 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-cd49bc32-5. Got return code (0).
+STDOUT: {
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/hostedservices/pkb-cd49bc32-5",
+  "serviceName": "pkb-cd49bc32-5",
+  "properties": {
+    "extendedProperties": {
+      "ResourceGroup": "pkb-cd49bc32-5",
+      "ResourceLocation": "East US"
+    },
+    "affinityGroup": "perfkitcd49bc32e88b21f04",
+    "label": "pkb-cd49bc32-5",
+    "status": "Created",
+    "dateCreated": "2015-07-24T07:19:30.000Z",
+    "dateLastModified": "2015-07-24T07:19:36.000Z"
+  },
+  "statusCode": 200,
+  "requestId": "92186ab205eecf529dea98554193e7f6"
+}
+
+STDERR: 
+2015-07-24 07:19:30,524 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:30,524 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-5 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:19:30,550 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-cd49bc32-0. Got return code (0).
+STDOUT: {
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/hostedservices/pkb-cd49bc32-0",
+  "serviceName": "pkb-cd49bc32-0",
+  "properties": {
+    "extendedProperties": {
+      "ResourceGroup": "pkb-cd49bc32-0",
+      "ResourceLocation": "East US"
+    },
+    "affinityGroup": "perfkitcd49bc32e88b21f04",
+    "label": "pkb-cd49bc32-0",
+    "status": "Created",
+    "dateCreated": "2015-07-24T07:19:31.000Z",
+    "dateLastModified": "2015-07-24T07:19:36.000Z"
+  },
+  "statusCode": 200,
+  "requestId": "cd8ed39ef87fcae6a0db872654efd96e"
+}
+
+STDERR: 
+2015-07-24 07:19:30,550 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:30,550 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:19:31,058 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-cd49bc32-7. Got return code (0).
+STDOUT: {
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/hostedservices/pkb-cd49bc32-7",
+  "serviceName": "pkb-cd49bc32-7",
+  "properties": {
+    "extendedProperties": {},
+    "affinityGroup": "perfkitcd49bc32e88b21f04",
+    "label": "pkb-cd49bc32-7",
+    "status": "Created",
+    "dateCreated": "2015-07-24T07:19:33.000Z",
+    "dateLastModified": "2015-07-24T07:19:33.000Z"
+  },
+  "statusCode": 200,
+  "requestId": "fad882fe6d5cc763a9edae487f91b5b0"
+}
+
+STDERR: 
+2015-07-24 07:19:31,058 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:19:31,059 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-7 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:20:16,366 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-3 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Creating a new storage account 'portalvhds1437722391755'
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Unable to retrieve storage account
+error:   Error: The server encountered an internal error. Please retry the request.
+error:   vm create command failed
+
+
+2015-07-24 07:20:16,366 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:20:16,366 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-cd49bc32-3
+2015-07-24 07:20:25,407 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-cd49bc32-3. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-24 07:20:25,407 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-24 07:20:43,091 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:20:43,091 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-3 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:21:36,115 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-4 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Creating a new storage account 'portalvhds1437722391266'
+info:    Configuring certificate
+info:    Creating VM
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Compute.ConstrainedAllocationFailed : Allocation failed; unable to satisfy constraints in request. The requested new service deployment is bound to an Affinity Group, or it targets a Virtual Network, or there is an existing deployment under this hosted service. Any of these conditions constrains the new deployment to specific Azure resources. Please retry later or try reducing the VM size or number of role instances. Alternatively, if possible, remove the aforementioned constraints or try deploying to a different region.
+error:   vm create command failed
+
+
+2015-07-24 07:21:36,118 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:21:36,118 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-cd49bc32-4
+2015-07-24 07:21:37,347 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-5 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Creating a new storage account 'portalvhds1437722394810'
+info:    Configuring certificate
+info:    Creating VM
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Compute.OverconstrainedAllocationRequest : The VM size (or combination of VM sizes) required by this deployment cannot be provisioned due to deployment request constraints. If possible, try relaxing constraints such as virtual network bindings, deploying to a hosted service with no other deployment in it and to a different affinity group or with no affinity group, or try deploying to a different region.
+error:   vm create command failed
+
+
+2015-07-24 07:21:37,348 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:21:37,348 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-cd49bc32-5
+2015-07-24 07:21:38,971 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Creating a new storage account 'portalvhds1437722394991'
+info:    Configuring certificate
+info:    Creating VM
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Compute.OverconstrainedAllocationRequest : The VM size (or combination of VM sizes) required by this deployment cannot be provisioned due to deployment request constraints. If possible, try relaxing constraints such as virtual network bindings, deploying to a hosted service with no other deployment in it and to a different affinity group or with no affinity group, or try deploying to a different region.
+error:   vm create command failed
+
+
+2015-07-24 07:21:38,972 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:21:38,973 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-cd49bc32-0
+2015-07-24 07:21:41,071 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-cd49bc32-4. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-24 07:21:41,072 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-24 07:21:42,410 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-cd49bc32-5. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-24 07:21:42,411 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-24 07:21:44,292 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-cd49bc32-0. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-24 07:21:44,292 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-24 07:21:46,935 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-6 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Creating a new storage account 'portalvhds1437722392938'
+info:    Configuring certificate
+info:    Creating VM
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Compute.OverconstrainedAllocationRequest : The VM size (or combination of VM sizes) required by this deployment cannot be provisioned due to deployment request constraints. If possible, try relaxing constraints such as virtual network bindings, deploying to a hosted service with no other deployment in it and to a different affinity group or with no affinity group, or try deploying to a different region.
+error:   vm create command failed
+
+
+2015-07-24 07:21:46,936 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:21:46,936 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-cd49bc32-6
+2015-07-24 07:21:51,824 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-cd49bc32-6. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-24 07:21:51,825 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-24 07:21:55,017 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-8 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Creating a new storage account 'portalvhds1437722390408'
+info:    Configuring certificate
+info:    Creating VM
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Compute.OverconstrainedAllocationRequest : The VM size (or combination of VM sizes) required by this deployment cannot be provisioned due to deployment request constraints. If possible, try relaxing constraints such as virtual network bindings, deploying to a hosted service with no other deployment in it and to a different affinity group or with no affinity group, or try deploying to a different region.
+error:   vm create command failed
+
+
+2015-07-24 07:21:55,019 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:21:55,019 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-cd49bc32-8
+2015-07-24 07:21:57,849 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:21:57,849 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-4 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:21:59,830 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-cd49bc32-8. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-24 07:21:59,831 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-24 07:22:05,912 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-3 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Configuring certificate
+info:    Creating VM
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Compute.OverconstrainedAllocationRequest : The VM size (or combination of VM sizes) required by this deployment cannot be provisioned due to deployment request constraints. If possible, try relaxing constraints such as virtual network bindings, deploying to a hosted service with no other deployment in it and to a different affinity group or with no affinity group, or try deploying to a different region.
+error:   vm create command failed
+
+
+2015-07-24 07:22:05,915 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:22:05,915 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-cd49bc32-3
+2015-07-24 07:22:08,870 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-7 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Creating a new storage account 'portalvhds1437722394970'
+info:    Configuring certificate
+info:    Creating VM
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Compute.ConstrainedAllocationFailed : Allocation failed; unable to satisfy constraints in request. The requested new service deployment is bound to an Affinity Group, or it targets a Virtual Network, or there is an existing deployment under this hosted service. Any of these conditions constrains the new deployment to specific Azure resources. Please retry later or try reducing the VM size or number of role instances. Alternatively, if possible, remove the aforementioned constraints or try deploying to a different region.
+error:   vm create command failed
+
+
+2015-07-24 07:22:08,872 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:22:08,872 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-cd49bc32-7
+2015-07-24 07:22:09,869 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:22:09,870 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-6 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:22:10,992 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-cd49bc32-3. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-24 07:22:10,992 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-24 07:22:11,815 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:22:11,815 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-5 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:22:13,337 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:22:13,338 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:22:17,233 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-cd49bc32-7. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-24 07:22:17,234 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-24 07:22:24,651 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:22:24,651 cd49bc32 Thread-8 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-8 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:22:30,464 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:22:30,465 cd49bc32 Thread-16 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-3 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:22:36,881 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:22:36,881 cd49bc32 Thread-9 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-7 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password
+2015-07-24 07:23:22,027 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-4 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Configuring certificate
+info:    Creating VM
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Compute.OverconstrainedAllocationRequest : The VM size (or combination of VM sizes) required by this deployment cannot be provisioned due to deployment request constraints. If possible, try relaxing constraints such as virtual network bindings, deploying to a hosted service with no other deployment in it and to a different affinity group or with no affinity group, or try deploying to a different region.
+error:   vm create command failed
+
+
+2015-07-24 07:23:22,028 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:23:22,028 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-cd49bc32-4
+2015-07-24 07:23:23,594 cd49bc32 Thread-18 hadoop_terasort(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-2 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Creating a new storage account 'portalvhds1437722391613'
+info:    Configuring certificate
+info:    Creating VM
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Compute.OverconstrainedAllocationRequest : The VM size (or combination of VM sizes) required by this deployment cannot be provisioned due to deployment request constraints. If possible, try relaxing constraints such as virtual network bindings, deploying to a hosted service with no other deployment in it and to a different affinity group or with no affinity group, or try deploying to a different region.
+error:   vm create command failed
+
+
+2015-07-24 07:23:23,595 cd49bc32 Thread-18 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:23:23,595 cd49bc32 Thread-18 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-cd49bc32-2
+2015-07-24 07:23:29,813 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-cd49bc32-4. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-24 07:23:29,813 cd49bc32 Thread-12 hadoop_terasort(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-24 07:23:31,491 cd49bc32 Thread-18 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-cd49bc32-2. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-24 07:23:31,492 cd49bc32 Thread-18 hadoop_terasort(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-24 07:23:35,123 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-6 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Configuring certificate
+info:    Creating VM
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Compute.OverconstrainedAllocationRequest : The VM size (or combination of VM sizes) required by this deployment cannot be provisioned due to deployment request constraints. If possible, try relaxing constraints such as virtual network bindings, deploying to a hosted service with no other deployment in it and to a different affinity group or with no affinity group, or try deploying to a different region.
+error:   vm create command failed
+
+
+2015-07-24 07:23:35,126 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:23:35,126 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-cd49bc32-6
+2015-07-24 07:23:35,164 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-5 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Configuring certificate
+info:    Creating VM
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Compute.OverconstrainedAllocationRequest : The VM size (or combination of VM sizes) required by this deployment cannot be provisioned due to deployment request constraints. If possible, try relaxing constraints such as virtual network bindings, deploying to a hosted service with no other deployment in it and to a different affinity group or with no affinity group, or try deploying to a different region.
+error:   vm create command failed
+
+
+2015-07-24 07:23:35,165 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:23:35,165 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-cd49bc32-5
+2015-07-24 07:23:36,211 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:418 INFO     Ran azure vm create --affinity-group=perfkitcd49bc32e88b21f04 --virtual-network-name=perfkitcd49bc32e88b21f04 --vm-size=Standard_D2 pkb-cd49bc32-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_cd49bc32/perfkitbenchmarker.pem --no-ssh-password. Got return code (1).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Configuring certificate
+info:    Creating VM
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Compute.ConstrainedAllocationFailed : Allocation failed; unable to satisfy constraints in request. The requested new service deployment is bound to an Affinity Group, or it targets a Virtual Network, or there is an existing deployment under this hosted service. Any of these conditions constrains the new deployment to specific Azure resources. Please retry later or try reducing the VM size or number of role instances. Alternatively, if possible, remove the aforementioned constraints or try deploying to a different region.
+error:   vm create command failed
+
+
+2015-07-24 07:23:36,211 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 07:23:36,211 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-cd49bc32-0
+2015-07-24 07:23:40,430 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-cd49bc32-6. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-24 07:23:40,430 cd49bc32 Thread-10 hadoop_terasort(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-24 07:23:40,513 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-cd49bc32-5. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-24 07:23:40,513 cd49bc32 Thread-11 hadoop_terasort(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.
+2015-07-24 07:23:41,619 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-cd49bc32-0. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-24 07:23:41,620 cd49bc32 Thread-21 hadoop_terasort(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of DebianBasedAzureVirtualMachine failed.

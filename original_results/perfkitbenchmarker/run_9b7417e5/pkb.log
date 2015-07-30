@@ -1,0 +1,16 @@
+2015-07-23 12:46:35,554 9b7417e5 MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D2
+--cloud=Azure
+--benchmarks=coremark
+2015-07-23 12:46:35,895 9b7417e5 MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7f3dfad269d0> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7f3dfc826150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_9b7417e5/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-23 12:46:35,895 9b7417e5 MainThread coremark(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-23 12:46:35,895 9b7417e5 MainThread coremark(1/1) pkb.py:276 ERROR    Prerequisite check failed for coremark
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/pkb.py", line 274, in RunBenchmark
+    check_prereqs()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmarks/coremark_benchmark.py", line 52, in CheckPrerequisites
+    data.ResourcePath(COREMARK_TAR)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/data/__init__.py", line 168, in ResourcePath
+    '{0} (Searched: {1})'.format(resource_name, loaders))
+ResourceNotFound: coremark_v1.0.tgz (Searched: [<FileResourceLoader path=".">, <FileResourceLoader path="data">, <PackageResourceLoader package="perfkitbenchmarker.data">, <PackageResourceLoader package="perfkitbenchmarker.scripts">])
+2015-07-23 12:46:35,896 9b7417e5 MainThread coremark(1/1) pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_9b7417e5/pkb.log

@@ -1,0 +1,1714 @@
+2015-07-22 07:41:08,905 500a3f74 MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D3
+--zones=eu-west-1
+--cloud=Azure
+--benchmarks=aerospike
+2015-07-22 07:41:09,253 500a3f74 MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7fd3531d79d0> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7fd354cd7150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_500a3f74/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-22 07:41:09,254 500a3f74 MainThread aerospike(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-22 07:41:09,255 500a3f74 MainThread aerospike(1/1) pkb.py:194 INFO     Preparing benchmark aerospike
+2015-07-22 07:41:09,257 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:41:09,258 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:41:12,512 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:41:12,513 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:41:12,513 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:41:15,191 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:41:15,192 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:41:43,571 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:41:43,571 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:41:46,352 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:41:46,354 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:41:46,354 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:41:49,149 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:41:49,149 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:42:07,869 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:42:07,870 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:42:10,643 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:42:10,645 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:42:10,645 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:42:13,231 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:42:13,231 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:42:34,883 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:42:34,884 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:42:37,654 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:42:37,656 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:42:37,656 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:42:40,232 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:42:40,232 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:43:08,971 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:43:08,972 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:43:12,336 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:43:12,337 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:43:12,337 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:43:14,995 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:43:14,995 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:43:31,954 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:43:31,954 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:43:37,424 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:43:37,425 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:43:37,425 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:43:40,103 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:43:40,104 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:44:08,189 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:44:08,189 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:44:11,142 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:44:11,142 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:44:11,143 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:44:13,761 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:44:13,761 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:44:40,756 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:44:40,756 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:44:43,439 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:44:43,440 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:44:43,441 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:44:46,082 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:44:46,082 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:45:04,780 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:45:04,781 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:45:07,587 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:45:07,588 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:45:07,588 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:45:10,433 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:45:10,433 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:45:32,966 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:45:32,966 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:45:35,636 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:45:35,637 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:45:35,638 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:45:38,286 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:45:38,287 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:45:56,804 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:45:56,804 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:45:59,898 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:45:59,899 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:45:59,899 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:46:02,757 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:46:02,758 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:46:22,751 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:46:22,751 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:46:25,683 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:46:25,684 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:46:25,684 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:46:28,299 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:46:28,299 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:46:56,852 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:46:56,852 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:46:59,547 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:46:59,548 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:46:59,548 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:47:02,065 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:47:02,066 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:47:21,212 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:47:21,212 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:47:23,974 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:47:23,975 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:47:23,975 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:47:26,775 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:47:26,775 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:47:49,870 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:47:49,870 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:47:52,728 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:47:52,729 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:47:52,729 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:47:55,339 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:47:55,339 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:48:13,625 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:48:13,625 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:48:16,384 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:48:16,385 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:48:16,386 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:48:19,412 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:48:19,412 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:48:37,985 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:48:37,985 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:48:40,890 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:48:40,891 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:48:40,891 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:48:43,526 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:48:43,527 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:49:06,492 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:49:06,492 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:49:09,410 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:49:09,411 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:49:09,411 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:49:12,184 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:49:12,185 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:49:32,082 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:49:32,082 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:49:37,688 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:49:37,690 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:49:37,690 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:49:40,296 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:49:40,297 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:50:01,124 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:50:01,124 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:50:04,125 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:50:04,126 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:50:04,126 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:50:06,770 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:50:06,771 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:50:26,095 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:50:26,096 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:50:28,780 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:50:28,781 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:50:28,781 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:50:31,313 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:50:31,313 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:50:49,302 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:50:49,302 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:50:52,090 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:50:52,091 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:50:52,091 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:50:54,986 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:50:54,987 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:51:18,215 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:51:18,215 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:51:20,981 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:51:20,982 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:51:20,982 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:51:30,735 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:51:30,735 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:51:50,793 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:51:50,793 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:51:53,800 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:51:53,802 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:51:53,802 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:51:56,577 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:51:56,578 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:52:14,775 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:52:14,775 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:52:17,723 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:52:17,723 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:52:17,723 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:52:20,640 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:52:20,640 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:52:42,317 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:52:42,318 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:52:45,243 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:52:45,244 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:52:45,245 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:52:47,736 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:52:47,737 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:53:05,292 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:53:05,292 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:53:11,333 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:53:11,334 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:53:11,334 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:53:14,014 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:53:14,015 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:53:34,272 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:53:34,272 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:53:37,152 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:53:37,153 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:53:37,153 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:53:39,738 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:53:39,739 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:54:03,088 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:54:03,088 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:54:05,856 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:54:05,856 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:54:05,857 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:54:08,461 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:54:08,462 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:54:26,405 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:54:26,405 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:54:29,141 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:54:29,143 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:54:29,143 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:54:31,872 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:54:31,873 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:54:56,161 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:54:56,162 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:54:58,941 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:54:58,942 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:54:58,942 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:55:01,572 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:55:01,572 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:55:17,491 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:55:17,491 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:55:21,207 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:55:21,208 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:55:21,208 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:55:23,836 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:55:23,837 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:55:41,810 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:55:41,810 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:55:44,858 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:55:44,859 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:55:44,859 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:55:47,562 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:55:47,562 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:56:08,824 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:56:08,825 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:56:11,644 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:56:11,645 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:56:11,645 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:56:14,100 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:56:14,101 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:56:33,606 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:56:33,606 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:56:36,544 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:56:36,546 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:56:36,546 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:56:39,084 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:56:39,084 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:57:04,861 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:57:04,861 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:57:07,577 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:57:07,578 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:57:07,578 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:57:10,233 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:57:10,233 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:57:29,105 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:57:29,105 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:57:32,128 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:57:32,129 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:57:32,129 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:57:34,715 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:57:34,715 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:58:01,210 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:58:01,210 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:58:04,430 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:58:04,431 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:58:04,431 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:58:07,334 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:58:07,334 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:58:36,160 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:58:36,161 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:58:39,154 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:58:39,155 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:58:39,155 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:58:41,729 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:58:41,729 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:58:59,192 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:58:59,192 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:59:02,292 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:59:02,294 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:59:02,294 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:59:05,095 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:59:05,096 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 07:59:29,187 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:59:29,187 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 07:59:31,969 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 07:59:31,970 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 07:59:31,971 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 07:59:34,559 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 07:59:34,559 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 08:00:03,388 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:00:03,388 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 08:00:06,369 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 08:00:06,370 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:00:06,370 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 08:00:09,081 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 08:00:09,081 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 08:00:34,282 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:00:34,283 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 08:00:37,619 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 08:00:37,620 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:00:37,620 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 08:00:40,255 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 08:00:40,256 500a3f74 Thread-1 aerospike(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-22 08:01:06,808 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:01:06,809 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817
+2015-07-22 08:01:09,875 500a3f74 Thread-1 aerospike(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=eu-west-1 --label=perfkit500a3f7417cd6b817 perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The location constraint is not valid
+error:   account affinity-group create command failed
+
+
+2015-07-22 08:01:09,876 500a3f74 Thread-1 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:01:09,876 500a3f74 Thread-1 aerospike(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit500a3f7417cd6b817
+2015-07-22 08:01:12,501 500a3f74 Thread-1 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit500a3f7417cd6b817. Got return code (1).
+STDOUT: 
+STDERR: The affinity group does not exist.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-22 08:01:12,545 500a3f74 MainThread aerospike(1/1) pkb.py:317 ERROR    Error during benchmark aerospike
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/pkb.py", line 290, in RunBenchmark
+    DoPreparePhase(benchmark, benchmark_name, spec, detailed_timer)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/pkb.py", line 200, in DoPreparePhase
+    spec.Prepare()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 215, in Prepare
+    vm_util.RunThreaded(self.PrepareNetwork, prepare_args)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 292, in RunThreaded
+    '\n'.join([stacktrace for stacktrace in exceptions]))
+ThreadException: The following exceptions occurred during threaded execution: Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 276, in RunThreaded
+    thread.join(1000)  # Set timeout so that join is interruptable.
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 216, in join
+    raise errors.VmUtil.ThreadException(self.exception)
+ThreadException: Exception occured in thread 140545580918528:
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 203, in run
+    self.RunWithExceptions()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 210, in RunWithExceptions
+    super(ThreadWithExceptions, self).run()
+  File "/usr/lib/python2.7/threading.py", line 763, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 248, in PrepareNetwork
+    network.Create()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 354, in WrappedFunction
+    raise e
+RetryableCreationError: Creation of AzureAffinityGroup failed.
+
+
+2015-07-22 08:01:12,547 500a3f74 Thread-90 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:01:12,548 500a3f74 Thread-90 aerospike(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-500a3f74-1
+2015-07-22 08:01:12,550 500a3f74 Thread-91 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:01:12,550 500a3f74 Thread-91 aerospike(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-500a3f74-0
+2015-07-22 08:01:20,281 500a3f74 Thread-90 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure vm delete --quiet pkb-500a3f74-1. Got return code (0).
+STDOUT: info:    Executing command vm delete
+info:    Getting virtual machines
+warn:    No VMs found
+info:    vm delete command OK
+
+STDERR: 
+2015-07-22 08:01:20,281 500a3f74 Thread-90 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:01:20,281 500a3f74 Thread-90 aerospike(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-500a3f74-1
+2015-07-22 08:01:20,433 500a3f74 Thread-91 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure vm delete --quiet pkb-500a3f74-0. Got return code (0).
+STDOUT: info:    Executing command vm delete
+info:    Getting virtual machines
+warn:    No VMs found
+info:    vm delete command OK
+
+STDERR: 
+2015-07-22 08:01:20,433 500a3f74 Thread-91 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:01:20,433 500a3f74 Thread-91 aerospike(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-500a3f74-0
+2015-07-22 08:01:24,221 500a3f74 Thread-90 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-500a3f74-1. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-22 08:01:24,222 500a3f74 Thread-90 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:01:24,222 500a3f74 Thread-90 aerospike(1/1) vm_util.py:392 INFO     Running: azure service delete --quiet pkb-500a3f74-1
+2015-07-22 08:01:24,587 500a3f74 Thread-91 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-500a3f74-0. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-22 08:01:24,587 500a3f74 Thread-91 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:01:24,587 500a3f74 Thread-91 aerospike(1/1) vm_util.py:392 INFO     Running: azure service delete --quiet pkb-500a3f74-0
+2015-07-22 08:01:27,226 500a3f74 Thread-90 aerospike(1/1) vm_util.py:418 INFO     Ran azure service delete --quiet pkb-500a3f74-1. Got return code (1).
+STDOUT: info:    Executing command service delete
+info:    Deleting cloud service
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The hosted service does not exist.
+error:   service delete command failed
+
+
+2015-07-22 08:01:27,227 500a3f74 Thread-90 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:01:27,227 500a3f74 Thread-90 aerospike(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-500a3f74-1
+2015-07-22 08:01:27,734 500a3f74 Thread-91 aerospike(1/1) vm_util.py:418 INFO     Ran azure service delete --quiet pkb-500a3f74-0. Got return code (1).
+STDOUT: info:    Executing command service delete
+info:    Deleting cloud service
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The hosted service does not exist.
+error:   service delete command failed
+
+
+2015-07-22 08:01:27,735 500a3f74 Thread-91 aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:01:27,735 500a3f74 Thread-91 aerospike(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-500a3f74-0
+2015-07-22 08:01:29,977 500a3f74 Thread-90 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-500a3f74-1. Got return code (1).
+STDOUT: 
+STDERR: The hosted service does not exist.
+Error information has been recorded to /root/.azure/azure.err
+service show command failed
+
+
+2015-07-22 08:01:30,442 500a3f74 Thread-91 aerospike(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-500a3f74-0. Got return code (1).
+STDOUT: 
+STDERR: The hosted service does not exist.
+Error information has been recorded to /root/.azure/azure.err
+service show command failed
+
+
+2015-07-22 08:01:30,474 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:01:30,474 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:01:33,474 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:01:33,474 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:01:33,475 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:01:36,602 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:01:36,602 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:01:52,469 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:01:52,469 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:01:55,477 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:01:55,478 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:01:55,478 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:01:58,479 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:01:58,480 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:02:17,515 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:02:17,516 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:02:20,792 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:02:20,792 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:02:20,792 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:02:23,899 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:02:23,899 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:02:53,621 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:02:53,621 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:02:56,640 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:02:56,640 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:02:56,640 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:02:59,751 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:02:59,751 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:03:28,231 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:03:28,232 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:03:31,276 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:03:31,276 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:03:31,276 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:03:34,315 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:03:34,315 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:03:59,063 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:03:59,063 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:04:02,172 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:04:02,172 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:04:02,172 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:04:07,697 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:04:07,697 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:04:28,266 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:04:28,267 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:04:31,511 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:04:31,511 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:04:31,512 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:04:34,746 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:04:34,747 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:04:55,055 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:04:55,055 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:04:58,008 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:04:58,008 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:04:58,008 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:05:01,264 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:05:01,264 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:05:16,840 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:05:16,841 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:05:20,100 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:05:20,100 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:05:20,100 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:05:23,408 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:05:23,408 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:05:53,396 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:05:53,396 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:05:56,505 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:05:56,506 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:05:56,506 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:05:59,520 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:05:59,520 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:06:20,890 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:06:20,890 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:06:23,969 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:06:23,970 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:06:23,970 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:06:26,993 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:06:26,993 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:06:56,959 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:06:56,959 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:06:59,879 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:06:59,880 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:06:59,880 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:07:03,246 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:07:03,247 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:07:30,756 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:07:30,756 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:07:33,866 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:07:33,867 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:07:33,867 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:07:36,865 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:07:36,866 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:07:58,841 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:07:58,841 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:08:01,902 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:08:01,902 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:08:01,902 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:08:05,146 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:08:05,147 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:08:23,765 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:08:23,766 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:08:26,800 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:08:26,800 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:08:26,800 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:08:30,076 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:08:30,076 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:08:58,584 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:08:58,584 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:09:01,574 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:09:01,575 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:09:01,575 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:09:04,671 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:09:04,672 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:09:30,989 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:09:30,990 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:09:34,394 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:09:34,395 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:09:34,395 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:09:37,527 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:09:37,528 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:10:01,017 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:10:01,018 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:10:04,485 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:10:04,486 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:10:04,486 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:10:07,783 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:10:07,783 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:10:24,609 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:10:24,610 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:10:27,605 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:10:27,606 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:10:27,606 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:10:30,779 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:10:30,779 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:10:52,205 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:10:52,205 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:10:55,293 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:10:55,294 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:10:55,294 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:10:58,464 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:10:58,464 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:11:25,403 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:11:25,403 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:11:28,325 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:11:28,325 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:11:28,325 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:11:31,359 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:11:31,359 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:11:52,674 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:11:52,674 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:11:55,737 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:11:55,738 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:11:55,738 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:11:58,702 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:11:58,702 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:12:23,864 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:12:23,864 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:12:27,093 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:12:27,094 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:12:27,094 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:12:30,296 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:12:30,296 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:12:52,791 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:12:52,791 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:12:55,748 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:12:55,748 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:12:55,748 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:12:58,847 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:12:58,847 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:13:27,252 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:13:27,252 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:13:30,424 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:13:30,424 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:13:30,424 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:13:33,402 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:13:33,403 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:13:50,932 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:13:50,933 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:13:54,084 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:13:54,085 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:13:54,085 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:13:57,130 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:13:57,131 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:14:23,533 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:14:23,533 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:14:28,056 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:14:28,057 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:14:28,057 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:14:31,141 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:14:31,141 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:14:48,034 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:14:48,035 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:14:51,008 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:14:51,008 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:14:51,008 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:14:54,309 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:14:54,309 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:15:17,669 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:15:17,669 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:15:21,209 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:15:21,210 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:15:21,210 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:15:24,295 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:15:24,295 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:15:53,393 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:15:53,394 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:15:56,320 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:15:56,320 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:15:56,320 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:15:59,298 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:15:59,299 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:16:28,743 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:16:28,743 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:16:31,892 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:16:31,892 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:16:31,892 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:16:35,190 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:16:35,191 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:16:50,947 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:16:50,947 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:16:54,000 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:16:54,000 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:16:54,000 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:16:57,299 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:16:57,299 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:17:16,990 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:17:16,990 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:17:19,978 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:17:19,978 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:17:19,978 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:17:23,045 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:17:23,045 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:17:44,018 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:17:44,019 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:17:46,892 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:17:46,893 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:17:46,893 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:17:50,047 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:17:50,048 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:18:14,387 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:18:14,388 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:18:17,388 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:18:17,388 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:18:17,388 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:18:20,441 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:18:20,442 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:18:35,872 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:18:35,873 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:18:38,971 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:18:38,971 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:18:38,972 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:18:42,187 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:18:42,188 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:19:10,559 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:19:10,559 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:19:13,476 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:19:13,477 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:19:13,477 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:19:16,596 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:19:16,596 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:19:33,020 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:19:33,020 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:19:35,956 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:19:35,956 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:19:35,956 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:19:39,208 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:19:39,208 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:19:55,772 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:19:55,772 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:19:58,808 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:19:58,808 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:19:58,808 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:20:01,818 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:20:01,819 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:20:25,931 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:20:25,932 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:20:29,112 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:20:29,112 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:20:29,112 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:20:32,243 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:20:32,243 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:20:54,175 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:20:54,175 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:20:57,084 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:20:57,084 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:20:57,084 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:21:00,202 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:21:00,203 500a3f74 MainThread aerospike(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:21:20,697 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:21:20,697 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit500a3f7417cd6b817
+2015-07-22 08:21:23,841 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit500a3f7417cd6b817" not found
+
+2015-07-22 08:21:23,842 500a3f74 MainThread aerospike(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 08:21:23,842 500a3f74 MainThread aerospike(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit500a3f7417cd6b817
+2015-07-22 08:21:26,787 500a3f74 MainThread aerospike(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit500a3f7417cd6b817. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 08:21:26,787 500a3f74 MainThread aerospike(1/1) benchmark_spec.py:242 ERROR    Got an exception deleting networks. Attempting to continue tearing down.
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 240, in Delete
+    net.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/azure/azure_network.py", line 228, in Delete
+    self.vnet.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/resource.py", line 135, in Delete
+    self._DeleteResource()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 354, in WrappedFunction
+    raise e
+RetryableDeletionError: Deletion of AzureVirtualNetwork failed.
+2015-07-22 08:21:26,790 500a3f74 MainThread aerospike(1/1) pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_500a3f74/pkb.log

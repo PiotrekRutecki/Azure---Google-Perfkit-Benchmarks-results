@@ -1,0 +1,56 @@
+2015-07-21 13:03:14,761 34756bcf MainThread pkb.py:336 INFO     Flag values:
+--machine_type=ExtraSmall
+--cloud=Azure
+--benchmarks=iperf
+2015-07-21 13:03:14,870 34756bcf MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7f2ec3f74990> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7f2ec5a73150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_34756bcf/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-21 13:03:14,871 34756bcf MainThread iperf(1/1) pkb.py:194 INFO     Preparing benchmark iperf
+2015-07-21 13:03:14,874 34756bcf Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 13:03:14,874 34756bcf Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit34756bcf28efaee0d perfkit34756bcf28efaee0d
+2015-07-21 13:03:16,253 34756bcf Thread-1 iperf(1/1) vm_util.py:418 INFO     Ran azure account affinity-group create --location=East US --label=perfkit34756bcf28efaee0d perfkit34756bcf28efaee0d. Got return code (1).
+STDOUT: info:    Executing command account affinity-group create
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   account affinity-group create command failed
+
+
+2015-07-21 13:03:16,254 34756bcf Thread-1 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 13:03:16,254 34756bcf Thread-1 iperf(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit34756bcf28efaee0d
+2015-07-21 13:03:17,617 34756bcf Thread-1 iperf(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit34756bcf28efaee0d. Got return code (1).
+STDOUT: 
+STDERR: There is no current subscription. Please use the azure login command to set your current subscription.
+Error information has been recorded to /root/.azure/azure.err
+account affinity-group show command failed
+
+
+2015-07-21 13:03:17,617 34756bcf Thread-1 iperf(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-21 13:03:27,222 34756bcf Thread-4 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 13:03:27,223 34756bcf Thread-4 iperf(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-34756bcf-1
+2015-07-21 13:03:27,226 34756bcf Thread-5 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 13:03:27,226 34756bcf Thread-5 iperf(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-34756bcf-0
+2015-07-21 13:03:28,918 34756bcf Thread-5 iperf(1/1) vm_util.py:418 INFO     Ran azure vm delete --quiet pkb-34756bcf-0. Got return code (1).
+STDOUT: info:    Executing command vm delete
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   vm delete command failed
+
+
+2015-07-21 13:03:28,919 34756bcf Thread-5 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 13:03:28,919 34756bcf Thread-5 iperf(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-34756bcf-0
+2015-07-21 13:03:28,958 34756bcf Thread-4 iperf(1/1) vm_util.py:418 INFO     Ran azure vm delete --quiet pkb-34756bcf-1. Got return code (1).
+STDOUT: info:    Executing command vm delete
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   There is no current subscription. Please use the azure login command to set your current subscription.
+error:   vm delete command failed
+
+
+2015-07-21 13:03:28,959 34756bcf Thread-4 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 13:03:28,959 34756bcf Thread-4 iperf(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-34756bcf-1
+2015-07-21 13:03:29,097 34756bcf MainThread iperf(1/1) pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_34756bcf/pkb.log
+2015-07-21 13:03:29,099 34756bcf Thread-4 iperf(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-34756bcf-1. Got return code (-2).
+STDOUT: 
+STDERR: 
+2015-07-21 13:03:29,099 34756bcf Thread-4 iperf(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-21 13:03:29,099 34756bcf Thread-4 iperf(1/1) vm_util.py:392 INFO     Running: azure service delete --quiet pkb-34756bcf-1

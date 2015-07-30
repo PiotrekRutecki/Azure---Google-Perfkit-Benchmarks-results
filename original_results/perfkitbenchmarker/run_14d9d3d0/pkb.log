@@ -1,0 +1,1545 @@
+2015-07-22 12:34:30,938 14d9d3d0 MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D2
+--cloud=Azure
+--benchmarks=bonnie++
+2015-07-22 12:34:31,074 14d9d3d0 MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7f431c3759d0> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7f431de75150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-22 12:34:31,075 14d9d3d0 MainThread bonnie++(1/1) pkb.py:194 INFO     Preparing benchmark bonnie++
+2015-07-22 12:34:31,077 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:34:31,078 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit14d9d3d01eae60c34 perfkit14d9d3d01eae60c34
+2015-07-22 12:34:33,868 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group create --location=East US --label=perfkit14d9d3d01eae60c34 perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    account affinity-group create command OK
+
+STDERR: 
+2015-07-22 12:34:33,869 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:34:33,869 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit14d9d3d01eae60c34
+2015-07-22 12:34:36,454 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {
+  "capabilities": [
+    "PersistentVMRole",
+    "HighMemory"
+  ],
+  "hostedServices": [],
+  "storageServices": [],
+  "name": "perfkit14d9d3d01eae60c34",
+  "label": "perfkit14d9d3d01eae60c34",
+  "location": "East US",
+  "createdTime": "2015-07-22T12:34:42.000Z",
+  "statusCode": 200,
+  "requestId": "239189a2f63acdf992304da601bd791c"
+}
+
+STDERR: 
+2015-07-22 12:34:36,455 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:34:36,455 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkit14d9d3d01eae60c34 --type=LRS perfkit14d9d3d01eae60c34
+2015-07-22 12:35:12,948 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure storage account create --affinity-group=perfkit14d9d3d01eae60c34 --type=LRS perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    storage account create command OK
+
+STDERR: 
+2015-07-22 12:35:12,948 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:35:12,948 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkit14d9d3d01eae60c34
+2015-07-22 12:35:15,743 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {
+  "extendedProperties": {
+    "ResourceGroup": "Default-Storage-EastUS",
+    "ResourceLocation": "East US"
+  },
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/storageservices/perfkit14d9d3d01eae60c34",
+  "name": "perfkit14d9d3d01eae60c34",
+  "properties": {
+    "endpoints": [
+      "https://perfkit14d9d3d01eae60c34.blob.core.windows.net/",
+      "https://perfkit14d9d3d01eae60c34.queue.core.windows.net/",
+      "https://perfkit14d9d3d01eae60c34.table.core.windows.net/"
+    ],
+    "affinityGroup": "perfkit14d9d3d01eae60c34",
+    "label": "perfkit14d9d3d01eae60c34",
+    "status": "Created",
+    "geoPrimaryRegion": "East US",
+    "statusOfGeoPrimaryRegion": "Available",
+    "geoSecondaryRegion": "",
+    "accountType": "Standard_LRS"
+  },
+  "resourceGroup": ""
+}
+
+STDERR: 
+2015-07-22 12:35:15,743 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:35:15,743 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet create --affinity-group=perfkit14d9d3d01eae60c34 perfkit14d9d3d01eae60c34
+2015-07-22 12:35:52,428 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet create --affinity-group=perfkit14d9d3d01eae60c34 perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet create
+info:    Using default address space start IP: 10.0.0.0
+info:    Using default address space cidr: 8
+info:    Using default subnet start IP: 10.0.0.0
+info:    Using default subnet cidr: 11
+info:    Looking up network configuration
+info:    Looking up affinity groups
+info:    Using affinity group perfkit14d9d3d01eae60c34
+info:    Setting network configuration
+info:    network vnet create command OK
+
+STDERR: 
+2015-07-22 12:35:52,428 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:35:52,429 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 12:35:55,658 14d9d3d0 Thread-1 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {
+  "dnsServers": [],
+  "subnets": [
+    {
+      "name": "Subnet-1",
+      "addressPrefix": "10.0.0.0/11"
+    }
+  ],
+  "name": "perfkit14d9d3d01eae60c34",
+  "id": "771317ff-101b-4c2b-bfb9-88dc0186e2ac",
+  "affinityGroup": "perfkit14d9d3d01eae60c34",
+  "state": "Created",
+  "addressSpace": {
+    "addressPrefixes": [
+      "10.0.0.0/8"
+    ]
+  }
+}
+
+STDERR: 
+2015-07-22 12:35:55,700 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:35:55,700 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: azure service create --affinitygroup=perfkit14d9d3d01eae60c34 pkb-14d9d3d0-0
+2015-07-22 12:35:59,441 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure service create --affinitygroup=perfkit14d9d3d01eae60c34 pkb-14d9d3d0-0. Got return code (0).
+STDOUT: info:    Executing command service create
+info:    Creating cloud service
+data:    Cloud service name pkb-14d9d3d0-0
+info:    service create command OK
+
+STDERR: 
+2015-07-22 12:35:59,441 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:35:59,442 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-14d9d3d0-0
+2015-07-22 12:36:02,044 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-14d9d3d0-0. Got return code (0).
+STDOUT: {
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/hostedservices/pkb-14d9d3d0-0",
+  "serviceName": "pkb-14d9d3d0-0",
+  "properties": {
+    "extendedProperties": {},
+    "affinityGroup": "perfkit14d9d3d01eae60c34",
+    "label": "pkb-14d9d3d0-0",
+    "status": "Created",
+    "dateCreated": "2015-07-22T12:36:08.000Z",
+    "dateLastModified": "2015-07-22T12:36:08.000Z"
+  },
+  "statusCode": 200,
+  "requestId": "4e9952ca584dcfc19e3e3e0b722a02c7"
+}
+
+STDERR: 
+2015-07-22 12:36:02,044 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:36:02,044 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkit14d9d3d01eae60c34 --virtual-network-name=perfkit14d9d3d01eae60c34 --vm-size=Standard_D2 pkb-14d9d3d0-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker.pem --no-ssh-password
+2015-07-22 12:38:29,778 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure vm create --affinity-group=perfkit14d9d3d01eae60c34 --virtual-network-name=perfkit14d9d3d01eae60c34 --vm-size=Standard_D2 pkb-14d9d3d0-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker.pem --no-ssh-password. Got return code (0).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Creating a new storage account 'portalvhds1437568575832'
+info:    Configuring certificate
+info:    Creating VM
+info:    OK
+info:    vm create command OK
+
+STDERR: 
+2015-07-22 12:38:29,778 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:38:29,778 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-14d9d3d0-0
+2015-07-22 12:38:34,017 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-14d9d3d0-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-14d9d3d0-0.cloudapp.net",
+  "AffinityGroup": "perfkit14d9d3d01eae60c34",
+  "VMName": "pkb-14d9d3d0-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "RoleStateUnknown",
+  "InstanceSize": "Standard_D2",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899",
+    "mediaLink": "https://portalvhds1437568575832.blob.core.windows.net/vhd-store/pkb-14d9d3d0-0-6f9f29872a2ba80e.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "23.96.27.99",
+      "name": "pkb-14d9d3d0-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "23.96.27.99",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-22 12:38:34,018 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:38:34,018 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-14d9d3d0-0
+2015-07-22 12:38:38,255 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-14d9d3d0-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-14d9d3d0-0.cloudapp.net",
+  "AffinityGroup": "perfkit14d9d3d01eae60c34",
+  "VMName": "pkb-14d9d3d0-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "RoleStateUnknown",
+  "InstanceSize": "Standard_D2",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899",
+    "mediaLink": "https://portalvhds1437568575832.blob.core.windows.net/vhd-store/pkb-14d9d3d0-0-6f9f29872a2ba80e.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "23.96.27.99",
+      "name": "pkb-14d9d3d0-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "23.96.27.99",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-22 12:38:38,256 14d9d3d0 Thread-8 bonnie++(1/1) benchmark_spec.py:322 INFO     VM: 23.96.27.99
+2015-07-22 12:38:38,256 14d9d3d0 Thread-8 bonnie++(1/1) benchmark_spec.py:323 INFO     Waiting for boot completion.
+2015-07-22 12:38:38,257 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:38:38,257 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:38:43,269 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection timed out
+
+2015-07-22 12:38:44,165 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:38:44,166 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:38:49,178 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection timed out
+
+2015-07-22 12:38:49,752 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:38:49,752 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:38:54,764 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection timed out
+
+2015-07-22 12:38:55,541 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:38:55,541 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:00,554 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection timed out
+
+2015-07-22 12:39:01,062 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:01,062 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:06,075 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection timed out
+
+2015-07-22 12:39:06,585 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:06,585 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:11,598 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection timed out
+
+2015-07-22 12:39:12,234 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:12,235 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:17,247 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection timed out
+
+2015-07-22 12:39:18,000 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:18,000 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:21,093 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:21,732 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:21,732 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:21,827 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:22,539 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:22,539 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:23,634 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:24,620 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:24,620 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:24,714 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:25,687 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:25,687 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:25,780 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:26,516 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:26,517 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:26,611 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:27,567 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:27,567 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:27,662 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:28,488 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:28,488 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:28,581 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:29,369 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:29,370 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:29,465 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:29,981 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:29,981 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:30,076 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:30,722 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:30,722 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:30,813 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:31,779 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:31,779 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:31,873 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:32,813 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:32,813 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:32,907 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:33,532 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:33,532 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:33,622 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:34,281 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:34,281 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:34,371 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:35,063 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:35,063 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:35,156 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:35,882 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:35,882 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:35,976 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:36,954 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:36,955 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:37,048 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:37,905 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:37,906 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:38,001 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:38,999 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:38,999 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:39,092 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:39,835 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:39,835 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:39,930 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:40,674 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:40,674 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:40,767 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:41,753 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:41,754 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:41,847 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:42,698 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:42,699 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:42,793 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:43,619 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:43,619 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:43,713 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:44,223 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:44,223 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:44,318 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:45,284 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:45,284 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:45,379 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:46,232 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:46,232 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:46,323 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:47,204 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:47,204 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:47,297 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:47,816 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:47,816 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:47,910 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:48,861 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:48,861 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:48,951 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:49,549 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:49,550 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:49,641 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 23.96.27.99 port 22: Connection refused
+
+2015-07-22 12:39:50,603 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:50,603 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname
+2015-07-22 12:39:52,181 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile hostname. Got return code (0).
+STDOUT: pkb-14d9d3d0-0
+
+STDERR: Warning: Permanently added '23.96.27.99' (ECDSA) to the list of known hosts.
+
+2015-07-22 12:39:52,181 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:39:52,182 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm disk attach-new pkb-14d9d3d0-0 500
+2015-07-22 12:40:59,519 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure vm disk attach-new pkb-14d9d3d0-0 500. Got return code (0).
+STDOUT: info:    Executing command vm disk attach-new
+info:    Getting virtual machines
+info:    Adding Data-Disk
+info:    vm disk attach-new command OK
+
+STDERR: 
+2015-07-22 12:40:59,520 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:40:59,520 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-14d9d3d0-0
+2015-07-22 12:41:05,349 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-14d9d3d0-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-14d9d3d0-0.cloudapp.net",
+  "AffinityGroup": "perfkit14d9d3d01eae60c34",
+  "VMName": "pkb-14d9d3d0-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "RoleStateUnknown",
+  "InstanceSize": "Standard_D2",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899",
+    "mediaLink": "https://portalvhds1437568575832.blob.core.windows.net/vhd-store/pkb-14d9d3d0-0-6f9f29872a2ba80e.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [
+    {
+      "hostCaching": "None",
+      "label": "pkb-14d9d3d0-0-pkb-14d9d3d0-0-pkb-14d9d3d0-0-0",
+      "name": "pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221240110939",
+      "logicalDiskSizeInGB": 500,
+      "mediaLink": "https://portalvhds1437568575832.blob.core.windows.net/vhd-store/pkb-14d9d3d0-0-46dbc00dd0a90c04.vhd",
+      "iOType": "Standard"
+    }
+  ],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "23.96.27.99",
+      "name": "pkb-14d9d3d0-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "23.96.27.99",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-22 12:41:05,349 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:41:05,349 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile sudo mke2fs -F -E lazy_itable_init=0 -O ^has_journal -t ext4 -b 4096 /dev/sdc
+2015-07-22 12:44:00,683 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile sudo mke2fs -F -E lazy_itable_init=0 -O ^has_journal -t ext4 -b 4096 /dev/sdc. Got return code (0).
+STDOUT: Discarding device blocks:      4096/131072000 33558528/131072000101191680/131072000                   done                            
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+32768000 inodes, 131072000 blocks
+6553600 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=4294967296
+4000 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968, 
+	102400000
+
+Allocating group tables:    0/4000         done                            
+Writing inode tables:    0/4000 354/4000 579/4000 634/4000 682/4000 731/4000 777/4000 808/4000 836/4000 862/4000 885/4000 907/4000 929/4000 951/4000 973/4000 999/40001020/40001040/40001063/40001087/40001112/40001136/40001159/40001181/40001204/40001226/40001248/40001270/40001292/40001315/40001337/40001359/40001381/40001403/40001426/40001451/40001476/40001503/40001530/40001553/40001579/40001602/40001625/40001647/40001671/40001695/40001718/40001740/40001767/40001793/40001820/40001844/40001871/40001896/40001920/40001945/40001968/40001994/40002019/40002041/40002064/40002088/40002111/40002140/40002168/40002194/40002220/40002248/40002275/40002298/40002320/40002342/40002364/40002389/40002417/40002444/40002468/40002495/40002523/40002549/40002577/40002601/40002625/40002652/40002679/40002706/40002731/40002757/40002781/40002805/40002830/40002854/40002877/40002900/40002923/40002945/40002968/40002993/40003020/40003043/40003068/40003093/40003116/40003143/40003171/40003194/40003217/40003241/40003267/40003290/40003313/40003335/40003357/40003379/40003401/40003425/40003450/40003474/40003498/40003520/40003542/40003564/40003586/40003609/40003631/40003653/40003675/40003697/40003718/40003739/40003760/40003782/40003803/40003828/40003852/40003875/40003899/40003923/40003947/40003969/40003994/4000         done                            
+Writing superblocks and filesystem accounting information:    0/4000  50/4000 730/4000         done
+
+
+STDERR: Warning: Permanently added '23.96.27.99' (ECDSA) to the list of known hosts.
+mke2fs 1.42.9 (4-Feb-2014)
+
+2015-07-22 12:44:00,683 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:44:00,684 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile sudo mkdir -p /scratch0;sudo mount /dev/sdc /scratch0;sudo chown -R $USER:$USER /scratch0;
+2015-07-22 12:44:03,858 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile sudo mkdir -p /scratch0;sudo mount /dev/sdc /scratch0;sudo chown -R $USER:$USER /scratch0;. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '23.96.27.99' (ECDSA) to the list of known hosts.
+
+2015-07-22 12:44:03,858 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:44:03,858 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile sudo apt-get update
+2015-07-22 12:44:16,132 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile sudo apt-get update. Got return code (0).
+STDOUT: Ign http://azure.archive.ubuntu.com trusty InRelease
+Ign http://azure.archive.ubuntu.com trusty-updates InRelease
+Hit http://azure.archive.ubuntu.com trusty Release.gpg
+Get:1 http://azure.archive.ubuntu.com trusty-updates Release.gpg [933 B]
+Hit http://azure.archive.ubuntu.com trusty Release
+Ign http://security.ubuntu.com trusty-security InRelease
+Get:2 http://azure.archive.ubuntu.com trusty-updates Release [63.5 kB]
+Get:3 http://security.ubuntu.com trusty-security Release.gpg [933 B]
+Get:4 http://security.ubuntu.com trusty-security Release [63.5 kB]
+Get:5 http://azure.archive.ubuntu.com trusty/main Sources [1,064 kB]
+Get:6 http://security.ubuntu.com trusty-security/main Sources [87.9 kB]
+Get:7 http://azure.archive.ubuntu.com trusty/universe Sources [6,399 kB]
+Get:8 http://security.ubuntu.com trusty-security/universe Sources [28.1 kB]
+Get:9 http://security.ubuntu.com trusty-security/main amd64 Packages [310 kB]
+Get:10 http://security.ubuntu.com trusty-security/universe amd64 Packages [111 kB]
+Get:11 http://security.ubuntu.com trusty-security/main Translation-en [164 kB]
+Get:12 http://security.ubuntu.com trusty-security/universe Translation-en [64.0 kB]
+Hit http://azure.archive.ubuntu.com trusty/main amd64 Packages
+Hit http://azure.archive.ubuntu.com trusty/universe amd64 Packages
+Hit http://azure.archive.ubuntu.com trusty/main Translation-en
+Hit http://azure.archive.ubuntu.com trusty/universe Translation-en
+Get:13 http://azure.archive.ubuntu.com trusty-updates/main Sources [215 kB]
+Get:14 http://azure.archive.ubuntu.com trusty-updates/universe Sources [125 kB]
+Get:15 http://azure.archive.ubuntu.com trusty-updates/main amd64 Packages [570 kB]
+Get:16 http://azure.archive.ubuntu.com trusty-updates/universe amd64 Packages [296 kB]
+Get:17 http://azure.archive.ubuntu.com trusty-updates/main Translation-en [275 kB]
+Get:18 http://azure.archive.ubuntu.com trusty-updates/universe Translation-en [157 kB]
+Ign http://azure.archive.ubuntu.com trusty/main Translation-en_US
+Ign http://azure.archive.ubuntu.com trusty/universe Translation-en_US
+Fetched 9,994 kB in 3s (2,632 kB/s)
+Reading package lists...
+
+STDERR: Warning: Permanently added '23.96.27.99' (ECDSA) to the list of known hosts.
+
+2015-07-22 12:44:16,133 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:44:16,133 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile mkdir -p /tmp/pkb
+2015-07-22 12:44:17,413 14d9d3d0 Thread-8 bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile mkdir -p /tmp/pkb. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '23.96.27.99' (ECDSA) to the list of known hosts.
+
+2015-07-22 12:44:17,422 14d9d3d0 MainThread bonnie++(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-22 12:44:17,431 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:563 INFO     ssh to VMs in this benchmark by name with: ssh -F /tmp/perfkitbenchmarker/run_14d9d3d0/ssh_config <vm name>
+2015-07-22 12:44:17,433 14d9d3d0 MainThread bonnie++(1/1) bonnie_benchmark.py:100 INFO     Bonnie++ prepare on 23.96.27.99
+2015-07-22 12:44:17,433 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:44:17,434 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install bonnie++
+2015-07-22 12:44:30,687 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install bonnie++. Got return code (0).
+STDOUT: Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  bonnie++
+0 upgraded, 1 newly installed, 0 to remove and 142 not upgraded.
+Need to get 67.9 kB of archives.
+After this operation, 202 kB of additional disk space will be used.
+Get:1 http://azure.archive.ubuntu.com/ubuntu/ trusty/main bonnie++ amd64 1.97.1 [67.9 kB]
+Fetched 67.9 kB in 0s (194 kB/s)
+Selecting previously unselected package bonnie++.
+(Reading database ... 27030 files and directories currently installed.)
+Preparing to unpack .../bonnie++_1.97.1_amd64.deb ...
+Unpacking bonnie++ (1.97.1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up bonnie++ (1.97.1) ...
+
+STDERR: Warning: Permanently added '23.96.27.99' (ECDSA) to the list of known hosts.
+
+2015-07-22 12:44:30,687 14d9d3d0 MainThread bonnie++(1/1) pkb.py:221 INFO     Running benchmark bonnie++
+2015-07-22 12:44:30,688 14d9d3d0 MainThread bonnie++(1/1) bonnie_benchmark.py:260 INFO     Bonnie++ running on 23.96.27.99
+2015-07-22 12:44:30,688 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:44:30,688 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile cat /proc/meminfo | grep MemTotal | awk '{print $2}'
+2015-07-22 12:44:31,945 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile cat /proc/meminfo | grep MemTotal | awk '{print $2}'. Got return code (0).
+STDOUT: 7137604
+
+STDERR: Warning: Permanently added '23.96.27.99' (ECDSA) to the list of known hosts.
+
+2015-07-22 12:44:31,946 14d9d3d0 MainThread bonnie++(1/1) bonnie_benchmark.py:264 INFO     Bonnie++ Results:
+2015-07-22 12:44:31,946 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 12:44:31,946 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile /usr/sbin/bonnie++ -q -d /scratch0 -s 13940 -n 100 -f
+2015-07-22 13:22:26,106 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:418 INFO     Ran ssh -A -p 22 perfkit@23.96.27.99 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_keyfile /usr/sbin/bonnie++ -q -d /scratch0 -s 13940 -n 100 -f. Got return code (0).
+STDOUT: 1.97,1.97,pkb-14d9d3d0-0,1,1437571535,13940M,,,,47170,6,11626,1,,,21335,1,347.6,6,100,,,,,47690,74,+++++,+++,64173,64,2902,98,+++++,+++,55801,54,,230ms,1770ms,,1617ms,541ms,6621us,967us,1200us,16437us,571us,585us
+
+STDERR: Warning: Permanently added '23.96.27.99' (ECDSA) to the list of known hosts.
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+pkb-14d9d3d0 13940M           47170   6 11626   1           21335   1 347.6   6
+Latency                         230ms    1770ms              1617ms     541ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+pkb-14d9d3d0-0      -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                100 47690  74 +++++ +++ 64173  64  2902  98 +++++ +++ 55801  54
+Latency              6621us     967us    1200us   16437us     571us     585us
+
+2015-07-22 13:22:26,111 14d9d3d0 MainThread bonnie++(1/1) pkb.py:241 INFO     Cleaning up benchmark bonnie++
+2015-07-22 13:22:26,112 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:22:26,112 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-14d9d3d0-0
+2015-07-22 13:23:11,620 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure vm delete --quiet pkb-14d9d3d0-0. Got return code (0).
+STDOUT: info:    Executing command vm delete
+info:    Getting virtual machines
+info:    Deleting VM
+info:    Deleting Cloud Service
+info:    vm delete command OK
+
+STDERR: 
+2015-07-22 13:23:11,621 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:23:11,621 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-14d9d3d0-0
+2015-07-22 13:23:16,030 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-14d9d3d0-0. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-22 13:23:16,030 14d9d3d0 Thread-63 bonnie++(1/1) azure_disk.py:76 INFO     Deleting disk pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899. This may fail while the associated VM is deleted, but will be retried.
+2015-07-22 13:23:16,031 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:23:16,031 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899
+2015-07-22 13:23:20,862 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899
+error:   Windows Azure is currently performing an operation on deployment 'pkb-14d9d3d0-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-22 13:23:20,862 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:23:20,863 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899
+2015-07-22 13:23:23,832 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkit14d9d3d01eae60c34",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437568575832.blob.core.windows.net/vhd-store/pkb-14d9d3d0-0-6f9f29872a2ba80e.vhd",
+  "name": "pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "usageDetails": {
+    "hostedServiceName": "pkb-14d9d3d0-0",
+    "deploymentName": "pkb-14d9d3d0-0",
+    "roleName": "pkb-14d9d3d0-0"
+  },
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-22 13:23:23,833 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-22 13:23:49,165 14d9d3d0 Thread-63 bonnie++(1/1) azure_disk.py:76 INFO     Deleting disk pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899. This may fail while the associated VM is deleted, but will be retried.
+2015-07-22 13:23:49,166 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:23:49,166 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899
+2015-07-22 13:23:53,855 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899
+error:   Windows Azure is currently performing an operation on deployment 'pkb-14d9d3d0-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-22 13:23:53,856 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:23:53,856 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899
+2015-07-22 13:23:56,866 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkit14d9d3d01eae60c34",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437568575832.blob.core.windows.net/vhd-store/pkb-14d9d3d0-0-6f9f29872a2ba80e.vhd",
+  "name": "pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "usageDetails": {
+    "hostedServiceName": "pkb-14d9d3d0-0",
+    "deploymentName": "pkb-14d9d3d0-0",
+    "roleName": "pkb-14d9d3d0-0"
+  },
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-22 13:23:56,866 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-22 13:24:23,769 14d9d3d0 Thread-63 bonnie++(1/1) azure_disk.py:76 INFO     Deleting disk pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899. This may fail while the associated VM is deleted, but will be retried.
+2015-07-22 13:24:23,770 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:24:23,771 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899
+2015-07-22 13:24:28,838 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899
+error:   Windows Azure is currently performing an operation on deployment 'pkb-14d9d3d0-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-22 13:24:28,839 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:24:28,839 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899
+2015-07-22 13:24:31,709 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkit14d9d3d01eae60c34",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437568575832.blob.core.windows.net/vhd-store/pkb-14d9d3d0-0-6f9f29872a2ba80e.vhd",
+  "name": "pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "usageDetails": {
+    "hostedServiceName": "pkb-14d9d3d0-0",
+    "deploymentName": "pkb-14d9d3d0-0",
+    "roleName": "pkb-14d9d3d0-0"
+  },
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-22 13:24:31,709 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-22 13:24:52,685 14d9d3d0 Thread-63 bonnie++(1/1) azure_disk.py:76 INFO     Deleting disk pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899. This may fail while the associated VM is deleted, but will be retried.
+2015-07-22 13:24:52,686 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:24:52,686 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899
+2015-07-22 13:24:57,542 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure vm disk delete --blob-delete pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899. Got return code (0).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Disk deleted: pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899
+info:    vm disk delete command OK
+
+STDERR: 
+2015-07-22 13:24:57,542 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:24:57,542 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899
+2015-07-22 13:25:00,611 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221237380899. Got return code (1).
+STDOUT: 
+STDERR: The disk with the specified name does not exist.
+Error information has been recorded to /root/.azure/azure.err
+vm disk show command failed
+
+
+2015-07-22 13:25:00,612 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:25:00,612 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:392 INFO     Running: azure service delete --quiet pkb-14d9d3d0-0
+2015-07-22 13:25:03,369 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:418 INFO     Ran azure service delete --quiet pkb-14d9d3d0-0. Got return code (1).
+STDOUT: info:    Executing command service delete
+info:    Deleting cloud service
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The hosted service does not exist.
+error:   service delete command failed
+
+
+2015-07-22 13:25:03,370 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:25:03,371 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-14d9d3d0-0
+2015-07-22 13:25:06,217 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-14d9d3d0-0. Got return code (1).
+STDOUT: 
+STDERR: The hosted service does not exist.
+Error information has been recorded to /root/.azure/azure.err
+service show command failed
+
+
+2015-07-22 13:25:06,217 14d9d3d0 Thread-63 bonnie++(1/1) azure_disk.py:76 INFO     Deleting disk pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221240110939. This may fail while the associated VM is deleted, but will be retried.
+2015-07-22 13:25:06,218 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:25:06,218 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221240110939
+2015-07-22 13:25:22,163 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure vm disk delete --blob-delete pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221240110939. Got return code (0).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Disk deleted: pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221240110939
+info:    vm disk delete command OK
+
+STDERR: 
+2015-07-22 13:25:22,164 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:25:22,164 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221240110939
+2015-07-22 13:25:25,168 14d9d3d0 Thread-63 bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-14d9d3d0-0-pkb-14d9d3d0-0-0-201507221240110939. Got return code (1).
+STDOUT: 
+STDERR: The disk with the specified name does not exist.
+Error information has been recorded to /root/.azure/azure.err
+vm disk show command failed
+
+
+2015-07-22 13:25:25,203 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:25:25,204 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:28:04,976 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    Setting network configuration
+info:    network vnet delete command OK
+
+STDERR: 
+2015-07-22 13:28:04,976 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:28:04,976 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:28:08,349 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:28:08,349 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:28:31,646 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:28:31,646 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:28:34,613 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:28:34,613 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:28:34,613 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:28:37,729 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:28:37,730 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:29:00,369 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:29:00,369 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:29:03,449 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:29:03,449 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:29:03,449 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:29:06,528 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:29:06,528 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:29:29,749 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:29:29,749 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:29:32,958 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:29:32,959 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:29:32,959 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:29:36,331 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:29:36,331 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:29:57,068 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:29:57,068 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:30:00,033 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:30:00,033 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:30:00,033 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:30:03,067 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:30:03,068 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:30:27,031 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:30:27,032 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:30:29,980 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:30:29,981 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:30:29,981 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:30:33,249 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:30:33,250 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:31:02,482 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:31:02,482 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:31:05,577 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:31:05,578 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:31:05,578 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:31:09,205 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:31:09,205 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:31:26,114 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:31:26,115 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:31:29,076 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:31:29,076 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:31:29,076 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:31:32,120 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:31:32,120 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:31:48,893 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:31:48,894 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:31:52,161 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:31:52,161 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:31:52,161 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:31:55,398 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:31:55,398 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:32:22,836 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:32:22,836 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:32:25,825 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:32:25,825 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:32:25,825 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:32:28,820 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:32:28,820 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:32:52,810 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:32:52,811 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:32:56,136 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:32:56,136 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:32:56,136 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:32:59,124 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:32:59,124 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:33:19,666 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:33:19,666 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:33:22,871 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:33:22,871 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:33:22,871 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:33:26,130 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:33:26,131 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:33:41,911 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:33:41,911 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:33:45,064 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:33:45,064 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:33:45,064 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:33:48,424 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:33:48,424 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:34:07,058 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:34:07,058 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:34:10,123 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:34:10,124 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:34:10,124 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:34:13,179 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:34:13,179 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:34:41,463 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:34:41,463 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:34:44,578 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:34:44,579 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:34:44,579 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:34:47,920 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:34:47,920 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:35:06,640 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:35:06,641 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:35:09,657 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:35:09,657 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:35:09,657 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:35:12,682 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:35:12,683 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:35:40,516 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:35:40,516 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:35:43,524 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:35:43,525 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:35:43,525 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:35:46,787 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:35:46,787 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:36:06,413 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:36:06,413 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:36:09,441 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:36:09,442 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:36:09,442 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:36:12,876 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:36:12,876 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:36:29,607 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:36:29,607 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:36:32,872 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:36:32,872 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:36:32,872 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:36:36,164 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:36:36,165 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:36:52,898 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:36:52,898 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:36:55,937 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:36:55,937 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:36:55,938 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:36:59,240 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:36:59,240 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:37:16,774 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:37:16,774 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:37:20,169 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:37:20,170 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:37:20,170 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:37:23,354 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:37:23,355 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:37:38,860 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:37:38,861 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:37:41,824 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:37:41,825 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:37:41,825 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:37:44,976 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:37:44,977 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:38:00,150 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:38:00,150 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:38:03,128 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:38:03,129 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:38:03,129 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:38:06,161 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:38:06,161 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:38:32,646 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:38:32,646 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:38:35,816 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:38:35,816 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:38:35,816 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:38:38,957 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:38:38,957 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:38:57,732 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:38:57,732 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:39:00,938 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:39:00,939 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:39:00,939 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:39:04,124 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:39:04,125 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:39:24,460 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:39:24,461 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:39:27,368 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:39:27,368 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:39:27,368 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:39:30,731 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:39:30,732 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:39:54,032 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:39:54,032 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:39:57,165 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:39:57,165 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:39:57,165 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:40:00,321 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:40:00,322 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:40:26,816 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:40:26,816 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:40:29,845 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:40:29,845 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:40:29,845 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:40:32,880 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:40:32,880 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:40:48,286 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:40:48,286 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:40:51,361 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:40:51,362 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:40:51,362 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:40:54,668 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:40:54,668 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:41:23,497 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:41:23,497 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:41:26,792 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:41:26,792 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:41:26,792 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:41:30,188 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:41:30,188 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:41:57,043 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:41:57,043 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:42:00,083 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:42:00,084 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:42:00,084 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:42:03,130 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:42:03,130 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:42:32,131 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:42:32,132 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:42:35,147 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:42:35,148 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:42:35,148 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:42:38,399 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:42:38,399 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:43:04,755 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:43:04,755 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:43:07,674 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:43:07,674 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:43:07,674 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:43:11,098 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:43:11,098 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:43:29,176 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:43:29,176 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:43:32,236 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:43:32,237 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:43:32,237 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:43:35,402 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:43:35,403 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:44:00,775 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:44:00,775 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:44:03,725 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:44:03,725 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:44:03,725 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:44:06,879 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:44:06,879 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:44:22,184 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:44:22,184 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:44:25,454 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:44:25,455 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:44:25,456 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:44:28,448 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:44:28,449 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:44:48,061 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:44:48,062 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:44:51,477 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:44:51,478 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:44:51,478 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:44:54,821 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:44:54,822 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:45:10,752 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:45:10,752 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit14d9d3d01eae60c34
+2015-07-22 13:45:13,894 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit14d9d3d01eae60c34" not found
+
+2015-07-22 13:45:13,895 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-22 13:45:13,895 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit14d9d3d01eae60c34
+2015-07-22 13:45:17,450 14d9d3d0 MainThread bonnie++(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit14d9d3d01eae60c34. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-22 13:45:17,450 14d9d3d0 MainThread bonnie++(1/1) benchmark_spec.py:242 ERROR    Got an exception deleting networks. Attempting to continue tearing down.
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 240, in Delete
+    net.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/azure/azure_network.py", line 228, in Delete
+    self.vnet.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/resource.py", line 135, in Delete
+    self._DeleteResource()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 354, in WrappedFunction
+    raise e
+RetryableDeletionError: Deletion of AzureVirtualNetwork failed.
+2015-07-22 13:45:17,456 14d9d3d0 MainThread publisher.py:329 INFO     
+-------------------------PerfKitBenchmarker Complete Results-------------------------
+{'timestamp': 1437571346.108502, 'metric': 'put_block', 'official': False, 'value': 47170.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': 'f0c10452-0edd-4607-bdc7-907e81ef78de', 'product_name': 'PerfKitBenchmarker', 'unit': 'K/sec', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.108744, 'metric': 'put_block_cpu', 'official': False, 'value': 6.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': 'dcc362ab-d7d3-4a2d-a81f-a315b6593f53', 'product_name': 'PerfKitBenchmarker', 'unit': '%s', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.108856, 'metric': 'rewrite', 'official': False, 'value': 11626.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '2c763770-798f-4394-b09a-83ee56081228', 'product_name': 'PerfKitBenchmarker', 'unit': 'K/sec', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.108969, 'metric': 'rewrite_cpu', 'official': False, 'value': 1.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '1ad7627c-b99b-47b2-9382-28340dd0ced7', 'product_name': 'PerfKitBenchmarker', 'unit': '%s', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.109079, 'metric': 'get_block', 'official': False, 'value': 21335.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': 'cbc75759-110c-464d-a5ed-98369c41e9cd', 'product_name': 'PerfKitBenchmarker', 'unit': 'K/sec', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.109187, 'metric': 'get_block_cpu', 'official': False, 'value': 1.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': 'b4209365-e79e-4352-8fe7-f27ff3eeecc6', 'product_name': 'PerfKitBenchmarker', 'unit': '%s', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.109293, 'metric': 'seeks', 'official': False, 'value': 347.6, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '4e3e15dd-3d2b-4d3b-ac8f-e792207910cb', 'product_name': 'PerfKitBenchmarker', 'unit': 'K/sec', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.109393, 'metric': 'seeks_cpu', 'official': False, 'value': 6.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '2a5216ed-1b59-4ac7-8f28-c3f575b2581f', 'product_name': 'PerfKitBenchmarker', 'unit': '%s', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.109506, 'metric': 'seq_create', 'official': False, 'value': 47690.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': 'c0e12517-58ac-4449-8317-99a456b42cf7', 'product_name': 'PerfKitBenchmarker', 'unit': 'K/sec', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.109647, 'metric': 'seq_create_cpu', 'official': False, 'value': 74.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '56b950b2-4e19-4c1d-a225-3d484646a552', 'product_name': 'PerfKitBenchmarker', 'unit': '%s', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.109798, 'metric': 'seq_del', 'official': False, 'value': 64173.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '3840db7f-5657-4b63-9a6e-868a01e698a9', 'product_name': 'PerfKitBenchmarker', 'unit': 'K/sec', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.110066, 'metric': 'seq_del_cpu', 'official': False, 'value': 64.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': 'd1c26a35-dbcb-4517-9ab7-6d03dda3c69f', 'product_name': 'PerfKitBenchmarker', 'unit': '%s', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.110167, 'metric': 'ran_create', 'official': False, 'value': 2902.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '3f49c8c7-2711-4122-b1e2-2043d5d536f5', 'product_name': 'PerfKitBenchmarker', 'unit': 'K/sec', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.110262, 'metric': 'ran_create_cpu', 'official': False, 'value': 98.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': 'b479215c-a191-4cd4-8010-debc6b6cb3a7', 'product_name': 'PerfKitBenchmarker', 'unit': '%s', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.110358, 'metric': 'ran_del', 'official': False, 'value': 55801.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '03b5e915-49a4-4d7e-8b07-d979789a4df0', 'product_name': 'PerfKitBenchmarker', 'unit': 'K/sec', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.110454, 'metric': 'ran_del_cpu', 'official': False, 'value': 54.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '112f7fc0-0462-4ee8-8b80-dc3d3c55da86', 'product_name': 'PerfKitBenchmarker', 'unit': '%s', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.110565, 'metric': 'put_block_latency', 'official': False, 'value': 230.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': 'd798be9f-87e8-4389-aaf4-d25f3316061c', 'product_name': 'PerfKitBenchmarker', 'unit': u'ms', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.110682, 'metric': 'rewrite_latency', 'official': False, 'value': 1770.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '5b547d89-a4f6-467c-a863-b8df97ee8439', 'product_name': 'PerfKitBenchmarker', 'unit': u'ms', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.110779, 'metric': 'get_block_latency', 'official': False, 'value': 1617.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '6d88f60c-3e63-4b86-81f9-e06dcfb519a3', 'product_name': 'PerfKitBenchmarker', 'unit': u'ms', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.110882, 'metric': 'seeks_latency', 'official': False, 'value': 541.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': 'dcf15bc1-432d-4113-90d6-7dd188745143', 'product_name': 'PerfKitBenchmarker', 'unit': u'ms', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.110983, 'metric': 'seq_create_latency', 'official': False, 'value': 6621.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '0155b245-f438-4c4c-b5b9-9c5c22a89c79', 'product_name': 'PerfKitBenchmarker', 'unit': u'us', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.11108, 'metric': 'seq_stat_latency', 'official': False, 'value': 967.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '33f797db-b247-4255-b00d-27805d173158', 'product_name': 'PerfKitBenchmarker', 'unit': u'us', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.111179, 'metric': 'seq_del_latency', 'official': False, 'value': 1200.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': 'cea759f1-2865-4826-8e5d-33338e1c8719', 'product_name': 'PerfKitBenchmarker', 'unit': u'us', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.111277, 'metric': 'ran_create_latency', 'official': False, 'value': 16437.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '803b1829-0b0d-4e46-8e0c-c00a3feb6bf7', 'product_name': 'PerfKitBenchmarker', 'unit': u'us', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.111372, 'metric': 'ran_stat_latency', 'official': False, 'value': 571.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '90b240f9-aacf-4ce6-a428-6e002dad0f1e', 'product_name': 'PerfKitBenchmarker', 'unit': u'us', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437571346.11147, 'metric': 'ran_del_latency', 'official': False, 'value': 585.0, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': '4ecdf16a-c818-41ec-aaa8-1b852b9592e2', 'product_name': 'PerfKitBenchmarker', 'unit': u'us', 'metadata': {'machine_type': 'Standard_D2', 'format_version': u'1.97', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'zones': 'East US', 'seed': u'1437571535', 'concurrency': u'1', 'file_size': u'13940M', 'cloud': 'Azure', 'name': u'pkb-14d9d3d0-0', 'scratch_disk_type': 'standard', 'num_striped_disks': 1, 'num_files': u'100', 'scratch_disk_size': 500, 'bonnie_version': u'1.97', 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB'}}
+{'timestamp': 1437572717.453023, 'metric': 'End to End Runtime', 'official': False, 'value': 4246.377491950989, 'owner': 'root', 'run_uri': '09c72454-b4e6-495b-a7c8-88cc32b2ccd0', 'test': 'bonnie++', 'sample_uri': 'fb70c19f-858c-4e92-ac5d-51922f89a5f2', 'product_name': 'PerfKitBenchmarker', 'unit': 'seconds', 'metadata': {'scratch_disk_type': 'standard', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'num_striped_disks': 1, 'zones': 'East US', 'machine_type': 'Standard_D2', 'scratch_disk_size': 500, 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB', 'cloud': 'Azure'}}
+
+2015-07-22 13:45:17,460 14d9d3d0 MainThread publisher.py:303 DEBUG    Pretty-printing results to <open file '<stdout>', mode 'w' at 0x7f431de75150>:
+
+-------------------------PerfKitBenchmarker Results Summary-------------------------
+BONNIE++:
+  bonnie_version="1.97" concurrency="1" file_size="13940M" format_version="1.97" name="pkb-14d9d3d0-0" num_files="100" seed="1437571535"
+  put_block                         47170.000000 K/sec                         
+  put_block_cpu                         6.000000 %s                            
+  rewrite                           11626.000000 K/sec                         
+  rewrite_cpu                           1.000000 %s                            
+  get_block                         21335.000000 K/sec                         
+  get_block_cpu                         1.000000 %s                            
+  seeks                               347.600000 K/sec                         
+  seeks_cpu                             6.000000 %s                            
+  seq_create                        47690.000000 K/sec                         
+  seq_create_cpu                       74.000000 %s                            
+  seq_del                           64173.000000 K/sec                         
+  seq_del_cpu                          64.000000 %s                            
+  ran_create                         2902.000000 K/sec                         
+  ran_create_cpu                       98.000000 %s                            
+  ran_del                           55801.000000 K/sec                         
+  ran_del_cpu                          54.000000 %s                            
+  put_block_latency                   230.000000 ms                            
+  rewrite_latency                    1770.000000 ms                            
+  get_block_latency                  1617.000000 ms                            
+  seeks_latency                       541.000000 ms                            
+  seq_create_latency                 6621.000000 us                            
+  seq_stat_latency                    967.000000 us                            
+  seq_del_latency                    1200.000000 us                            
+  ran_create_latency                16437.000000 us                            
+  ran_stat_latency                    571.000000 us                            
+  ran_del_latency                     585.000000 us                            
+  End to End Runtime                 4246.377492 seconds                       
+
+-------------------------
+For all tests: cloud="Azure" image="b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB" machine_type="Standard_D2" num_striped_disks="1" perfkitbenchmarker_version="v0.18.0-2-gf593091" scratch_disk_size="500" scratch_disk_type="standard" zones="East US"
+
+2015-07-22 13:45:17,460 14d9d3d0 MainThread publisher.py:359 INFO     Publishing 27 samples to /tmp/perfkitbenchmarker/run_14d9d3d0/perfkitbenchmarker_results.json
+2015-07-22 13:45:17,463 14d9d3d0 MainThread pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_14d9d3d0/pkb.log

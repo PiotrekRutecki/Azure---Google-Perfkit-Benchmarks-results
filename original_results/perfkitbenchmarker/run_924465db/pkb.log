@@ -1,0 +1,1697 @@
+2015-07-26 19:04:18,776 924465db MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D2
+--cloud=Azure
+--benchmarks=sysbench_oltp
+2015-07-26 19:04:19,005 924465db MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7f00098dd9d0> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7f000b3dd150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-26 19:04:19,005 924465db MainThread sysbench_oltp(1/1) pkb.py:194 INFO     Preparing benchmark sysbench_oltp
+2015-07-26 19:04:19,008 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:04:19,008 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit924465db21ae49062 perfkit924465db21ae49062
+2015-07-26 19:04:22,250 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group create --location=East US --label=perfkit924465db21ae49062 perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    account affinity-group create command OK
+
+STDERR: 
+2015-07-26 19:04:22,250 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:04:22,250 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit924465db21ae49062
+2015-07-26 19:04:25,460 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {
+  "capabilities": [
+    "PersistentVMRole",
+    "HighMemory"
+  ],
+  "hostedServices": [],
+  "storageServices": [],
+  "name": "perfkit924465db21ae49062",
+  "label": "perfkit924465db21ae49062",
+  "location": "East US",
+  "createdTime": "2015-07-26T19:04:37.000Z",
+  "statusCode": 200,
+  "requestId": "d980819f0547cea3ad71091df3f5a285"
+}
+
+STDERR: 
+2015-07-26 19:04:25,460 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:04:25,460 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure storage account create --affinity-group=perfkit924465db21ae49062 --type=LRS perfkit924465db21ae49062
+2015-07-26 19:05:05,856 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure storage account create --affinity-group=perfkit924465db21ae49062 --type=LRS perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command storage account create
+info:    Creating storage account
+info:    storage account create command OK
+
+STDERR: 
+2015-07-26 19:05:05,856 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:05:05,856 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure storage account show --json perfkit924465db21ae49062
+2015-07-26 19:05:08,877 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure storage account show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {
+  "extendedProperties": {
+    "ResourceGroup": "Default-Storage-EastUS",
+    "ResourceLocation": "East US"
+  },
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/storageservices/perfkit924465db21ae49062",
+  "name": "perfkit924465db21ae49062",
+  "properties": {
+    "endpoints": [
+      "https://perfkit924465db21ae49062.blob.core.windows.net/",
+      "https://perfkit924465db21ae49062.queue.core.windows.net/",
+      "https://perfkit924465db21ae49062.table.core.windows.net/"
+    ],
+    "affinityGroup": "perfkit924465db21ae49062",
+    "label": "perfkit924465db21ae49062",
+    "status": "Created",
+    "geoPrimaryRegion": "East US",
+    "statusOfGeoPrimaryRegion": "Available",
+    "geoSecondaryRegion": "",
+    "accountType": "Standard_LRS"
+  },
+  "resourceGroup": ""
+}
+
+STDERR: 
+2015-07-26 19:05:08,878 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:05:08,878 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet create --affinity-group=perfkit924465db21ae49062 perfkit924465db21ae49062
+2015-07-26 19:05:46,804 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet create --affinity-group=perfkit924465db21ae49062 perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet create
+info:    Using default address space start IP: 10.0.0.0
+info:    Using default address space cidr: 8
+info:    Using default subnet start IP: 10.0.0.0
+info:    Using default subnet cidr: 11
+info:    Looking up network configuration
+info:    Looking up affinity groups
+info:    Using affinity group perfkit924465db21ae49062
+info:    Setting network configuration
+info:    network vnet create command OK
+
+STDERR: 
+2015-07-26 19:05:46,804 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:05:46,804 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:05:49,953 924465db Thread-1 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {
+  "dnsServers": [],
+  "subnets": [
+    {
+      "name": "Subnet-1",
+      "addressPrefix": "10.0.0.0/11"
+    }
+  ],
+  "name": "perfkit924465db21ae49062",
+  "id": "01a42526-8a97-49c9-a69b-c05c6f556850",
+  "affinityGroup": "perfkit924465db21ae49062",
+  "state": "Created",
+  "addressSpace": {
+    "addressPrefixes": [
+      "10.0.0.0/8"
+    ]
+  }
+}
+
+STDERR: 
+2015-07-26 19:05:49,988 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:05:49,988 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure service create --affinitygroup=perfkit924465db21ae49062 pkb-924465db-0
+2015-07-26 19:05:53,922 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure service create --affinitygroup=perfkit924465db21ae49062 pkb-924465db-0. Got return code (0).
+STDOUT: info:    Executing command service create
+info:    Creating cloud service
+data:    Cloud service name pkb-924465db-0
+info:    service create command OK
+
+STDERR: 
+2015-07-26 19:05:53,922 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:05:53,922 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-924465db-0
+2015-07-26 19:05:57,227 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-924465db-0. Got return code (0).
+STDOUT: {
+  "uri": "https://management.core.windows.net/99f53565-a594-49c5-a9dd-d2ad5f85c18e/services/hostedservices/pkb-924465db-0",
+  "serviceName": "pkb-924465db-0",
+  "properties": {
+    "extendedProperties": {},
+    "affinityGroup": "perfkit924465db21ae49062",
+    "label": "pkb-924465db-0",
+    "status": "Created",
+    "dateCreated": "2015-07-26T19:06:08.000Z",
+    "dateLastModified": "2015-07-26T19:06:08.000Z"
+  },
+  "statusCode": 200,
+  "requestId": "33bc8c8ae3b2c31593625bb96e1b2607"
+}
+
+STDERR: 
+2015-07-26 19:05:57,227 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:05:57,228 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm create --affinity-group=perfkit924465db21ae49062 --virtual-network-name=perfkit924465db21ae49062 --vm-size=Standard_D2 pkb-924465db-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker.pem --no-ssh-password
+2015-07-26 19:09:34,481 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure vm create --affinity-group=perfkit924465db21ae49062 --virtual-network-name=perfkit924465db21ae49062 --vm-size=Standard_D2 pkb-924465db-0 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB perfkit --ssh=22 --ssh-cert=/tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker.pem --no-ssh-password. Got return code (0).
+STDOUT: info:    Executing command vm create
+info:    Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB
+info:    Looking up virtual network
+info:    Looking up cloud service
+warn:    --affinity-group option will be ignored
+info:    Getting cloud service properties
+info:    Looking up deployment
+info:    Retrieving storage accounts
+info:    Creating a new storage account 'portalvhds1437937574935'
+info:    Configuring certificate
+info:    Creating VM
+info:    OK
+info:    vm create command OK
+
+STDERR: 
+2015-07-26 19:09:34,481 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:09:34,481 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-924465db-0
+2015-07-26 19:09:42,612 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-924465db-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-924465db-0.cloudapp.net",
+  "AffinityGroup": "perfkit924465db21ae49062",
+  "VMName": "pkb-924465db-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "RoleStateUnknown",
+  "InstanceSize": "Standard_D2",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-924465db-0-pkb-924465db-0-0-201507261907510880",
+    "mediaLink": "https://portalvhds1437937574935.blob.core.windows.net/vhd-store/pkb-924465db-0-d4ea5351dc05aea5.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "137.135.85.157",
+      "name": "pkb-924465db-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "137.135.85.157",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-26 19:09:42,612 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:09:42,613 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-924465db-0
+2015-07-26 19:09:47,148 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-924465db-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-924465db-0.cloudapp.net",
+  "AffinityGroup": "perfkit924465db21ae49062",
+  "VMName": "pkb-924465db-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "RoleStateUnknown",
+  "InstanceSize": "Standard_D2",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-924465db-0-pkb-924465db-0-0-201507261907510880",
+    "mediaLink": "https://portalvhds1437937574935.blob.core.windows.net/vhd-store/pkb-924465db-0-d4ea5351dc05aea5.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "137.135.85.157",
+      "name": "pkb-924465db-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "137.135.85.157",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-26 19:09:47,148 924465db Thread-8 sysbench_oltp(1/1) benchmark_spec.py:322 INFO     VM: 137.135.85.157
+2015-07-26 19:09:47,148 924465db Thread-8 sysbench_oltp(1/1) benchmark_spec.py:323 INFO     Waiting for boot completion.
+2015-07-26 19:09:47,149 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:09:47,149 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:09:52,161 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection timed out
+
+2015-07-26 19:09:53,135 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:09:53,136 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:09:58,153 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection timed out
+
+2015-07-26 19:09:59,051 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:09:59,051 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:04,064 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection timed out
+
+2015-07-26 19:10:04,588 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:04,588 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:09,605 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection timed out
+
+2015-07-26 19:10:10,504 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:10,505 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:10,599 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:11,154 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:11,154 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:11,249 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:12,124 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:12,124 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:12,220 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:12,899 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:12,899 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:12,995 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:13,514 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:13,514 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:13,609 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:14,315 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:14,315 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:14,410 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:15,359 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:15,360 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:15,453 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:16,029 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:16,030 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:16,123 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:17,102 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:17,102 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:17,196 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:17,746 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:17,746 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:17,838 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:18,552 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:18,552 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:18,646 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:19,381 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:19,382 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:19,479 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:20,134 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:20,134 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:20,228 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:21,018 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:21,018 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:21,115 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:21,690 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:21,690 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:21,789 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:22,360 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:22,360 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:22,455 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:23,316 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:23,317 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:23,410 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:24,128 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:24,129 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:24,224 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:25,222 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:25,222 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:25,320 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:26,186 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:26,187 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:26,282 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:27,144 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:27,145 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:27,242 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:28,145 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:28,145 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:28,239 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:29,175 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:29,175 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:29,270 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:29,845 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:29,845 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:29,939 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:30,664 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:30,665 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:30,756 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:31,507 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:31,507 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:31,597 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:32,345 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:32,346 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:32,436 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:33,134 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:33,135 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:33,230 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (255).
+STDOUT: 
+STDERR: ssh: connect to host 137.135.85.157 port 22: Connection refused
+
+2015-07-26 19:10:34,083 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:34,083 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname
+2015-07-26 19:10:35,633 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile hostname. Got return code (0).
+STDOUT: pkb-924465db-0
+
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:10:35,634 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:10:35,634 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm disk attach-new pkb-924465db-0 500
+2015-07-26 19:11:12,333 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure vm disk attach-new pkb-924465db-0 500. Got return code (0).
+STDOUT: info:    Executing command vm disk attach-new
+info:    Getting virtual machines
+info:    Adding Data-Disk
+info:    vm disk attach-new command OK
+
+STDERR: 
+2015-07-26 19:11:12,333 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:11:12,334 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-924465db-0
+2015-07-26 19:11:18,155 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-924465db-0. Got return code (0).
+STDOUT: {
+  "DNSName": "pkb-924465db-0.cloudapp.net",
+  "AffinityGroup": "perfkit924465db21ae49062",
+  "VMName": "pkb-924465db-0",
+  "IPAddress": "10.32.0.4",
+  "InstanceStatus": "ReadyRole",
+  "InstanceSize": "Standard_D2",
+  "Image": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "OSDisk": {
+    "hostCaching": "ReadWrite",
+    "name": "pkb-924465db-0-pkb-924465db-0-0-201507261907510880",
+    "mediaLink": "https://portalvhds1437937574935.blob.core.windows.net/vhd-store/pkb-924465db-0-d4ea5351dc05aea5.vhd",
+    "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+    "operatingSystem": "Linux",
+    "iOType": "Standard"
+  },
+  "DataDisks": [
+    {
+      "hostCaching": "None",
+      "label": "pkb-924465db-0-pkb-924465db-0-pkb-924465db-0-0",
+      "name": "pkb-924465db-0-pkb-924465db-0-0-201507261910580099",
+      "logicalDiskSizeInGB": 500,
+      "mediaLink": "https://portalvhds1437937574935.blob.core.windows.net/vhd-store/pkb-924465db-0-28c66845d143ef5c.vhd",
+      "iOType": "Standard"
+    }
+  ],
+  "ReservedIPName": "",
+  "VirtualIPAddresses": [
+    {
+      "address": "137.135.85.157",
+      "name": "pkb-924465db-0ContractContract",
+      "isDnsProgrammed": true
+    }
+  ],
+  "PublicIPs": [],
+  "Network": {
+    "Endpoints": [
+      {
+        "localPort": 22,
+        "name": "ssh",
+        "port": 22,
+        "protocol": "tcp",
+        "virtualIPAddress": "137.135.85.157",
+        "enableDirectServerReturn": false
+      }
+    ],
+    "PublicIPs": [],
+    "NetworkInterfaces": []
+  }
+}
+
+STDERR: 
+2015-07-26 19:11:18,156 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:11:18,156 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo mke2fs -F -E lazy_itable_init=0 -O ^has_journal -t ext4 -b 4096 /dev/sdc
+2015-07-26 19:13:55,290 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo mke2fs -F -E lazy_itable_init=0 -O ^has_journal -t ext4 -b 4096 /dev/sdc. Got return code (0).
+STDOUT: Discarding device blocks:      4096/131072000 23072768/131072000 83890176/131072000                   done                            
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+32768000 inodes, 131072000 blocks
+6553600 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=4294967296
+4000 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968, 
+	102400000
+
+Allocating group tables:    0/4000         done                            
+Writing inode tables:    0/4000 193/4000 550/4000 628/4000 679/4000 727/4000 776/4000 824/4000 867/4000 903/4000 932/4000 966/4000 998/40001030/40001062/40001093/40001121/40001146/40001173/40001202/40001233/40001262/40001292/40001322/40001351/40001381/40001410/40001439/40001467/40001495/40001522/40001550/40001577/40001605/40001632/40001659/40001687/40001719/40001749/40001782/40001817/40001847/40001874/40001892/40001914/40001940/40001965/40001990/40002015/40002040/40002066/40002099/40002129/40002163/40002191/40002219/40002246/40002271/40002299/40002326/40002352/40002381/40002405/40002432/40002460/40002489/40002515/40002540/40002565/40002591/40002619/40002649/40002681/40002709/40002738/40002764/40002795/40002824/40002852/40002882/40002913/40002941/40002973/40003006/40003036/40003064/40003092/40003120/40003148/40003176/40003206/40003237/40003265/40003291/40003317/40003342/40003367/40003392/40003417/40003441/40003459/40003468/40003473/40003475/40003476/40003477/40003478/40003479/40003481/40003485/40003494/40003504/40003520/40003537/40003559/40003587/40003618/40003650/40003684/40003718/40003752/40003786/40003820/40003855/40003889/40003923/40003957/40003991/4000         done                            
+Writing superblocks and filesystem accounting information:    0/4000  28/4000         done
+
+
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+mke2fs 1.42.9 (4-Feb-2014)
+
+2015-07-26 19:13:55,291 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:13:55,291 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo mkdir -p /scratch0;sudo mount /dev/sdc /scratch0;sudo chown -R $USER:$USER /scratch0;
+2015-07-26 19:13:58,640 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo mkdir -p /scratch0;sudo mount /dev/sdc /scratch0;sudo chown -R $USER:$USER /scratch0;. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:13:58,641 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:13:58,641 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo apt-get update
+2015-07-26 19:14:09,816 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo apt-get update. Got return code (0).
+STDOUT: Ign http://security.ubuntu.com trusty-security InRelease
+Get:1 http://security.ubuntu.com trusty-security Release.gpg [933 B]
+Get:2 http://security.ubuntu.com trusty-security Release [63.5 kB]
+Ign http://azure.archive.ubuntu.com trusty InRelease
+Ign http://azure.archive.ubuntu.com trusty-updates InRelease
+Hit http://azure.archive.ubuntu.com trusty Release.gpg
+Get:3 http://azure.archive.ubuntu.com trusty-updates Release.gpg [933 B]
+Hit http://azure.archive.ubuntu.com trusty Release
+Get:4 http://azure.archive.ubuntu.com trusty-updates Release [63.5 kB]
+Get:5 http://azure.archive.ubuntu.com trusty/main Sources [1,064 kB]
+Get:6 http://security.ubuntu.com trusty-security/main Sources [88.7 kB]
+Get:7 http://security.ubuntu.com trusty-security/universe Sources [28.1 kB]
+Get:8 http://azure.archive.ubuntu.com trusty/universe Sources [6,399 kB]
+Get:9 http://security.ubuntu.com trusty-security/main amd64 Packages [315 kB]
+Get:10 http://security.ubuntu.com trusty-security/universe amd64 Packages [111 kB]
+Get:11 http://security.ubuntu.com trusty-security/main Translation-en [169 kB]
+Get:12 http://security.ubuntu.com trusty-security/universe Translation-en [64.0 kB]
+Hit http://azure.archive.ubuntu.com trusty/main amd64 Packages
+Hit http://azure.archive.ubuntu.com trusty/universe amd64 Packages
+Hit http://azure.archive.ubuntu.com trusty/main Translation-en
+Hit http://azure.archive.ubuntu.com trusty/universe Translation-en
+Get:13 http://azure.archive.ubuntu.com trusty-updates/main Sources [223 kB]
+Get:14 http://azure.archive.ubuntu.com trusty-updates/universe Sources [127 kB]
+Get:15 http://azure.archive.ubuntu.com trusty-updates/main amd64 Packages [584 kB]
+Get:16 http://azure.archive.ubuntu.com trusty-updates/universe amd64 Packages [297 kB]
+Get:17 http://azure.archive.ubuntu.com trusty-updates/main Translation-en [281 kB]
+Get:18 http://azure.archive.ubuntu.com trusty-updates/universe Translation-en [157 kB]
+Ign http://azure.archive.ubuntu.com trusty/main Translation-en_US
+Ign http://azure.archive.ubuntu.com trusty/universe Translation-en_US
+Fetched 10.0 MB in 3s (2,521 kB/s)
+Reading package lists...
+
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:14:09,816 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:14:09,817 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile mkdir -p /tmp/pkb
+2015-07-26 19:14:11,199 924465db Thread-8 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile mkdir -p /tmp/pkb. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:14:11,202 924465db MainThread sysbench_oltp(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-26 19:14:11,217 924465db MainThread sysbench_oltp(1/1) vm_util.py:563 INFO     ssh to VMs in this benchmark by name with: ssh -F /tmp/perfkitbenchmarker/run_924465db/ssh_config <vm name>
+2015-07-26 19:14:11,220 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:14:11,221 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile echo "mysql-server-5.5 mysql-server/root_password password perfkitbenchmarker" | sudo debconf-set-selections
+2015-07-26 19:14:13,940 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile echo "mysql-server-5.5 mysql-server/root_password password perfkitbenchmarker" | sudo debconf-set-selections. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:14:13,940 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:14:13,940 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile echo "mysql-server-5.5 mysql-server/root_password_again password perfkitbenchmarker" | sudo debconf-set-selections
+2015-07-26 19:14:15,716 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile echo "mysql-server-5.5 mysql-server/root_password_again password perfkitbenchmarker" | sudo debconf-set-selections. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:14:15,717 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:14:15,717 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install mysql-server
+2015-07-26 19:15:21,142 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install mysql-server. Got return code (0).
+STDOUT: Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  libaio1 libdbd-mysql-perl libdbi-perl libhtml-template-perl libmysqlclient18
+  libterm-readkey-perl mysql-client-5.5 mysql-client-core-5.5 mysql-common
+  mysql-server-5.5 mysql-server-core-5.5
+Suggested packages:
+  libclone-perl libmldbm-perl libnet-daemon-perl libplrpc-perl
+  libsql-statement-perl libipc-sharedcache-perl tinyca mailx
+The following NEW packages will be installed:
+  libaio1 libdbd-mysql-perl libdbi-perl libhtml-template-perl libmysqlclient18
+  libterm-readkey-perl mysql-client-5.5 mysql-client-core-5.5 mysql-common
+  mysql-server mysql-server-5.5 mysql-server-core-5.5
+0 upgraded, 12 newly installed, 0 to remove and 142 not upgraded.
+Need to get 9,520 kB of archives.
+After this operation, 96.6 MB of additional disk space will be used.
+Get:1 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libaio1 amd64 0.3.109-4 [6,364 B]
+Get:2 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-common all 5.5.44-0ubuntu0.14.04.1 [13.9 kB]
+Get:3 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main libmysqlclient18 amd64 5.5.44-0ubuntu0.14.04.1 [596 kB]
+Get:4 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libdbi-perl amd64 1.630-1 [879 kB]
+Get:5 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libdbd-mysql-perl amd64 4.025-1 [99.3 kB]
+Get:6 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libterm-readkey-perl amd64 2.31-1 [27.4 kB]
+Get:7 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-client-core-5.5 amd64 5.5.44-0ubuntu0.14.04.1 [702 kB]
+Get:8 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-client-5.5 amd64 5.5.44-0ubuntu0.14.04.1 [1,573 kB]
+Get:9 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-server-core-5.5 amd64 5.5.44-0ubuntu0.14.04.1 [3,589 kB]
+Get:10 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-server-5.5 amd64 5.5.44-0ubuntu0.14.04.1 [1,955 kB]
+Get:11 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libhtml-template-perl all 2.95-1 [65.5 kB]
+Get:12 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-server all 5.5.44-0ubuntu0.14.04.1 [12.2 kB]
+Preconfiguring packages ...
+Fetched 9,520 kB in 0s (22.8 MB/s)
+Selecting previously unselected package libaio1:amd64.
+(Reading database ... 27030 files and directories currently installed.)
+Preparing to unpack .../libaio1_0.3.109-4_amd64.deb ...
+Unpacking libaio1:amd64 (0.3.109-4) ...
+Selecting previously unselected package mysql-common.
+Preparing to unpack .../mysql-common_5.5.44-0ubuntu0.14.04.1_all.deb ...
+Unpacking mysql-common (5.5.44-0ubuntu0.14.04.1) ...
+Selecting previously unselected package libmysqlclient18:amd64.
+Preparing to unpack .../libmysqlclient18_5.5.44-0ubuntu0.14.04.1_amd64.deb ...
+Unpacking libmysqlclient18:amd64 (5.5.44-0ubuntu0.14.04.1) ...
+Selecting previously unselected package libdbi-perl.
+Preparing to unpack .../libdbi-perl_1.630-1_amd64.deb ...
+Unpacking libdbi-perl (1.630-1) ...
+Selecting previously unselected package libdbd-mysql-perl.
+Preparing to unpack .../libdbd-mysql-perl_4.025-1_amd64.deb ...
+Unpacking libdbd-mysql-perl (4.025-1) ...
+Selecting previously unselected package libterm-readkey-perl.
+Preparing to unpack .../libterm-readkey-perl_2.31-1_amd64.deb ...
+Unpacking libterm-readkey-perl (2.31-1) ...
+Selecting previously unselected package mysql-client-core-5.5.
+Preparing to unpack .../mysql-client-core-5.5_5.5.44-0ubuntu0.14.04.1_amd64.deb ...
+Unpacking mysql-client-core-5.5 (5.5.44-0ubuntu0.14.04.1) ...
+Selecting previously unselected package mysql-client-5.5.
+Preparing to unpack .../mysql-client-5.5_5.5.44-0ubuntu0.14.04.1_amd64.deb ...
+Unpacking mysql-client-5.5 (5.5.44-0ubuntu0.14.04.1) ...
+Selecting previously unselected package mysql-server-core-5.5.
+Preparing to unpack .../mysql-server-core-5.5_5.5.44-0ubuntu0.14.04.1_amd64.deb ...
+Unpacking mysql-server-core-5.5 (5.5.44-0ubuntu0.14.04.1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up mysql-common (5.5.44-0ubuntu0.14.04.1) ...
+Selecting previously unselected package mysql-server-5.5.
+(Reading database ... 27393 files and directories currently installed.)
+Preparing to unpack .../mysql-server-5.5_5.5.44-0ubuntu0.14.04.1_amd64.deb ...
+Unpacking mysql-server-5.5 (5.5.44-0ubuntu0.14.04.1) ...
+Selecting previously unselected package libhtml-template-perl.
+Preparing to unpack .../libhtml-template-perl_2.95-1_all.deb ...
+Unpacking libhtml-template-perl (2.95-1) ...
+Selecting previously unselected package mysql-server.
+Preparing to unpack .../mysql-server_5.5.44-0ubuntu0.14.04.1_all.deb ...
+Unpacking mysql-server (5.5.44-0ubuntu0.14.04.1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+Setting up libaio1:amd64 (0.3.109-4) ...
+Setting up libmysqlclient18:amd64 (5.5.44-0ubuntu0.14.04.1) ...
+Setting up libdbi-perl (1.630-1) ...
+Setting up libdbd-mysql-perl (4.025-1) ...
+Setting up libterm-readkey-perl (2.31-1) ...
+Setting up mysql-client-core-5.5 (5.5.44-0ubuntu0.14.04.1) ...
+Setting up mysql-client-5.5 (5.5.44-0ubuntu0.14.04.1) ...
+Setting up mysql-server-core-5.5 (5.5.44-0ubuntu0.14.04.1) ...
+Setting up mysql-server-5.5 (5.5.44-0ubuntu0.14.04.1) ...
+Setting up libhtml-template-perl (2.95-1) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+Setting up mysql-server (5.5.44-0ubuntu0.14.04.1) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.5) ...
+
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+150726 19:15:16 [Warning] Using unique option prefix key_buffer instead of key_buffer_size is deprecated and will be removed in a future release. Please use the full name instead.
+150726 19:15:16 [Note] /usr/sbin/mysqld (mysqld 5.5.44-0ubuntu0.14.04.1) starting as process 3420 ...
+mysql start/running, process 3552
+
+2015-07-26 19:15:21,143 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:15:21,143 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo service mysql status
+2015-07-26 19:15:22,392 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo service mysql status. Got return code (0).
+STDOUT: mysql start/running, process 3552
+
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:15:22,393 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:15:22,393 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile chmod 777 /scratch0
+2015-07-26 19:15:23,623 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile chmod 777 /scratch0. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:15:23,624 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:15:23,624 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo service mysql stop
+2015-07-26 19:15:26,119 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo service mysql stop. Got return code (0).
+STDOUT: mysql stop/waiting
+
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:15:26,119 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:15:26,120 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo sed -i "s/datadir=\/var\/lib\/mysql/datadir=\/scratch0\/mysql/" /etc/mysql/my.cnf
+2015-07-26 19:15:27,345 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo sed -i "s/datadir=\/var\/lib\/mysql/datadir=\/scratch0\/mysql/" /etc/mysql/my.cnf. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:15:27,345 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:15:27,345 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo cp -R -p /var/lib/mysql /scratch0/
+2015-07-26 19:15:28,814 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo cp -R -p /var/lib/mysql /scratch0/. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:15:28,815 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:15:28,815 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo service mysql restart
+2015-07-26 19:15:32,130 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo service mysql restart. Got return code (0).
+STDOUT: mysql start/running, process 4087
+
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+stop: Unknown instance: 
+
+2015-07-26 19:15:32,131 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:15:32,131 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo service mysql status
+2015-07-26 19:15:33,430 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo service mysql status. Got return code (0).
+STDOUT: mysql start/running, process 4087
+
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:15:33,431 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:15:33,431 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo mysql -u root --password=perfkitbenchmarker -e "create database sbtest";
+2015-07-26 19:15:34,698 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo mysql -u root --password=perfkitbenchmarker -e "create database sbtest";. Got return code (0).
+STDOUT: 
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:15:34,699 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:15:34,699 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install sysbench
+2015-07-26 19:15:40,675 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install sysbench. Got return code (0).
+STDOUT: Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  sysbench
+0 upgraded, 1 newly installed, 0 to remove and 142 not upgraded.
+Need to get 56.7 kB of archives.
+After this operation, 170 kB of additional disk space will be used.
+Get:1 http://azure.archive.ubuntu.com/ubuntu/ trusty/universe sysbench amd64 0.4.12-1.1 [56.7 kB]
+Fetched 56.7 kB in 0s (301 kB/s)
+Selecting previously unselected package sysbench.
+(Reading database ... 27494 files and directories currently installed.)
+Preparing to unpack .../sysbench_0.4.12-1.1_amd64.deb ...
+Unpacking sysbench (0.4.12-1.1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up sysbench (0.4.12-1.1) ...
+
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:15:40,676 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:15:40,676 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo sysbench --test=oltp --db-driver=mysql --mysql-table-engine=myisam --oltp-table-size=1000000 --mysql-user=root --max-requests=0 --max-time=60 --mysql-password=perfkitbenchmarker prepare
+2015-07-26 19:15:48,571 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo sysbench --test=oltp --db-driver=mysql --mysql-table-engine=myisam --oltp-table-size=1000000 --mysql-user=root --max-requests=0 --max-time=60 --mysql-password=perfkitbenchmarker prepare. Got return code (0).
+STDOUT: sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Creating table 'sbtest'...
+Creating 1000000 records in table 'sbtest'...
+
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:15:48,572 924465db MainThread sysbench_oltp(1/1) pkb.py:221 INFO     Running benchmark sysbench_oltp
+2015-07-26 19:15:48,573 924465db MainThread sysbench_oltp(1/1) sysbench_oltp_benchmark.py:86 INFO     Sysbench OLTP Results:
+2015-07-26 19:15:48,573 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:15:48,573 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile cat /proc/cpuinfo | grep processor | wc -l
+2015-07-26 19:15:49,826 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile cat /proc/cpuinfo | grep processor | wc -l. Got return code (0).
+STDOUT: 2
+
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:15:49,826 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:15:49,827 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo sysbench --test=oltp --db-driver=mysql --mysql-table-engine=myisam --oltp-table-size=1000000 --mysql-user=root --max-requests=0 --max-time=60 --mysql-password=perfkitbenchmarker --num-threads=2 run
+2015-07-26 19:16:51,197 924465db MainThread sysbench_oltp(1/1) vm_util.py:418 INFO     Ran ssh -A -p 22 perfkit@137.135.85.157 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_keyfile sudo sysbench --test=oltp --db-driver=mysql --mysql-table-engine=myisam --oltp-table-size=1000000 --mysql-user=root --max-requests=0 --max-time=60 --mysql-password=perfkitbenchmarker --num-threads=2 run. Got return code (0).
+STDOUT: sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 2
+
+Doing OLTP test.
+Running mixed OLTP test
+Using Special distribution (12 iterations,  1 pct of values are returned in 75 pct cases)
+Using "LOCK TABLES WRITE" for starting transactions
+Using auto_inc on the id column
+Threads started!
+Time limit exceeded, exiting...
+(last message repeated 1 times)
+Done.
+
+OLTP test statistics:
+    queries performed:
+        read:                            345618
+        write:                           123435
+        other:                           49374
+        total:                           518427
+    transactions:                        24687  (411.43 per sec.)
+    deadlocks:                           0      (0.00 per sec.)
+    read/write requests:                 469053 (7817.15 per sec.)
+    other operations:                    49374  (822.86 per sec.)
+
+Test execution summary:
+    total time:                          60.0031s
+    total number of events:              24687
+    total time taken by event execution: 119.8064
+    per-request statistics:
+         min:                                  1.97ms
+         avg:                                  4.85ms
+         max:                               1497.54ms
+         approx.  95 percentile:               6.03ms
+
+Threads fairness:
+    events (avg/stddev):           12343.5000/8.50
+    execution time (avg/stddev):   59.9032/0.00
+
+
+STDERR: Warning: Permanently added '137.135.85.157' (ECDSA) to the list of known hosts.
+
+2015-07-26 19:16:51,200 924465db MainThread sysbench_oltp(1/1) pkb.py:241 INFO     Cleaning up benchmark sysbench_oltp
+2015-07-26 19:16:51,201 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:16:51,201 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-924465db-0
+2015-07-26 19:17:35,068 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure vm delete --quiet pkb-924465db-0. Got return code (0).
+STDOUT: info:    Executing command vm delete
+info:    Getting virtual machines
+info:    Deleting VM
+info:    Deleting Cloud Service
+info:    vm delete command OK
+
+STDERR: 
+2015-07-26 19:17:35,068 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:17:35,069 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm show --json pkb-924465db-0
+2015-07-26 19:17:39,426 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure vm show --json pkb-924465db-0. Got return code (0).
+STDOUT: No VMs found
+
+STDERR: 
+2015-07-26 19:17:39,427 924465db Thread-68 sysbench_oltp(1/1) azure_disk.py:76 INFO     Deleting disk pkb-924465db-0-pkb-924465db-0-0-201507261907510880. This may fail while the associated VM is deleted, but will be retried.
+2015-07-26 19:17:39,427 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:17:39,427 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-924465db-0-pkb-924465db-0-0-201507261907510880
+2015-07-26 19:17:43,555 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-924465db-0-pkb-924465db-0-0-201507261907510880. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-924465db-0-pkb-924465db-0-0-201507261907510880
+error:   Windows Azure is currently performing an operation on deployment 'pkb-924465db-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-924465db-0-pkb-924465db-0-0-201507261907510880' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-26 19:17:43,556 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:17:43,556 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-924465db-0-pkb-924465db-0-0-201507261907510880
+2015-07-26 19:17:46,475 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-924465db-0-pkb-924465db-0-0-201507261907510880. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkit924465db21ae49062",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437937574935.blob.core.windows.net/vhd-store/pkb-924465db-0-d4ea5351dc05aea5.vhd",
+  "name": "pkb-924465db-0-pkb-924465db-0-0-201507261907510880",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "usageDetails": {
+    "hostedServiceName": "pkb-924465db-0",
+    "deploymentName": "pkb-924465db-0",
+    "roleName": "pkb-924465db-0"
+  },
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-26 19:17:46,476 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-26 19:18:14,522 924465db Thread-68 sysbench_oltp(1/1) azure_disk.py:76 INFO     Deleting disk pkb-924465db-0-pkb-924465db-0-0-201507261907510880. This may fail while the associated VM is deleted, but will be retried.
+2015-07-26 19:18:14,522 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:18:14,523 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-924465db-0-pkb-924465db-0-0-201507261907510880
+2015-07-26 19:18:19,365 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-924465db-0-pkb-924465db-0-0-201507261907510880. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-924465db-0-pkb-924465db-0-0-201507261907510880
+error:   Windows Azure is currently performing an operation on deployment 'pkb-924465db-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-924465db-0-pkb-924465db-0-0-201507261907510880' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-26 19:18:19,365 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:18:19,366 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-924465db-0-pkb-924465db-0-0-201507261907510880
+2015-07-26 19:18:22,245 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-924465db-0-pkb-924465db-0-0-201507261907510880. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkit924465db21ae49062",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437937574935.blob.core.windows.net/vhd-store/pkb-924465db-0-d4ea5351dc05aea5.vhd",
+  "name": "pkb-924465db-0-pkb-924465db-0-0-201507261907510880",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "usageDetails": {
+    "hostedServiceName": "pkb-924465db-0",
+    "deploymentName": "pkb-924465db-0",
+    "roleName": "pkb-924465db-0"
+  },
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-26 19:18:22,246 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-26 19:18:46,711 924465db Thread-68 sysbench_oltp(1/1) azure_disk.py:76 INFO     Deleting disk pkb-924465db-0-pkb-924465db-0-0-201507261907510880. This may fail while the associated VM is deleted, but will be retried.
+2015-07-26 19:18:46,712 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:18:46,712 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-924465db-0-pkb-924465db-0-0-201507261907510880
+2015-07-26 19:18:51,105 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:418 INFO     Ran azure vm disk delete --blob-delete pkb-924465db-0-pkb-924465db-0-0-201507261907510880. Got return code (1).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   Disk not deleted: pkb-924465db-0-pkb-924465db-0-0-201507261907510880
+error:   Windows Azure is currently performing an operation on deployment 'pkb-924465db-0' that requires exclusive access. Please try again later for operation on disk or image 'pkb-924465db-0-pkb-924465db-0-0-201507261907510880' associated with the deployment.
+error:   vm disk delete command failed
+
+
+2015-07-26 19:18:51,107 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:18:51,107 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-924465db-0-pkb-924465db-0-0-201507261907510880
+2015-07-26 19:18:54,219 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-924465db-0-pkb-924465db-0-0-201507261907510880. Got return code (0).
+STDOUT: {
+  "affinityGroup": "perfkit924465db21ae49062",
+  "logicalSizeInGB": 30,
+  "mediaLinkUri": "https://portalvhds1437937574935.blob.core.windows.net/vhd-store/pkb-924465db-0-d4ea5351dc05aea5.vhd",
+  "name": "pkb-924465db-0-pkb-924465db-0-0-201507261907510880",
+  "operatingSystemType": "Linux",
+  "sourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB",
+  "usageDetails": {
+    "hostedServiceName": "pkb-924465db-0",
+    "deploymentName": "pkb-924465db-0",
+    "roleName": "pkb-924465db-0"
+  },
+  "isPremium": false,
+  "iOType": "Standard"
+}
+
+STDERR: 
+2015-07-26 19:18:54,220 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureDisk failed.
+2015-07-26 19:19:13,743 924465db Thread-68 sysbench_oltp(1/1) azure_disk.py:76 INFO     Deleting disk pkb-924465db-0-pkb-924465db-0-0-201507261907510880. This may fail while the associated VM is deleted, but will be retried.
+2015-07-26 19:19:13,744 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:19:13,744 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-924465db-0-pkb-924465db-0-0-201507261907510880
+2015-07-26 19:19:18,666 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure vm disk delete --blob-delete pkb-924465db-0-pkb-924465db-0-0-201507261907510880. Got return code (0).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Disk deleted: pkb-924465db-0-pkb-924465db-0-0-201507261907510880
+info:    vm disk delete command OK
+
+STDERR: 
+2015-07-26 19:19:18,667 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:19:18,667 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-924465db-0-pkb-924465db-0-0-201507261907510880
+2015-07-26 19:19:21,527 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-924465db-0-pkb-924465db-0-0-201507261907510880. Got return code (1).
+STDOUT: 
+STDERR: The disk with the specified name does not exist.
+Error information has been recorded to /root/.azure/azure.err
+vm disk show command failed
+
+
+2015-07-26 19:19:21,528 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:19:21,528 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure service delete --quiet pkb-924465db-0
+2015-07-26 19:19:24,763 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:418 INFO     Ran azure service delete --quiet pkb-924465db-0. Got return code (1).
+STDOUT: info:    Executing command service delete
+info:    Deleting cloud service
+info:    Error information has been recorded to /root/.azure/azure.err
+
+STDERR: error:   The hosted service does not exist.
+error:   service delete command failed
+
+
+2015-07-26 19:19:24,765 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:19:24,765 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure service show --json pkb-924465db-0
+2015-07-26 19:19:27,335 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure service show --json pkb-924465db-0. Got return code (1).
+STDOUT: 
+STDERR: The hosted service does not exist.
+Error information has been recorded to /root/.azure/azure.err
+service show command failed
+
+
+2015-07-26 19:19:27,336 924465db Thread-68 sysbench_oltp(1/1) azure_disk.py:76 INFO     Deleting disk pkb-924465db-0-pkb-924465db-0-0-201507261910580099. This may fail while the associated VM is deleted, but will be retried.
+2015-07-26 19:19:27,336 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:19:27,336 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm disk delete --blob-delete pkb-924465db-0-pkb-924465db-0-0-201507261910580099
+2015-07-26 19:19:32,468 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure vm disk delete --blob-delete pkb-924465db-0-pkb-924465db-0-0-201507261910580099. Got return code (0).
+STDOUT: info:    Executing command vm disk delete
+info:    Deleting Disk
+info:    Disk deleted: pkb-924465db-0-pkb-924465db-0-0-201507261910580099
+info:    vm disk delete command OK
+
+STDERR: 
+2015-07-26 19:19:32,469 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:19:32,469 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure vm disk show --json pkb-924465db-0-pkb-924465db-0-0-201507261910580099
+2015-07-26 19:19:35,388 924465db Thread-68 sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure vm disk show --json pkb-924465db-0-pkb-924465db-0-0-201507261910580099. Got return code (1).
+STDOUT: 
+STDERR: The disk with the specified name does not exist.
+Error information has been recorded to /root/.azure/azure.err
+vm disk show command failed
+
+
+2015-07-26 19:19:35,409 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:19:35,409 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:20:10,588 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    Setting network configuration
+info:    network vnet delete command OK
+
+STDERR: 
+2015-07-26 19:20:10,588 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:20:10,588 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:20:13,763 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:20:13,764 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:20:32,062 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:20:32,062 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:20:35,157 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:20:35,157 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:20:35,157 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:20:38,289 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:20:38,290 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:21:00,896 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:21:00,896 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:21:04,537 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:21:04,537 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:21:04,537 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:21:07,722 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:21:07,723 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:21:32,308 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:21:32,308 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:21:35,258 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:21:35,258 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:21:35,259 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:21:38,334 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:21:38,334 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:21:55,066 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:21:55,066 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:21:58,293 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:21:58,293 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:21:58,293 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:22:01,628 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:22:01,629 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:22:27,340 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:22:27,341 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:22:30,309 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:22:30,310 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:22:30,310 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:22:33,552 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:22:33,553 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:22:53,167 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:22:53,167 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:22:56,375 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:22:56,376 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:22:56,376 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:22:59,510 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:22:59,511 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:23:24,110 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:23:24,110 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:23:27,505 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:23:27,505 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:23:27,505 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:23:30,613 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:23:30,613 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:23:55,472 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:23:55,472 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:23:58,665 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:23:58,665 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:23:58,665 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:24:01,909 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:24:01,910 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:24:31,556 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:24:31,556 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:24:34,864 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:24:34,865 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:24:34,865 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:24:37,925 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:24:37,925 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:24:55,188 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:24:55,189 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:24:58,071 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:24:58,072 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:24:58,072 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:25:01,522 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:25:01,522 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:25:20,813 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:25:20,813 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:25:23,832 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:25:23,833 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:25:23,833 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:25:26,984 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:25:26,985 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:25:52,613 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:25:52,614 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:25:55,743 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:25:55,744 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:25:55,744 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:25:58,718 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:25:58,718 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:26:27,013 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:26:27,014 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:26:30,058 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:26:30,059 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:26:30,059 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:26:33,163 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:26:33,164 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:27:02,212 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:27:02,212 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:27:05,200 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:27:05,200 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:27:05,200 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:27:08,349 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:27:08,349 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:27:32,939 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:27:32,939 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:27:35,976 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:27:35,976 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:27:35,976 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:27:39,090 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:27:39,091 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:27:56,552 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:27:56,553 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:27:59,529 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:27:59,530 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:27:59,530 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:28:02,597 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:28:02,597 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:28:22,350 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:28:22,351 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:28:25,415 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:28:25,415 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:28:25,415 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:28:28,930 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:28:28,931 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:28:50,377 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:28:50,377 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:28:53,596 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:28:53,596 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:28:53,596 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:28:57,109 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:28:57,109 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:29:22,967 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:29:22,967 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:29:25,973 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:29:25,973 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:29:25,973 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:29:29,141 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:29:29,141 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:29:51,150 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:29:51,150 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:29:54,714 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:29:54,715 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:29:54,715 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:29:57,805 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:29:57,806 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:30:13,422 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:30:13,422 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:30:16,813 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:30:16,814 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:30:16,814 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:30:20,062 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:30:20,063 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:30:35,723 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:30:35,723 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:30:38,686 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:30:38,687 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:30:38,687 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:30:41,739 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:30:41,739 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:31:10,742 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:31:10,742 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:31:14,150 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:31:14,150 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:31:14,150 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:31:17,245 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:31:17,245 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:31:39,743 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:31:39,743 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:31:42,797 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:31:42,797 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:31:42,797 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:31:45,768 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:31:45,769 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:32:13,599 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:32:13,600 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:32:17,125 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:32:17,126 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:32:17,126 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:32:20,386 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:32:20,386 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:32:38,451 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:32:38,451 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:32:41,910 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:32:41,910 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:32:41,910 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:32:45,030 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:32:45,031 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:33:07,294 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:33:07,294 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:33:10,710 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:33:10,710 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:33:10,710 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:33:13,969 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:33:13,969 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:33:40,279 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:33:40,279 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:33:43,195 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:33:43,196 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:33:43,196 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:33:46,263 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:33:46,263 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:34:03,621 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:34:03,622 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:34:06,769 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:34:06,769 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:34:06,769 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:34:09,812 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:34:09,812 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:34:36,988 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:34:36,988 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:34:40,075 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:34:40,075 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:34:40,075 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:34:43,036 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:34:43,036 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:35:07,882 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:35:07,882 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:35:10,989 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:35:10,990 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:35:10,990 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:35:14,225 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:35:14,226 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:35:34,275 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:35:34,276 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:35:37,248 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:35:37,248 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:35:37,249 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:35:40,562 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:35:40,563 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:35:57,829 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:35:57,830 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:36:00,776 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:36:00,776 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:36:00,776 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:36:03,902 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:36:03,903 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:36:29,884 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:36:29,884 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:36:32,875 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:36:32,875 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:36:32,876 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:36:35,882 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:36:35,882 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:36:52,706 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:36:52,707 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:36:56,093 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:36:56,093 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:36:56,093 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:36:59,264 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:36:59,265 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:37:17,500 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:37:17,500 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:37:20,496 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:37:20,497 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:37:20,497 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:37:23,621 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:37:23,622 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:37:50,859 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:37:50,859 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:37:54,157 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:37:54,157 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:37:54,157 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:37:57,196 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:37:57,196 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:38:26,025 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:38:26,025 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:38:29,483 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:38:29,484 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:38:29,484 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:38:32,566 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:38:32,566 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:38:56,283 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:38:56,284 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:38:59,330 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:38:59,331 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:38:59,331 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:39:02,426 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:39:02,427 924465db MainThread sysbench_oltp(1/1) vm_util.py:357 ERROR    Got exception running _DeleteResource: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:39:29,144 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:39:29,145 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet delete --quiet perfkit924465db21ae49062
+2015-07-26 19:39:32,196 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet delete --quiet perfkit924465db21ae49062. Got return code (0).
+STDOUT: info:    Executing command network vnet delete
+info:    Looking up network configuration
+info:    network vnet delete command OK
+
+STDERR: error:   A virtual network with name "perfkit924465db21ae49062" not found
+
+2015-07-26 19:39:32,197 924465db MainThread sysbench_oltp(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-26 19:39:32,197 924465db MainThread sysbench_oltp(1/1) vm_util.py:392 INFO     Running: azure network vnet show --json perfkit924465db21ae49062
+2015-07-26 19:39:35,208 924465db MainThread sysbench_oltp(1/1) vm_util.py:420 DEBUG    Ran azure network vnet show --json perfkit924465db21ae49062. Got return code (0).
+STDOUT: {}
+
+STDERR: 
+2015-07-26 19:39:35,209 924465db MainThread sysbench_oltp(1/1) benchmark_spec.py:242 ERROR    Got an exception deleting networks. Attempting to continue tearing down.
+Traceback (most recent call last):
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/benchmark_spec.py", line 240, in Delete
+    net.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/azure/azure_network.py", line 228, in Delete
+    self.vnet.Delete()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/resource.py", line 135, in Delete
+    self._DeleteResource()
+  File "/home/final/PerfKitBenchmarker/perfkitbenchmarker/vm_util.py", line 354, in WrappedFunction
+    raise e
+RetryableDeletionError: Deletion of AzureVirtualNetwork failed.
+2015-07-26 19:39:35,216 924465db MainThread publisher.py:329 INFO     
+-------------------------PerfKitBenchmarker Complete Results-------------------------
+{'timestamp': 1437938211.200317, 'metric': 'OLTP Transaction Rate', 'official': False, 'value': 411.43, 'owner': 'root', 'run_uri': '135c12b1-4ec0-466c-b6ad-f020083e0681', 'test': 'sysbench_oltp', 'sample_uri': 'ab21e2a8-0479-4b04-8506-4913bd419927', 'product_name': 'PerfKitBenchmarker', 'unit': 'Transactions/sec', 'metadata': {'scratch_disk_type': 'standard', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'num_striped_disks': 1, 'zones': 'East US', 'machine_type': 'Standard_D2', 'scratch_disk_size': 500, 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB', 'cloud': 'Azure'}}
+{'timestamp': 1437939575.212481, 'metric': 'End to End Runtime', 'official': False, 'value': 2116.206442832947, 'owner': 'root', 'run_uri': '135c12b1-4ec0-466c-b6ad-f020083e0681', 'test': 'sysbench_oltp', 'sample_uri': '791a1933-7487-43bb-854c-63fad7d08a56', 'product_name': 'PerfKitBenchmarker', 'unit': 'seconds', 'metadata': {'scratch_disk_type': 'standard', 'perfkitbenchmarker_version': 'v0.18.0-2-gf593091', 'num_striped_disks': 1, 'zones': 'East US', 'machine_type': 'Standard_D2', 'scratch_disk_size': 500, 'image': 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB', 'cloud': 'Azure'}}
+
+2015-07-26 19:39:35,217 924465db MainThread publisher.py:303 DEBUG    Pretty-printing results to <open file '<stdout>', mode 'w' at 0x7f000b3dd150>:
+
+-------------------------PerfKitBenchmarker Results Summary-------------------------
+SYSBENCH_OLTP:
+  OLTP Transaction Rate               411.430000 Transactions/sec              
+  End to End Runtime                 2116.206443 seconds                       
+
+-------------------------
+For all tests: cloud="Azure" image="b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB" machine_type="Standard_D2" num_striped_disks="1" perfkitbenchmarker_version="v0.18.0-2-gf593091" scratch_disk_size="500" scratch_disk_type="standard" zones="East US"
+
+2015-07-26 19:39:35,217 924465db MainThread publisher.py:359 INFO     Publishing 2 samples to /tmp/perfkitbenchmarker/run_924465db/perfkitbenchmarker_results.json
+2015-07-26 19:39:35,218 924465db MainThread pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_924465db/pkb.log

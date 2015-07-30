@@ -1,0 +1,50 @@
+2015-07-24 08:40:13,341 619be288 MainThread pkb.py:336 INFO     Flag values:
+--machine_type=Standard_D2
+--cloud=Azure
+--benchmarks=hadoop_terasort
+2015-07-24 08:40:13,571 619be288 MainThread publisher.py:501 DEBUG    Using publishers: [<LogPublisher logger=<logging.RootLogger object at 0x7f37ba531990> level=20>, <PrettyPrintStreamPublisher stream=<open file '<stdout>', mode 'w' at 0x7f37bc074150>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/run_619be288/perfkitbenchmarker_results.json" mode="wb">]
+2015-07-24 08:40:13,572 619be288 MainThread hadoop_terasort(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-24 08:40:13,572 619be288 MainThread hadoop_terasort(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-24 08:40:13,573 619be288 MainThread hadoop_terasort(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-24 08:40:13,573 619be288 MainThread hadoop_terasort(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-24 08:40:13,574 619be288 MainThread hadoop_terasort(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-24 08:40:13,574 619be288 MainThread hadoop_terasort(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-24 08:40:13,574 619be288 MainThread hadoop_terasort(1/1) __init__.py:91 WARNING  File resource loader root data is not a directory.
+2015-07-24 08:40:13,576 619be288 MainThread hadoop_terasort(1/1) pkb.py:194 INFO     Preparing benchmark hadoop_terasort
+2015-07-24 08:40:13,582 619be288 Thread-1 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 08:40:13,582 619be288 Thread-1 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure account affinity-group create --location=East US --label=perfkit619be288cddea8c07 perfkit619be288cddea8c07
+2015-07-24 08:40:16,901 619be288 Thread-1 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group create --location=East US --label=perfkit619be288cddea8c07 perfkit619be288cddea8c07. Got return code (0).
+STDOUT: info:    Executing command account affinity-group create
+info:    Creating affinity group
+info:    account affinity-group create command OK
+
+STDERR: 
+2015-07-24 08:40:16,901 619be288 Thread-1 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 08:40:16,901 619be288 Thread-1 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure account affinity-group show --json perfkit619be288cddea8c07
+2015-07-24 08:40:18,341 619be288 Thread-1 hadoop_terasort(1/1) vm_util.py:420 DEBUG    Ran azure account affinity-group show --json perfkit619be288cddea8c07. Got return code (-2).
+STDOUT: 
+STDERR: 
+2015-07-24 08:40:18,341 619be288 Thread-1 hadoop_terasort(1/1) vm_util.py:357 ERROR    Got exception running _CreateResource: Creation of AzureAffinityGroup failed.
+2015-07-24 08:40:18,344 619be288 Thread-4 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 08:40:18,344 619be288 Thread-4 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-619be288-8
+2015-07-24 08:40:18,345 619be288 Thread-5 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 08:40:18,347 619be288 Thread-6 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 08:40:18,347 619be288 Thread-6 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-619be288-6
+2015-07-24 08:40:18,347 619be288 Thread-5 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-619be288-7
+2015-07-24 08:40:18,354 619be288 Thread-7 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 08:40:18,358 619be288 Thread-7 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-619be288-5
+2015-07-24 08:40:18,362 619be288 Thread-10 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 08:40:18,365 619be288 Thread-10 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-619be288-4
+2015-07-24 08:40:18,378 619be288 Thread-12 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 08:40:18,379 619be288 Thread-12 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-619be288-3
+2015-07-24 08:40:18,384 619be288 Thread-14 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 08:40:18,389 619be288 Thread-14 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-619be288-2
+2015-07-24 08:40:18,392 619be288 Thread-16 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 08:40:18,396 619be288 Thread-16 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-619be288-1
+2015-07-24 08:40:18,409 619be288 Thread-17 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
+2015-07-24 08:40:18,412 619be288 Thread-17 hadoop_terasort(1/1) vm_util.py:392 INFO     Running: azure vm delete --quiet pkb-619be288-0
+2015-07-24 08:40:19,368 619be288 MainThread hadoop_terasort(1/1) pkb.py:426 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/run_619be288/pkb.log
+2015-07-24 08:40:19,371 619be288 Thread-5 hadoop_terasort(1/1) vm_util.py:418 INFO     Ran azure vm delete --quiet pkb-619be288-7. Got return code (-2).
+STDOUT: 
+STDERR: 
+2015-07-24 08:40:19,371 619be288 Thread-5 hadoop_terasort(1/1) vm_util.py:389 DEBUG    Environment variables: None
